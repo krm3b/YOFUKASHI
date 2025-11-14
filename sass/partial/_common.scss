@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+// ==========================
+// YOFUKASHI共通項目
+// ==========================
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: $color-base;
+    color: $color-text;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 2%;
+}
+

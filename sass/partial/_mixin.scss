@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+// ================================================
+// レスポンシブ
+// ================================================
+// @mixin pc {
+//     @media (max-width: ($pc)) {
+//         @content;
+//     }
+// }
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+// ================================================
+// flex
+// ================================================
+@mixin flex($justify-content: space-between, $gap: 0px) {
+    display: flex;
+    justify-content: $justify-content;
+    gap: $gap;
+
+}
