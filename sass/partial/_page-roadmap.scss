@@ -2,6 +2,63 @@
 @use 'mixin' as *;
 
 .page-roadmap {
-    color: $color-base;
-    
+    width: 100%;
+    align-items: center;
+    background: #fff;
+
+    .step-container {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+
+        .step-img {
+            width: 50%;
+            margin-right: 30px;
+        }
+
+        .step-content {
+            width: 50%;
+            margin-left: 30px;
+
+            .step-title {
+                font-size: 50px;
+                font-family: "Monoton", sans-serif;
+                font-weight: 100;
+                font-style: normal;
+
+                span {
+                    font-size: 80px;
+                    font-family: "Monoton", sans-serif;
+                    font-weight: 100;
+                    color: #4c4c4c;
+                    font-style: normal;
+                    
+                }
+            }
+
+            .step-subtitle {
+                font-size: 24px;
+                margin-top: 8px;
+                display: inline-block;
+                border-bottom: 6px solid #4777dc;
+                margin-bottom: 200px;
+
+                // 疑似要素青い下線
+                &::after {
+                    width: 60px;
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border-radius: 2px;
+                }
+            }
+
+            .step-text {
+                margin-top: 16px;
+                line-height: 1.8;
+                color: #333;
+            }
+        }
+    }
 }
