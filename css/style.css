@@ -30,6 +30,32 @@ body {
   font-weight: normal;
 }
 
+.back-btn {
+  margin-top: 40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #888;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-btn img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+  display: block;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -140,5 +166,53 @@ footer p {
 }
 
 .page-roadmap {
-  color: #FEFEFE;
+  width: 100%;
+  align-items: center;
+  background: #fff;
+}
+.page-roadmap .step-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.page-roadmap .step-container .step-img {
+  width: 50%;
+  margin-right: 30px;
+}
+.page-roadmap .step-container .step-content {
+  width: 50%;
+  margin-left: 30px;
+}
+.page-roadmap .step-container .step-content .step-title {
+  font-size: 50px;
+  font-family: "Monoton", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.page-roadmap .step-container .step-content .step-title span {
+  font-size: 80px;
+  font-family: "Monoton", sans-serif;
+  font-weight: 100;
+  color: #4c4c4c;
+  font-style: normal;
+}
+.page-roadmap .step-container .step-content .step-subtitle {
+  font-size: 24px;
+  margin-top: 8px;
+  display: inline-block;
+  border-bottom: 6px solid #4777dc;
+  margin-bottom: 200px;
+}
+.page-roadmap .step-container .step-content .step-subtitle::after {
+  width: 60px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 2px;
+}
+.page-roadmap .step-container .step-content .step-text {
+  margin-top: 16px;
+  line-height: 1.8;
+  color: #333;
 }/*# sourceMappingURL=style.css.map */
