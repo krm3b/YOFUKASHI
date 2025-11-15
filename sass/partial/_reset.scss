@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 62.5%;
 }
 
 ul, ol {
@@ -20,4 +21,9 @@ img {
     vertical-align: bottom;
     max-width: 100%;
     height: auto;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 160%;
 }
