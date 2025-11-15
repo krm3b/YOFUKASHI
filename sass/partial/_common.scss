@@ -13,9 +13,25 @@ body {
 }
 
 .container {
-    max-width: 850px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
     padding-inline: 2%;
 }
 
+.section-title {
+    text-align: center;
+    margin-bottom: 180px;
+
+    .en {
+        color: $color-main;
+        font-size: 2.0rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+    .ja {
+        color: $color-accent-navy;
+        font-size: 3.6rem;
+        font-weight: normal;
+    }
+}

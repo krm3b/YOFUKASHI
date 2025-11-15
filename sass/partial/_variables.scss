@@ -9,20 +9,34 @@ $sp: 425px;
 // 🎨 カラーパレット
 // ==========================
 // ベースカラー（背景）
-$color-base: #f7f9fc;
-$color-base-sub: #FFFFFF;
+$color-base: #FEFEFE;
+$color-base-sub: #F2F9FF;
+$color-white: #FFFFFF;
 
 // メインカラー
-$color-main: #4777dc;
-$color-main-sub: #3384e7;
+$color-main: #3688D6;
+$color-main-sub: #DFEEFD;
 
 // アクセントカラー
-$color-accent: #ff9f43;
-$color-accent-sub: #4fb8ff;
-$color-point: #6E60C7;
+$color-accent: #F59E3D;
+$color-accent-navy: #3F3D56;
+
+// グレー系
+$color-light-gray: #E6E6E6;
+$color-gray: #595959;
+
+// ３カラーの配色
+$color-step1: #E9EDF2;
+$color-step2: #CDDCE6;
+$color-step3: #8B9DAC;
 
 // テキスト
 $color-text: #333333;
+// 金額
+$color-text-price: #C54E4E;
+// 赤強調（お悩み）
+$color-text-worries: #BB6666;
+
 
 // ライン系
 $color-line: #767676;
