@@ -30,3 +30,15 @@
     gap: $gap;
 
 }
+
+// ================================================
+// section-padding
+// ================================================
+@mixin section-padding {
+    padding: 100px;
+
+    @include sp {
+        padding: 70px;
+    }
+
+}
