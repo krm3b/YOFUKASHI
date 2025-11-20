@@ -35,10 +35,28 @@
 // section-padding
 // ================================================
 @mixin section-padding {
-    padding: 100px;
+    padding-block: 100px;
 
     @include sp {
-        padding: 70px;
+        padding-block: 70px;
     }
 
+}
+
+// ================================================
+// font : Monoton
+// ================================================
+@mixin monoton {
+    font-family: "Monoton", "Noto Sans JP", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+// ================================================
+// font : Open Sans
+// ================================================
+@mixin open-sans {
+    font-family: "Open Sans", "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
