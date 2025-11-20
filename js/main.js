@@ -1,5 +1,36 @@
 $(function () {
-
+    /*=================================================
+    PICK UP スライダー
+    ===================================================*/
+    // カルーセル用 jQueryプラグイン「slick」の設定
+    // マニュアル：https://kenwheeler.github.io/slick/
+    $(".slick").slick({
+        centerMode: true,                 //両端見切れ状態の有無
+        slidesToShow: 3,                  //1スライダーの表示数
+        autoplay: true,                   //自動再生の有無
+        autoplaySpeed: 0,                 //再生速度（1000=1秒）
+        speed: 7000,                      // スライドが流れる速度を設定
+        cssEase: "linear",                // スライドの流れ方を等速に設定
+        responsive: [
+            {
+              breakpoint: 769, // 769px以下のとき
+                settings: {
+                speed: 8000,
+                slidesToShow: 2,
+                centerMode: false,
+            },
+            },
+            {
+              breakpoint: 426, // 426px以下のとき
+                settings: {
+                speed: 5000,
+                slidesToShow: 1,
+                centerMode: false,
+            },
+            },
+        ],
+    });
+    
     /*=================================================
         FAQ
     ===================================================*/
@@ -25,6 +56,5 @@ $(function () {
             $(Box).slideDown(500);					//アコーディオンを開く
         });
     });
-
 
 });

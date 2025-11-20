@@ -1,6 +1,136 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-.worries {
+// 格子状の背景
+.background {
+    background-image: url("../img/worries_background.webp");
+    background-size: contain;
+    background-repeat: repeat;
+    position: relative;
+    z-index: -2;
+}
 
+.worries {
+    padding: 45px 0 150px 0;
+    position: relative;
+
+    // 吹き出し画像
+    &::before {
+        content: "";
+        position: absolute;
+        top: 15%;
+        right: 0;
+        width: 90%;
+        height: calc(80% - 45px);
+        background-image: url("../img/worries1.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right center;
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+        z-index: -1;
+
+        @include tab {
+            width: 100% ;
+        }
+    }
+
+    // 矢印
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 135px;
+        height: 140px;
+        background-image: url("../../img/arrow_gray.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+    }
+    
+    .wrapper {
+        max-width: 1200px; // セクション全体の最大幅を少し大きめに設定
+        width: 100%;
+        margin: 0 auto; // まずラッパーを中央に配置
+
+        h2 {
+            font-size: 2.4rem;
+            letter-spacing: 5px;
+            color: $color-white;
+            background-color: $color-accent-navy;
+            border-radius: 50px;
+            font-weight: normal;
+            width: fit-content;
+            padding: 15px 16% 10px 16%;
+            margin-left: 10%;
+            
+            span {
+                font-size: 3.6rem;
+                font-weight: bold;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 8px;
+                    background-color: $color-white;
+
+                }
+            }
+        }
+
+        ul {
+            padding-left: 50px;
+            margin-left: 11%;
+            width: fit-content;
+
+            li {
+                display: block;
+                font-size: 1.6rem;
+                margin-block: 30px;
+                padding-bottom: 5px;
+                border-bottom: 1px $color-line dashed;
+                position: relative;
+
+                // チェックアイコン
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -50px;
+                    transform: translateY(-50%);
+                    background-image: url("../img/icon_CheckSquare.webp");
+                    background-size: cover;      // 擬似要素全体に画像を拡大/縮小して表示（はみ出る可能性あり）
+                    background-repeat: no-repeat; // 画像の繰り返しを停止
+                    width: 40px;
+                    height: 40px;
+
+                    @include tab {
+                        left: -30px;
+                        width: 25px;
+                        height: 25px;
+                        top: 62%;
+                    }
+                }
+                p {
+                    @include tab {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                span {
+                    font-size: 2.4rem;
+                    color: $color-text-worries;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
