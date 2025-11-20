@@ -1,6 +1,97 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-.support {
+.support-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  /* ▼ 青い背景：正方形 */
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 20px;
+
+    aspect-ratio: 1 / 1; // 正方形に固定
+    width: 350px;         // サイズはここで調整OK
+
+    background: #9cc8e8;
+    border-radius: 12px;
+    z-index: -1;
+  }
+
+  /* ▼ 白いカード：正方形 */
+  .support-text {
+    background: #fff;
+    aspect-ratio: 1 / 1;  // ★ 正方形にする
+    width: 320px;         // 青い箱より少し小さくすると良い
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 18px;
+      color: #1a2b48;
+      font-weight: bold;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 15px;
+      color: #333;
+      overflow: hidden;   // ★ テキストが溢れないように
+    }
+  }
+
+  /* 番号タグ */
+  .support-number {
+    position: absolute;
+    top: -18px;
+    left: -20px;
+    background: #1a2b48;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* ▼ 画像はテキストと重ならない位置 */
+  .support-img {
+    position: relative;
+
+    img {
+      width: 200px;
+      height: auto;
+    }
+  }
+}
+
+
+
+/* ============================
+   偶数カードだけ反転レイアウト
+   ============================ */
+.support-card:nth-child(even) {
+  flex-direction: row-reverse;  // 左右入れ替え
+
+  /* 青い背景の位置も反転 */
+  &::before {
+    left: auto;
+    right: 20px;
+  }
+
+  /* 番号タグも反転側に寄せる */
 
 }
