@@ -1,15 +1,21 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
+
 .faq {
-    // padding-top: calc(m.$header-height + m.$section-padding);
-    // padding-bottom: m.$section-padding;
+    @include section-padding;
+    position: relative;
+	z-index: 1;             /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+	width:100%;
+	height: 100%;
 
-    // @include m.sp {
-    //     padding-top: calc(m.$header-height + m.$sp-section-padding);
-    //     padding-bottom: m.$sp-section-padding;
-    // }
-
+    #particles-js{ 
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
 
     .accordion-area {
         padding-inline: 5%;
@@ -23,11 +29,12 @@
             margin-bottom: 30px;
 
             span {
-                font-family: "Crimson Text", "Noto Sans JP", sans-serif;
+                @include open-sans;
                 font-size: 4.8rem;
                 margin-right: 20px;
 
                 @include sp {
+                    font-size: 3.5rem;
                     margin-right: 5px;
                 }
                 
@@ -43,13 +50,15 @@
                 background-color: $color-base-sub;
                 font-weight: normal;
                 font-size: 1.6rem;
-                // border-top-left-radius: 5px;
-                // border-top-right-radius: 5px;
                 border-radius: 5px;
-                padding: 1% 10% 1% 2%;
+                padding: 1% 10% 1% 20px;
                 position: relative;
                 cursor: pointer;
                 transition: .3s ease;
+
+                @include sp {
+                    padding: 3% 10% 3% 10px;
+                }
 
                 &.close {
                     border-bottom-left-radius: 0;
@@ -84,14 +93,19 @@
             .box {
                 display: none;
                 background-color: $color-main-sub;
-                padding: 3% 10% 3% 2%;
+                padding: 3% 10% 3% 25px;
                 border-bottom-left-radius: 5px;
                 border-bottom-right-radius: 5px;
 
+                @include sp {
+                    padding: 3% 10% 3% 12px;
+                }
+                
                 .text-wrapper {
                     display: flex;
                     align-items: center;
                 }
+                
             }
         }
     }

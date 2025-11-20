@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
 // ==========================
 // 共通事項
 // ==========================
@@ -20,7 +23,6 @@ a {
 img {
     vertical-align: bottom;
     max-width: 100%;
-    height: auto;
     object-fit: cover;
     width: 100%;
 }
