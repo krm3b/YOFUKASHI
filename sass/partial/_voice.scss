@@ -3,4 +3,92 @@
 
 .voice {
 
+    // 全ての子孫要素に対してbox-sizingを適用
+    * {
+        box-sizing: border-box;
+    }
+
+    // --- Keyframes ---
+    @keyframes gradientText {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @keyframes zoomBackground {
+        from {
+            background-size: 100% 100%;
+        }
+
+        to {
+            background-size: 120% 120%;
+        }
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .panel {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 50.0rem;
+        border-radius: 1.6rem 1.6rem 0 0;
+        color: $color-white;
+        cursor: pointer;
+        flex: 0.5;
+        margin: 10px;
+        position: relative;
+        -webkit-transition: all 700ms ease-in;
+
+        .text {
+            font-size: 2.4rem;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin: 0;
+            opacity: 0;
+            padding: 1.2rem 2.5rem 1.2rem 2.0rem;
+            background: #fff;
+            border-radius: 0 0 1.6rem 1.6rem;
+            color: $color-text;
+            border: 0.1rem solid $color-line;
+            letter-spacing: 0.5rem;
+            width: 100%;
+
+            h3 {
+                font-size: 2.4rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 1.4;
+                padding-top: 0.5rem;
+            }
+        }
+
+        &.active {
+            flex: 5;
+            background-size: 100% 100%;
+
+            &:hover {
+                animation: zoomBackground 5s ease forwards;
+            }
+
+
+            .text {
+                opacity: 1;
+                transition: opacity 0.3s ease-in 0.4s;
+            }
+        }
+    }
 }

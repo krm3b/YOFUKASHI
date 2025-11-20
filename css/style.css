@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Noto Sans JP", sans-serif;
   background-color: #FEFEFE;
@@ -80,13 +84,128 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 
 p {
   font-size: 1.6rem;
   line-height: 160%;
+}
+
+/* ================================
+   Header
+================================ */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: transform 0.5s ease;
+  /* ================================
+     Menu Wrapper（右側に寄せる）
+  ================================= */
+  /* ================================
+     Glass Card Style
+  ================================= */
+}
+header.hide {
+  transform: translateY(-100%);
+}
+header .menu {
+  margin-left: auto;
+}
+header .menu nav ul {
+  display: flex;
+  align-items: center;
+}
+header .menu nav ul li {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  font-size: 3rem;
+  /* ================================
+     Reservation Button
+  ================================= */
+}
+header .menu nav ul li .reservation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  background-color: #F59E3D;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+header .menu nav ul li .reservation p {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  line-height: 1;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+}
+header .menu nav ul li .reservation .arrow-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+header .menu nav ul li .reservation .arrow-circle::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #F59E3D;
+  border-right: 2px solid #F59E3D;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+header .glass-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 14px 7px rgba(255, 255, 255, 0.7);
+  /* 上の細い光ライン */
+  /* 左の縦ライン */
+}
+header .glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+header .glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
 }
 
 footer {
@@ -195,6 +314,7 @@ footer p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -268,7 +388,8 @@ footer p {
 .why-pronavi .slick img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slick-slide {
@@ -387,6 +508,110 @@ footer p {
   align-items: center;
 }
 
+.gallery {
+  background-color: #3688D6;
+  margin-block: 300px;
+}
+.gallery .wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.gallery .wrapper .section-title .en {
+  color: #333333;
+}
+.gallery .wrapper .section-title .ja,
+.gallery .wrapper .section-title .text {
+  color: #FFFFFF;
+}
+.gallery .wrapper .student-img {
+  display: flex;
+  gap: 50px;
+}
+.gallery .wrapper .student-img .left-slider,
+.gallery .wrapper .student-img .right-slider {
+  flex: 1;
+  height: 80vh;
+}
+
+.mainvisial {
+  position: relative;
+  height: 100vh;
+}
+.mainvisial img {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mainvisial h2 {
+  position: absolute;
+  left: 20%;
+  bottom: 20%;
+  background-color: #ffffff;
+  font-size: 42px;
+}
+.mainvisial .icon {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  display: flex;
+  align-items: center;
+}
+.mainvisial .icon img {
+  width: 490px;
+  height: 155px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mainvisial .icon .reservation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 30px;
+  background-color: #F59E3D;
+  color: #fff;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 100px;
+}
+.mainvisial .icon .reservation p {
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  line-height: 1;
+  letter-spacing: 4px;
+}
+.mainvisial .icon .reservation .arrow-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: 15px;
+  position: relative;
+}
+.mainvisial .icon .reservation .arrow-circle::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #F59E3D;
+  border-right: 2px solid #F59E3D;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
 .support-card {
   position: relative;
   width: 100%;
@@ -465,6 +690,81 @@ footer p {
 .support-card:nth-child(even)::before {
   left: auto;
   right: 20px;
+}
+
+.voice * {
+  box-sizing: border-box;
+}
+@keyframes gradientText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes zoomBackground {
+  from {
+    background-size: 100% 100%;
+  }
+  to {
+    background-size: 120% 120%;
+  }
+}
+.voice .container {
+  display: flex;
+}
+.voice .panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50rem;
+  border-radius: 1.6rem 1.6rem 0 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 700ms ease-in;
+}
+.voice .panel .text {
+  font-size: 2.4rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 1.2rem 2.5rem 1.2rem 2rem;
+  background: #fff;
+  border-radius: 0 0 1.6rem 1.6rem;
+  color: #333333;
+  border: 0.1rem solid #767676;
+  letter-spacing: 0.5rem;
+  width: 100%;
+}
+.voice .panel .text h3 {
+  font-size: 2.4rem;
+}
+.voice .panel .text p {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  padding-top: 0.5rem;
+}
+.voice .panel.active {
+  flex: 5;
+  background-size: 100% 100%;
+}
+.voice .panel.active:hover {
+  animation: zoomBackground 5s ease forwards;
+}
+.voice .panel.active .text {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
 .background {
   background-image: url("../img/worries_background.webp");
   background-size: contain;
@@ -521,6 +821,7 @@ footer p {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -544,6 +845,7 @@ footer p {
 .worries .wrapper ul {
   padding-left: 50px;
   margin-left: 11%;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .worries .wrapper ul li {

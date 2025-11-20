@@ -1,20 +1,156 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
+/* ================================
+   Header
+================================ */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-    
+    padding: 20px;
+    transition: transform 0.5s ease;
 
+    &.hide {
+        transform: translateY(-100%);
+    }
 
+    /* ================================
+       Menu Wrapper（右側に寄せる）
+    ================================= */
+    .menu {
+        margin-left: auto;
 
+        nav {
+            ul {
+                display: flex;
+                align-items: center;
 
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                    font-size: 3rem;
 
+                    /* ================================
+                       Reservation Button
+                    ================================= */
+                    .reservation {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
 
+                        width: 100%;
+                        padding: 5px;
 
+                        background-color: #F59E3D;
+                        color: #fff;
 
+                        border-radius: 30px;
+                        text-decoration: none;
+                        cursor: pointer;
 
+                        font-size: 1.2em;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
+                        p {
+                            display: flex;
+                            align-items: center;
 
+                            padding: 5px;
+                            line-height: 1;
 
+                            border: 1px solid #ffffff;
+                            border-radius: 30px;
+                        }
+
+                        .arrow-circle {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 35px;
+                            height: 35px;
+                            margin-left: 15px;
+
+                            background-color: #fff;
+                            border-radius: 50%;
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                position: absolute;
+
+                                width: 10px;
+                                height: 10px;
+
+                                border-top: 2px solid #F59E3D;
+                                border-right: 2px solid #F59E3D;
+
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) rotate(45deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* ================================
+       Glass Card Style
+    ================================= */
+    .glass-card {
+        position: relative;
+        overflow: hidden;
+
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(13px);
+        -webkit-backdrop-filter: blur(13px);
+
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 0 14px 7px rgba(255, 255, 255, 0.7);
+
+        /* 上の細い光ライン */
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.8),
+                transparent
+            );
+        }
+
+        /* 左の縦ライン */
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.8),
+                transparent,
+                rgba(255, 255, 255, 0.3)
+            );
+        }
+    }
 }
