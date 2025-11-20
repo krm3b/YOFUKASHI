@@ -1,6 +1,41 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-.gallery {
 
+.gallery {
+    background-color: #3688D6;
+    margin-block: 300px;
+
+    .wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+
+        .section-title {
+            .en {
+                color: $color-text;
+            }
+
+            .ja,
+            .text {
+                color: $color-white;
+            }
+        }
+
+        .student-img {
+            display: flex;
+            gap: 50px;
+
+            .left-slider,
+            .right-slider {
+                flex: 1; // 横並びを強制
+                height: 80vh; // 高さを確保
+            }
+        }
+    }
+
+    
 }
