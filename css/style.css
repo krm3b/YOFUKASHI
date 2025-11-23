@@ -84,8 +84,7 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 
@@ -314,7 +313,6 @@ footer p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
-  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -388,8 +386,7 @@ footer p {
 .why-pronavi .slick img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .slick-slide {
@@ -544,8 +541,7 @@ footer p {
 .mainvisial img {
   width: 100%;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mainvisial h2 {
   position: absolute;
@@ -564,8 +560,7 @@ footer p {
 .mainvisial .icon img {
   width: 490px;
   height: 155px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .mainvisial .icon .reservation {
   display: flex;
@@ -601,6 +596,135 @@ footer p {
   position: relative;
 }
 .mainvisial .icon .reservation .arrow-circle::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #F59E3D;
+  border-right: 2px solid #F59E3D;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.course {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* 青いヘッダー */
+.course-header {
+  background: #3b89d7;
+  padding: 25px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  width: 1180px;
+  height: 114px;
+  margin: 0 auto;
+}
+.course-header h1 {
+  font-size: 36px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* 白いカード */
+.course-card {
+  width: 1180px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 60px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 40px;
+}
+
+/* 左：アイコン部分（固定300px） */
+.course-left {
+  width: 340px;
+  height: 320px;
+}
+
+.skill-title {
+  background: #2e84d6;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  text-align: center;
+}
+
+.skill-box {
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 右側：内容 */
+.course-right {
+  flex: 1;
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* 料金 */
+.price-wrap {
+  font-size: 18px;
+  margin-bottom: 30px;
+  padding-left: 250px;
+}
+
+.cost {
+  font-size: 40px;
+  font-weight: bold;
+  color: #c54e4e;
+  margin: 0 5px;
+}
+
+/* ボタンを縦並びで左寄せに */
+.reservation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 50%;
+  padding: 8px 5px;
+  background-color: #F59E3D;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.reservation p {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+  line-height: 1;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+}
+.reservation .arrow-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+.reservation .arrow-circle::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -821,7 +945,6 @@ footer p {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -845,7 +968,6 @@ footer p {
 .worries .wrapper ul {
   padding-left: 50px;
   margin-left: 11%;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .worries .wrapper ul li {
