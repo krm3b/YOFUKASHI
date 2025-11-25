@@ -1,154 +1,146 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-// .mainvisual {
-//     position: relative;
-//     width: 100%;
-//     height: 100vh;
-//     background: #222;
-
-//     .clip {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         transition: clip-path 0.5s ease, z-index 0s;
-//     }
-
-//     .clip1 {
-//         background: url(/img/header/mainvisial-left.webp);
-//         background-size: cover;
-//         background-position: center;
-//         clip-path: polygon(0 0, 46% 0, 39% 100%, 0 100%);
-//         z-index: 1;
-
-//         &:hover {
-//             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-//             z-index: 10; // hover時に最前面へ
-//         }
-//     }
-
-//     .clip2 {
-//         background: url(/img/header/mainvisial-center.webp);
-//         background-size: cover;
-//         background-position: center;
-//         clip-path: polygon(19% 0, 87% 0, 64% 100%, 33% 100%);
-//         z-index: 2;
-
-//         &:hover {
-//             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-//             z-index: 10;
-//         }
-//     }
-
-//     .clip3 {
-//         background: url(/img/header/mainvisial-right.webp);
-//         background-size: cover;
-//         background-position: center;
-//         clip-path: polygon(82% 0, 100% 0, 100% 100%, 63% 100%);
-//         z-index: 3;
-
-//         &:hover {
-//             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-//             z-index: 10;
-//         }
-//     }
-
-
-//     h2 {
-//         background-color: #ffffff;
-//         color: #000; // 背景が白なので文字色を黒にすると見やすい
-//         position: relative;
-//         z-index: 20; // 背景のclipより前面に出す
-//     }
-
-//     .icon {
-//         position: relative;
-//         z-index: 20; // clipより前面に出す
-//         text-align: center;
-//         margin-top: 20px;
-//     }
-// }
-
 .mainvisial {
     position: relative;
+    width: 80%;
     height: 100vh;
-    img {
+    margin-bottom: 300px; //仮
+
+    
+
+    .clip {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        
-        height: 100vh;
-        object-fit: cover;
+        height: 100%;
+        transition: all 0.5s;
     }
 
+    .clip1 {
+        background: url(/img/mainvisial/mainvisial-left.webp);
+        background-size: cover;
+        background-position: center top;
+        clip-path: polygon(0 0, 46% 0, 39% 100%, 0 100%);
+    }
+
+    .clip2 {
+        background: url(/img/mainvisial/mainvisial-center.webp);
+        background-size: cover;
+        background-position: center top;
+        clip-path: polygon(19% 0, 87% 0, 64% 100%, 33% 100%);
+    }
+
+
+    .clip3 {
+        background: url(/img/mainvisial/mainvisial-right.webp);
+        background-size: cover;
+        background-position: center top;
+        clip-path: polygon(82% 0, 100% 0, 100% 100%, 63% 100%);
+    }
+
+
+    &:hover .clip {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+
+        &:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    }
+
+    // h2 {
+    //     background-color: #ffffff;
+    //     color: #000; // 背景が白なので文字色を黒にすると見やすい
+    //     position: relative;
+    //     z-index: 20; // 背景のclipより前面に出す
+    // }
+
+    .icon {
+        position: relative;
+        z-index: 20; // clipより前面に出す
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+
+.main-text {
+    position: absolute;
+    left: 20%;
+    top: 80%;
+
     h2 {
-        position: absolute;
-        left: 20%;
-        bottom: 20%;
         background-color: #ffffff;
-        font-size: 42px;
+        font-size: 4.2rem;
+        display: inline-block;
+
     }
 
 
     .icon {
-        position: absolute;
-        bottom: 0;
-        left: 20%;
-        display: flex;
-        align-items: center;
+    display: flex;
+    justify-content: center;  // 横方向の中央揃え
+    align-items: center;       // 縦方向の中央揃え
+    gap: 4rem;                 // アイコンと予約ボタンの間隔を調整（必要なら）
+
         img {
             width: 490px;
             height: 155px;
             object-fit: cover;
         }
-                .reservation {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 5px;
-                    border-radius: 30px;
-                    background-color: #F59E3D;
-                    color: #fff;
-                    font-size: 1.2em;
-                    cursor: pointer;
-                    text-decoration: none;
-                    margin-left: 100px;
 
-                    p {
-                        border: 1px solid #ffffff;
-                        border-radius: 30px;
-                        display: flex;
-                        align-items: center;
-                        padding: 5px;
-                        line-height: 1;
-                        letter-spacing: 4px;
-                    }
+        .reservation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 3.0rem;
+            background-color: #F59E3D;
+            color: #fff;
+            font-size: 1.2em;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 10.0rem;
+            padding: 0.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 
-                    .arrow-circle {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 35px;
-                        height: 35px;
-                        background-color: #fff;
-                        border-radius: 50%;
-                        margin-left: 15px;
-                        position: relative;
 
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            width: 10px;
-                            height: 10px;
-                            border-top: 2px solid #F59E3D;
-                            border-right: 2px solid #F59E3D;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%) rotate(45deg);
-                        }
-                    }
+            p {
+                
+                border: 0.1rem solid #ffffff;
+                border-radius: 3.0rem;
+                display: flex;
+                align-items: center;
+                padding: 0.5rem;
+                line-height: 1;
+                letter-spacing: 0.2rem;
+                white-space: nowrap;
+
+            }
+
+            .arrow-circle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                height: 35px;
+                background-color: #fff;
+                border-radius: 50%;
+                margin-left: 15px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-top: 2px solid #F59E3D;
+                    border-right: 2px solid #F59E3D;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
                 }
+            }
+        }
     }
-
-
 }

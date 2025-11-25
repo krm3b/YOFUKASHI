@@ -6,13 +6,12 @@
     background-color: #3688D6;
     margin-block: 300px;
 
+
     .wrapper {
         display: flex;
-        flex-direction: row-reverse;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 0 auto;
+        flex-direction: row-reverse;
+
 
         .section-title {
             .en {
@@ -25,17 +24,16 @@
             }
         }
 
-        .student-img {
-            display: flex;
-            gap: 50px;
+        .slick {
 
-            .left-slider,
-            .right-slider {
-                flex: 1; // 横並びを強制
-                height: 80vh; // 高さを確保
+            .slick-left {
+                transform: rotate(180deg) !important;
+
+                img {
+                    transform: rotate(180deg);
+                }
             }
         }
     }
-
-    
 }
+
