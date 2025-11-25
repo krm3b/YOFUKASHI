@@ -107,7 +107,8 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 
@@ -116,25 +117,18 @@ p {
   line-height: 160%;
 }
 
-/* ================================
-   Header
-================================ */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   transition: transform 0.5s ease;
-  /* ================================
-     Menu Wrapper（右側に寄せる）
-  ================================= */
-  /* ================================
-     Glass Card Style
-  ================================= */
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
 }
 header.hide {
   transform: translateY(-100%);
@@ -147,35 +141,32 @@ header .menu nav ul {
   align-items: center;
 }
 header .menu nav ul li {
+  margin-left: 10px;
   display: flex;
   align-items: center;
-  margin-left: 10px;
   font-size: 3rem;
-  /* ================================
-     Reservation Button
-  ================================= */
 }
 header .menu nav ul li .reservation {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   padding: 5px;
+  width: 100%;
+  border-radius: 30px;
   background-color: #F59E3D;
   color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  cursor: pointer;
   font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 header .menu nav ul li .reservation p {
+  border: 1px solid #ffffff;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   padding: 5px;
   line-height: 1;
-  border: 1px solid #ffffff;
-  border-radius: 30px;
 }
 header .menu nav ul li .reservation .arrow-circle {
   display: flex;
@@ -183,9 +174,9 @@ header .menu nav ul li .reservation .arrow-circle {
   align-items: center;
   width: 35px;
   height: 35px;
-  margin-left: 15px;
   background-color: #fff;
   border-radius: 50%;
+  margin-left: 15px;
   position: relative;
 }
 header .menu nav ul li .reservation .arrow-circle::after {
@@ -198,36 +189,6 @@ header .menu nav ul li .reservation .arrow-circle::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
-}
-header .glass-card {
-  position: relative;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(13px);
-  -webkit-backdrop-filter: blur(13px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 14px 7px rgba(255, 255, 255, 0.7);
-  /* 上の細い光ライン */
-  /* 左の縦ライン */
-}
-header .glass-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-}
-header .glass-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
 }
 
 footer {
@@ -403,7 +364,8 @@ footer p {
 }
 @media (max-width: 768px) {
   .about .flex__img img {
-    object-position: 50% 20%;
+    -o-object-position: 50% 20%;
+       object-position: 50% 20%;
   }
 }
 
@@ -413,6 +375,7 @@ footer p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -509,7 +472,8 @@ footer p {
 .why-pronavi .slick img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slick-slide {
@@ -732,11 +696,8 @@ footer p {
 }
 .gallery .wrapper {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
+  flex-direction: row-reverse;
 }
 .gallery .wrapper .section-title .en {
   color: #333333;
@@ -745,67 +706,105 @@ footer p {
 .gallery .wrapper .section-title .text {
   color: #FFFFFF;
 }
-.gallery .wrapper .student-img {
-  display: flex;
-  gap: 50px;
+.gallery .wrapper .slick .slick-left {
+  transform: rotate(180deg) !important;
 }
-.gallery .wrapper .student-img .left-slider,
-.gallery .wrapper .student-img .right-slider {
-  flex: 1;
-  height: 80vh;
+.gallery .wrapper .slick .slick-left img {
+  transform: rotate(180deg);
 }
 
 .mainvisial {
   position: relative;
+  width: 80%;
   height: 100vh;
+  margin-bottom: 300px;
 }
-.mainvisial img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
-.mainvisial h2 {
+.mainvisial .clip {
   position: absolute;
-  left: 20%;
-  bottom: 20%;
-  background-color: #ffffff;
-  font-size: 42px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.mainvisial .clip1 {
+  background: url(/img/mainvisial/mainvisial-left.webp);
+  background-size: cover;
+  background-position: center top;
+  clip-path: polygon(0 0, 46% 0, 39% 100%, 0 100%);
+}
+.mainvisial .clip2 {
+  background: url(/img/mainvisial/mainvisial-center.webp);
+  background-size: cover;
+  background-position: center top;
+  clip-path: polygon(19% 0, 87% 0, 64% 100%, 33% 100%);
+}
+.mainvisial .clip3 {
+  background: url(/img/mainvisial/mainvisial-right.webp);
+  background-size: cover;
+  background-position: center top;
+  clip-path: polygon(82% 0, 100% 0, 100% 100%, 63% 100%);
+}
+.mainvisial:hover .clip {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.mainvisial:hover .clip:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .mainvisial .icon {
-  position: absolute;
-  bottom: 0;
-  left: 20%;
-  display: flex;
-  align-items: center;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  margin-top: 20px;
 }
-.mainvisial .icon img {
+
+.main-text {
+  position: absolute;
+  left: 20%;
+  top: 80%;
+}
+.main-text h2 {
+  background-color: #ffffff;
+  font-size: 4.2rem;
+  display: inline-block;
+}
+.main-text .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+.main-text .icon img {
   width: 490px;
   height: 155px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.mainvisial .icon .reservation {
+.main-text .icon .reservation {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
-  border-radius: 30px;
+  border-radius: 3rem;
   background-color: #F59E3D;
   color: #fff;
   font-size: 1.2em;
   cursor: pointer;
   text-decoration: none;
-  margin-left: 100px;
+  margin-left: 10rem;
+  padding: 0.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
-.mainvisial .icon .reservation p {
-  border: 1px solid #ffffff;
-  border-radius: 30px;
+.main-text .icon .reservation p {
+  border: 0.1rem solid #ffffff;
+  border-radius: 3rem;
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding: 0.5rem;
   line-height: 1;
-  letter-spacing: 4px;
+  letter-spacing: 0.2rem;
+  white-space: nowrap;
 }
-.mainvisial .icon .reservation .arrow-circle {
+.main-text .icon .reservation .arrow-circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -816,7 +815,136 @@ footer p {
   margin-left: 15px;
   position: relative;
 }
-.mainvisial .icon .reservation .arrow-circle::after {
+.main-text .icon .reservation .arrow-circle::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #F59E3D;
+  border-right: 2px solid #F59E3D;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.course {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* 青いヘッダー */
+.course-header {
+  background: #3b89d7;
+  padding: 25px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  width: 1180px;
+  height: 114px;
+  margin: 0 auto;
+}
+.course-header h1 {
+  font-size: 36px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* 白いカード */
+.course-card {
+  width: 1180px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 60px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 40px;
+}
+
+/* 左：アイコン部分（固定300px） */
+.course-left {
+  width: 340px;
+  height: 320px;
+}
+
+.skill-title {
+  background: #2e84d6;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 6px 6px 0 0;
+  text-align: center;
+}
+
+.skill-box {
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 右側：内容 */
+.course-right {
+  flex: 1;
+}
+
+.desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* 料金 */
+.price-wrap {
+  font-size: 18px;
+  margin-bottom: 30px;
+  padding-left: 250px;
+}
+
+.cost {
+  font-size: 40px;
+  font-weight: bold;
+  color: #c54e4e;
+  margin: 0 5px;
+}
+
+/* ボタンを縦並びで左寄せに */
+.reservation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 50%;
+  padding: 8px 5px;
+  background-color: #F59E3D;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.reservation p {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+  line-height: 1;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+}
+.reservation .arrow-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin-left: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+}
+.reservation .arrow-circle::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -840,8 +968,7 @@ footer p {
 }
 .reasons__item {
   border-radius: 30px;
-  padding: 5%;
-  position: -webkit-sticky; /*Safari*/
+  padding: 5%; /*Safari*/
   position: sticky;
 }
 .reasons__item.item1 {
@@ -961,6 +1088,7 @@ footer p {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
+  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -970,6 +1098,144 @@ footer p {
 .roadmap .flex__btn .text {
   color: #FFFFFF;
   width: 80%;
+}
+
+.sns-section {
+  background: linear-gradient(180deg, #f0f8ff 0%, #e0f7fa 50%, #f0f8ff 100%);
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+.sns-section .sns-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sns-section .section-title {
+  position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.sns-section .section-title .line-break {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+.sns-section .section-title .line-break:first-child::before, .sns-section .section-title .line-break:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #333;
+}
+.sns-section .section-title .line-break:first-child::before {
+  top: 4px;
+  transform: rotate(-25deg);
+}
+.sns-section .section-title .line-break:first-child::after {
+  bottom: 4px;
+  transform: rotate(-10deg);
+}
+.sns-section .section-title .line-break:last-child::before, .sns-section .section-title .line-break:last-child::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 40px;
+  height: 2px;
+  background: #333;
+}
+.sns-section .section-title .line-break:last-child::before {
+  top: 4px;
+  transform: rotate(25deg);
+}
+.sns-section .section-title .line-break:last-child::after {
+  bottom: 4px;
+  transform: rotate(10deg);
+}
+.sns-section .profile-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .sns-section .profile-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.sns-section .profile-card {
+  width: 50%;
+  max-width: 300px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .sns-section .profile-card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 30px;
+  }
+}
+.sns-section .profile-image-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  box-shadow: 0 0 0 2px #ddd;
+}
+.sns-section .profile-image-container .profile-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.sns-section .instagram-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e4405f;
+  z-index: 10;
+  transform: translate(15%, 15%);
+}
+.sns-section .instagram-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  border-radius: 20%;
+  background: radial-gradient(circle at 30% 70%, #ffdc80, #f77737, #cd486b, #bc2a8d, #833ab4);
+}
+.sns-section .instagram-icon::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  right: 25%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.sns-section .name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+.sns-section .description {
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: #555;
 }
 
 .support-card {
@@ -1104,7 +1370,8 @@ footer p {
   max-width: 200px; /* 画像の最大幅を制限 */
   height: auto;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   /* 画像上部の余白を再現するためにmargin-topを追加 */
   margin-top: -10px;
   border-radius: 5px; /* 画像の角を少し丸く */
@@ -1283,6 +1550,7 @@ footer p {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -1318,6 +1586,7 @@ footer p {
 .worries .wrapper ul {
   padding-left: 50px;
   margin-left: 11%;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
