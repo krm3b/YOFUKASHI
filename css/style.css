@@ -521,6 +521,104 @@ footer p {
   }
 }
 
+.contact {
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f8f8f8;
+}
+.contact .support-image-container {
+  position: relative;
+  max-width: 1580px;
+  height: 732px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.contact .support-image-container .support-image {
+  display: block;
+  width: 100%;
+  filter: brightness(0.95);
+}
+.contact .support-image-container .support-text-overlay {
+  position: absolute;
+  top: 80%;
+  left: 30%;
+  transform: translate(-40%, -50%);
+  color: #333333;
+  text-align: center;
+  width: 730px;
+  height: 280px;
+  opacity: 0.7;
+}
+.contact .support-image-container .support-text-overlay p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  background-color: #FEFEFE;
+  padding: 15px 30px;
+}
+.contact .cta-container {
+  margin-top: 40px;
+}
+.contact .cta-container .cta-heading {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  /* 「無料」のハイライト部分のスタイル */
+}
+.contact .cta-container .cta-heading .highlight-free {
+  position: relative;
+  padding: 0 4px;
+  display: inline-block;
+  z-index: 1;
+  /* 疑似要素でオレンジの背景を挿入 */
+}
+.contact .cta-container .cta-heading .highlight-free::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #ff9900;
+  opacity: 0.6;
+  z-index: -1;
+}
+.contact .cta-container .btn-free-counseling {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  width: 300px;
+  max-width: 80%;
+  border-radius: 30px;
+  /* グラデーションと影の再現 */
+  background: linear-gradient(to right, #ffb347, #ff8c00);
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  /* ボタン右側のアロー（矢印） */
+}
+.contact .cta-container .btn-free-counseling::after {
+  content: "›";
+  margin-left: 10px;
+  font-size: 1.5em;
+  line-height: 1;
+}
+.contact .cta-container .btn-free-counseling:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.25);
+}
+.contact .cta-container .small-text {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 10px;
+}
+
 .faq {
   padding-block: 100px;
   position: relative;
@@ -952,6 +1050,107 @@ footer p {
 .support-card:nth-child(even)::before {
   left: auto;
   right: 20px;
+}
+
+/*  3つのカードを横に並べるコンテナ (Flexbox使用) */
+.profiles-container {
+  display: flex;
+  gap: 20px; /* カード間のスペース */
+  justify-content: center;
+  flex-wrap: wrap; /* 画面が狭くなった時に折り返す */
+  max-width: 1200px; /* 全体の最大幅（適宜調整） */
+  margin: 0 auto;
+}
+
+/*  個別のプロフィールカードのスタイル */
+.profile-card {
+  /* 3分割に近い幅設定。flex-basisで基準幅、flex-growで拡大、flex-shrinkで縮小を設定 */
+  flex: 1 1 300px;
+  max-width: 400px; /* 個別カードの最大幅 */
+  border-radius: 10px; /* 角の丸み */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+  /* Tetsuのカードに適用されていた青い枠線 */
+  border: 3px solid transparent;
+}
+
+/* Tetsuのカード (白背景 + 青枠) */
+.white-card {
+  background-color: #E9EDF2;
+}
+
+/* Yurikoのカード (薄いグレー背景) */
+.gray-card {
+  background-color: #CDDCE6; /* 白より少し暗いグレー */
+}
+
+/*Aokiのカード*/
+.gray2-card {
+  background-color: #8B9DAC;
+}
+
+/* 🖼️ 画像セクション */
+.image-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.profile-image {
+  /* 画像のサイズと形状を調整 */
+  width: 100%;
+  max-width: 200px; /* 画像の最大幅を制限 */
+  height: auto;
+  display: block;
+  object-fit: cover;
+  /* 画像上部の余白を再現するためにmargin-topを追加 */
+  margin-top: -10px;
+  border-radius: 5px; /* 画像の角を少し丸く */
+}
+
+/* 📝 テキストセクション */
+.text-section {
+  /* 左の赤い線がないため、padding-leftは通常に戻します */
+  padding-left: 0;
+}
+
+.title-occupation {
+  font-size: 0.9em;
+  margin: 0;
+  color: #555; /* やや薄い色に */
+}
+
+.title-name {
+  font-size: 2.2em;
+  margin: 0;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.main-message {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  font-weight: normal;
+}
+
+.main-message strong {
+  font-weight: bold;
+  color: #333; /* 強調文字の色 */
+}
+
+.description-text {
+  font-size: 0.9em;
+  line-height: 1.7;
+  margin: 0;
+  color: #555; /* 説明文の色 */
+}
+
+.description-text strong {
+  font-weight: bold;
+  color: #333;
 }
 
 .voice * {

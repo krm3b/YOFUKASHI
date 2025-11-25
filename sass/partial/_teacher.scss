@@ -1,6 +1,106 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-.teacher {
-
+/*  3つのカードを横に並べるコンテナ (Flexbox使用) */
+.profiles-container {
+    display: flex;
+    gap: 20px; /* カード間のスペース */
+    justify-content: center;
+    flex-wrap: wrap; /* 画面が狭くなった時に折り返す */
+    max-width: 1200px; /* 全体の最大幅（適宜調整） */
+    margin: 0 auto;
 }
+
+/*  個別のプロフィールカードのスタイル */
+.profile-card {
+    /* 3分割に近い幅設定。flex-basisで基準幅、flex-growで拡大、flex-shrinkで縮小を設定 */
+    flex: 1 1 300px; 
+    max-width: 400px; /* 個別カードの最大幅 */
+    border-radius: 10px; /* 角の丸み */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    box-sizing: border-box;
+    /* Tetsuのカードに適用されていた青い枠線 */
+    border: 3px solid transparent; 
+}
+
+/* Tetsuのカード (白背景 + 青枠) */
+.white-card {
+    background-color: #E9EDF2;
+}
+
+/* Yurikoのカード (薄いグレー背景) */
+.gray-card {
+    background-color: #CDDCE6; /* 白より少し暗いグレー */
+}
+
+/*Aokiのカード*/
+.gray2-card {
+    background-color: #8B9DAC;
+}
+
+
+/* 🖼️ 画像セクション */
+.image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.profile-image {
+    /* 画像のサイズと形状を調整 */
+    width: 100%; 
+    max-width: 200px; /* 画像の最大幅を制限 */
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* 画像上部の余白を再現するためにmargin-topを追加 */
+    margin-top: -10px; 
+    border-radius: 5px; /* 画像の角を少し丸く */
+}
+
+/* 📝 テキストセクション */
+.text-section {
+    /* 左の赤い線がないため、padding-leftは通常に戻します */
+    padding-left: 0; 
+}
+
+.title-occupation {
+    font-size: 0.9em;
+    margin: 0;
+    color: #555; /* やや薄い色に */
+}
+
+.title-name {
+    font-size: 2.2em;
+    margin: 0;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+.main-message {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-weight: normal;
+}
+
+.main-message strong {
+    font-weight: bold;
+    color: #333; /* 強調文字の色 */
+}
+
+.description-text {
+    font-size: 0.9em;
+    line-height: 1.7;
+    margin: 0;
+    color: #555; /* 説明文の色 */
+}
+
+.description-text strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
