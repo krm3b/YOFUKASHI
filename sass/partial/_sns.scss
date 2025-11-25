@@ -1,6 +1,201 @@
-@use 'variables' as *;
-@use 'mixin' as *;
+@use "variables" as *;
+@use "mixin" as *;
 
-.sns {
+// ==============================
+// セクション全体とグラデーション背景
+// ==============================
+.sns-section {
+  // 水色系のグラデーションを背景に設定
+  background: linear-gradient(
+    180deg,
+    #f0f8ff 0%,
+    // 非常に薄い水色 (上)
+    #e0f7fa 50%,
+    // やや明るい水色 (中央)
+    #f0f8ff 100% // 非常に薄い水色 (下)
+  );
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
 
+  .sns-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  // ----------------------
+  // タイトル部分
+  // ----------------------
+  .section-title {
+  position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .line-break {
+    position: relative;
+    width: 40px;
+    height: 20px;
+
+    // 左側 ----------------------------
+    &:first-child {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: #333;
+      }
+
+      &::before {
+        top: 4px;
+        transform: rotate(-25deg); // 左上の線（角度強め）
+      }
+      &::after {
+        bottom: 4px;
+        transform: rotate(-10deg); // 左下の線（角度弱め）
+      }
+    }
+
+    // 右側 ----------------------------
+    &:last-child {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 40px;
+        height: 2px;
+        background: #333;
+      }
+
+      &::before {
+        top: 4px;
+        transform: rotate(25deg); // 右上の線
+      }
+      &::after {
+        bottom: 4px;
+        transform: rotate(10deg); // 右下の線
+      }
+    }
+  }
+}
+
+
+  // ----------------------
+  // カードコンテナ (Flexboxで横並び)
+  // ----------------------
+  .profile-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px; // カード間のスペース
+
+    @media (max-width: 768px) {
+      flex-direction: column; // スマホでは縦並び
+      align-items: center;
+    }
+  }
+
+  // ----------------------
+  // 各カードのスタイル
+  // ----------------------
+  .profile-card {
+    width: 50%;
+    max-width: 300px;
+    padding: 20px;
+    // 背景は白くせずに、背景グラデーションを活かします
+
+    @media (max-width: 768px) {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+  }
+
+  // ----------------------
+  // 画像部分
+  // ----------------------
+  .profile-image-container {
+    position: relative;
+    width: 150px; // 画像のサイズ
+    height: 150px;
+    margin: 0 auto;
+
+    box-shadow: 0 0 0 2px #ddd; // 薄いグレーの線 (デザインの赤い線は省略し、境界線を強調)
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  // ----------------------
+  // Instagramアイコン (画像の右下)
+  // ----------------------
+  .instagram-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e4405f; // Instagramのコーポレートカラー
+    z-index: 10;
+    transform: translate(15%, 15%); // 右下へ少しはみ出させる
+
+    // ロゴの"カメラ"風の見た目を再現するための内側の装飾
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70%;
+      height: 70%;
+      border-radius: 20%;
+      background: radial-gradient(
+        circle at 30% 70%,
+        #ffdc80,
+        #f77737,
+        #cd486b,
+        #bc2a8d,
+        #833ab4
+      ); // カラフルなグラデーション
+    }
+    &::after {
+      // 中央の白い丸
+      content: "";
+      position: absolute;
+      top: 25%;
+      right: 25%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+
+  // ----------------------
+  // 名前と説明
+  // ----------------------
+  .name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #555;
+  }
 }
