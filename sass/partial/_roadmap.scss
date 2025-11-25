@@ -2,5 +2,91 @@
 @use 'mixin' as *;
 
 .roadmap {
+    padding-block: 100px;
+    background-color: $color-background-accent;
 
+    .flex {
+        @include flex(center, 0);
+        align-items: end;
+        position: relative;
+        z-index: 0;
+
+        &__icon {
+            width: 20%;
+            min-width: 200px;
+            margin-right: -100px;
+            margin-bottom: -50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        &__btn {
+            display: block;
+            max-width: 800px;
+            width: 70%;
+            height: 500px;
+            border-radius: 30px;
+            padding: 30px 50px;
+            @include flex(space-between, 0);
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+
+            &:hover .bg-wrapper::before {
+                transform: scale(1.2);
+            }
+
+            .bg-wrapper {
+                position: absolute;
+                inset: 0;
+                border-radius: 30px;
+                overflow: hidden;
+                z-index: -1;
+
+                //背景画像
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-image: url(../img/roadmap1.webp);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: right;
+                    opacity: 0.5;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 30px;
+                    z-index: -5;
+                    transition: transform .2s ease;
+
+                }
+
+                //グレーマスク
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-color: $color-gray;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 30px;
+                    z-index: -10;
+                }
+            }
+
+            .comment {
+                background-color: $color-white;
+                width: fit-content;
+                margin-left: -100px;
+                padding: 10px 15px;
+                font-size: 2.4rem;
+                margin-block: 10px;
+            }
+
+            .text {
+                color: $color-white;
+                width: 80%;
+            }
+        }
+    }
 }

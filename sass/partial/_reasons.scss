@@ -2,5 +2,67 @@
 @use 'mixin' as *;
 
 .reasons {
+    padding-block: 100px;
+    background-color: $color-background-accent;
 
+    .container {
+        @include flex(justify-content, 100px);
+        flex-direction: column;
+    }
+
+    &__item {
+        border-radius: 30px;
+        padding: 5%;
+        position: -webkit-sticky;/*Safari*/
+        position: sticky;
+
+
+        &.item1 {
+            background-color: $color-step1;
+            top:70px;/*Header高さ分で止まるようにする*/
+
+        }
+        &.item2 {
+            background-color: $color-step2;
+            top:90px;
+
+        }
+        &.item3 {
+            background-color: $color-step3;
+            color: $color-white;
+            top:110px;
+        }
+
+        .no {
+            @include monoton;
+            font-size: 3.0rem;
+            text-align: right;
+            margin-bottom: 50px;
+            span {
+                font-size: 5.0rem;
+            }
+        }
+
+        .flex {
+            @include flex(justify-content, 20px);
+
+            &__text {
+                width: 50%;
+                h3 {
+                    font-size: clamp(2.5rem, 3vw, 3.6rem);
+                    white-space: nowrap;
+                    font-weight: normal;
+                    margin-bottom: 50px;
+                    
+                }
+            }
+            &__img {
+                width: 50%;
+                height: 455px;
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
 }
