@@ -19,8 +19,19 @@
     .flex {
         @include flex(center, 20px);
         margin-bottom: 50px;
+
+        @include tab {
+            flex-direction: column;
+        }
+
         &__img {
             width: 40%;
+
+            @include tab {
+                width: 50%;
+                @include flex(space-between, 0);
+            }
+
             img {
                 display: block;
                 border-top-left-radius: 30px;
@@ -33,12 +44,20 @@
                 &.img2 {
                     width: 60%;
                     margin-top: -50px;
+
+                    @include tab {
+                        margin: 0;
+                    }
                 }
             }
         }
 
         &__text {
             width: 60%;
+
+            @include tab {
+                width: 100%;
+            }
             h3 {
                 font-size: clamp(2rem, 3vw, 2.8rem);
                 // font-size: 2.8rem;

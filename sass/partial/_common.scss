@@ -21,6 +21,7 @@ body {
     width: 100%;
     margin: 0 auto;
     padding-inline: 2%;
+
 }
 
 .section-title {
@@ -60,14 +61,30 @@ body {
     justify-content: center;
     align-items: center;
     gap: 6px;
-}
-
-.back-btn {
     img {
         width: 32px;
         height: 32px;
         margin-bottom: 4px;
         display: block;
-        
+    }
+}
+
+.view-more-btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid $color-white;
+    background: none;
+    color: $color-white;
+    @include open-sans;
+    font-size: 1.6rem;
+    @include flex(center, 6px);
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    img {
+        width: 32px;
+        height: 32px;
+        display: block;
     }
 }
