@@ -194,6 +194,7 @@ body {
             border-top: 2px solid $color-accent;
             border-right: 2px solid $color-accent;
             transform: translate(0, 0) rotate(45deg);
+
             transition: 0.5s;
         }
 
@@ -201,6 +202,7 @@ body {
             transform: translate(-50%, 0) rotate(45deg);
             opacity: 0;
         }
+
 
         &::after {
             animation: arrow-slide 1.2s infinite;
@@ -217,108 +219,6 @@ body {
         }
     }
 }
-
-
-
-
-// .reservation {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     margin: 0 auto;
-//     padding: 5px;
-//     background-color: $color-accent;
-//     color: $color-white;
-//     border-radius: 3rem;
-//     cursor: pointer;
-//     font-size: 1.2em;
-//     box-shadow: 0 0 0.2em 0 $color-accent;
-//     transition: 1s;
-//     position: relative;
-    
-
-//     p {
-//         display: flex;
-//         align-items: center;
-//         margin: 0 auto;
-//         padding: 5px;
-//         line-height: 1;
-//         border: 1px solid $color-white;
-//         border-radius: 30px;
-//         transition: 0.5s;
-//     }
-
-//     &:active {
-//         transform: scale(0.95);
-
-//         p {
-//             text-shadow: none;
-//         }
-//     }
-
-//     &:hover {
-//         outline: 0.1em solid transparent;
-//         outline-offset: 0.2em;
-//         box-shadow: 0 0 1em 0 $color-accent;
-//         animation: ripple 1s linear infinite, colorize 1s infinite;
-//         transition: 0.5s;
-
-//         p {
-//             text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
-//         }
-//     }
-
-//     .arrow-circle {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         width: 35px;
-//         height: 35px;
-//         margin-left: 15px;
-//         background-color: $color-white;
-//         border-radius: 50%;
-//         position: relative;
-//         transition: 0.5s;
-//         overflow: hidden;
-
-//         &::before,
-//         &::after {
-//             content: '';
-//             position: absolute;
-//             width: 10px;
-//             height: 10px;
-//             border-top: 2px solid $color-accent;
-//             border-right: 2px solid $color-accent;
-//             transform: translate(0, 0) rotate(45deg);
-//             transition: 0.5s;
-//         }
-
-//         &::before {
-//             transform: translate(-50%, 0) rotate(45deg);
-//             opacity: 0;
-//         }
-//     }
-
-//     &:hover {
-//         .arrow-circle {
-//             filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.25));
-
-//             &::after {
-//                 animation: arrow-slide 1.2s infinite;
-//             }
-
-//             &::before {
-//                 animation: arrow-slide 1.2s infinite 0.3s;
-//             }
-//         }
-//     }
-
-//     &:active {
-//         .arrow-circle {
-//             filter: none;
-//         }
-//     }
-// }
 
 .sp-only {
     display: none;

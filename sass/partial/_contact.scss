@@ -16,11 +16,13 @@
         @include sp {
             height: 400px;
         }
+
         p {
             width: fit-content;
             margin-bottom: 50px;
             padding: 50px 30px;
             background-color: rgba($color-white, 0.5);
+
             @include sp {
                 margin-bottom: 20px;
                 padding: 30px 10px;
@@ -48,6 +50,7 @@
             @include sp {
                 font-size: 2rem;
             }
+
             span {
                 font-size: 2.4rem;
                 position: relative;
@@ -67,6 +70,18 @@
                 }
             }
         }
+
+        .btn-wrapper {
+            margin: 0 auto;
+
+
+            .reservation {
+                width: 100%;
+            }
+
+            @include sp {
+                padding-inline: 2%;
+            }
+        }
     }
 }
-
