@@ -23,12 +23,22 @@
             background-color: $color-white;
             border-radius: 30px;
             padding: 10% 100px 10% 5%;
-    
+            
             @include tab {
                 width: 90%;
                 margin-right: auto;
                 margin-top: -50px;
                 padding: 10% 5% 10% 5%;
+
+            }
+            @include sp {
+                width: 100%;
+            }
+            
+            .section-title {
+                @include sp {
+                    margin-bottom: 30px;
+                }
             }
     
             .text {
@@ -107,7 +117,7 @@
                 }
 
                 @include sp {
-                    font-size: 1.4rem;
+                    font-size: 1.3rem;
                 }
 
                 // 吹き出し線
@@ -159,6 +169,14 @@
             width: 50%;
             height: 500px;
             margin-left: -85px;
+
+            @include tab {
+                width: 90%;
+                height: 300px;
+                margin-left: auto;
+                margin-top: 50px;
+            }
+
             img {
                 border-radius: 30px;
                 height: 100%;

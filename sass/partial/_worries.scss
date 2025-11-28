@@ -16,7 +16,7 @@
     &::before {
         content: "";
         position: absolute;
-        top: 15%;
+        top: 12%;
         right: 0;
         width: 90%;
         height: calc(80% - 45px);
@@ -67,9 +67,14 @@
             margin-left: 10%;
 
             @include tab {
-                font-size: 2rem;
+                font-size: clamp(1.6rem, 4vw, 2.4rem);
                 margin: 0 auto;
                 padding: 15px 8% 10px 8%;
+            }
+
+            @include sp {
+                font-size: 1.6rem;
+                letter-spacing: 3px;
             }
             
             span {
@@ -78,7 +83,7 @@
                 position: relative;
 
                 @include tab {
-                    font-size: 3rem;
+                    font-size: clamp(2rem, 4vw, 3rem);
                 }
 
                 &::after {
@@ -99,11 +104,13 @@
         ul {
             padding-left: 50px;
             margin-left: 11%;
+            margin-top: 50px;
             width: fit-content;
 
             @include tab {
                 padding-right: 2%;
                 margin: 0 auto;
+                padding-left: 35px;
             }
 
             li {
@@ -144,6 +151,9 @@
                     font-size: 2.4rem;
                     color: $color-text-worries;
                     font-weight: bold;
+                    @include sp {
+                        font-size: 1.8rem;
+                    }
                 }
             }
         }
