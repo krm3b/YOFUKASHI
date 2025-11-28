@@ -3,6 +3,7 @@
 
 .price {
     padding-block: 100px;
+
     .arrow {
         width: 150px;
         display: block;
@@ -15,8 +16,9 @@
         width: 100%;
         margin: 0 auto;
         padding-inline: 2%;
-    
+
     }
+
     .course {
         border: 1px $color-line solid;
         border-top-left-radius: 5px;
@@ -28,7 +30,7 @@
             padding: 20px 30px;
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
-            
+
             h3 {
                 font-size: 3.6rem;
                 font-weight: normal;
@@ -38,7 +40,7 @@
                 }
             }
         }
-    
+
 
         .course-box {
             padding: 30px;
@@ -63,7 +65,7 @@
                     @include tab {
                         width: 100%;
                     }
-    
+
                     .skill-title {
                         background-color: $color-main;
                         color: $color-white;
@@ -80,6 +82,7 @@
                         @include tab {
                             @include flex(center, 0);
                         }
+
                         img {
                             max-width: 200px;
                             width: 100%;
@@ -106,14 +109,17 @@
                         gap: 70px;
                         margin-bottom: 50px;
                     }
+
                     .price-text {
                         .black {
                             font-size: 3.0rem;
                             font-weight: bold;
+
                             @include tab {
                                 font-size: clamp(1.6rem, 5vw, 3.0rem);
                             }
                         }
+
                         .price-red {
                             font-size: 7.2rem;
                             color: $color-text-price;
@@ -124,6 +130,7 @@
                                 font-size: clamp(3.5rem, 10vw, 7.2rem);
                             }
                         }
+
                         .red {
                             font-size: 3.6rem;
                             color: $color-text-price;
@@ -146,9 +153,23 @@
                                 width: 200%;
                             }
 
-                                @include tab {
-                                    font-size: clamp(1rem, 3vw, 1.6rem);
-                                }
+                            @include tab {
+                                font-size: clamp(1rem, 3vw, 1.6rem);
+                            }
+                        }
+
+
+                    }
+
+                    .btn-wrapper {
+                        margin: 0 auto;
+
+                        .reservation {
+                            width: 100%;
+                        }
+
+                        @include sp {
+                            padding-inline: 2%;
                         }
                     }
                 }
@@ -164,10 +185,12 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     50% {
         opacity: 1;
         transform: translateY(0);
     }
+
     100% {
         opacity: 0;
         transform: translateY(10px);

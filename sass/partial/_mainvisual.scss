@@ -75,11 +75,7 @@
 
         @include sp {
             padding-inline: 2%;
-            width: 100%;
-
-            .reservation {
-                width: 100%;
-            }
+            margin: 0 auto;
         }
     }
 

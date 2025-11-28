@@ -2,17 +2,27 @@
 @use 'mixin' as *;
 
 .gallery {
-    background-color: #3688D6;
+    background-color: $color-main;
     overflow: hidden;
     padding: 60px 0;
     margin-block: 90px;
 
+    .section-title {
+        margin-bottom: 4rem;
+        .en {
+            color: $color-accent-navy;
+        }
 
-    .view-more-btn {
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
+        .ja,
+        .text {
+            color: $color-white;
+        }
 
+        .view-more-btn {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+        }
     }
 
     .slick-top {
@@ -33,18 +43,6 @@
         }
     }
 
-    .section-title {
-        margin-bottom: 4rem;
-
-        .en {
-            color: $color-accent-navy;
-        }
-
-        .ja,
-        .text {
-            color: $color-white;
-        }
-    }
 
     .slick-bottom {
         margin-top: 2rem;

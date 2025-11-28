@@ -99,7 +99,6 @@ body {
   gap: 6px;
   flex-direction: column;
   align-items: center;
-<<<<<<< HEAD
   margin-left: auto;
   position: relative;
   overflow: hidden;
@@ -122,14 +121,12 @@ body {
 }
 .view-more-btn:hover::after {
   left: 0;
-=======
 }
 @media (max-width: 768px) {
   .view-more-btn {
     width: 130px;
     height: 130px;
   }
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
 }
 .view-more-btn img {
   width: 32px;
@@ -137,7 +134,6 @@ body {
   display: block;
 }
 
-<<<<<<< HEAD
 .reservation {
   display: flex;
   align-items: center;
@@ -211,7 +207,8 @@ body {
 }
 .reservation:active .arrow-circle {
   filter: none;
-=======
+}
+
 .sp-only {
   display: none;
 }
@@ -252,7 +249,6 @@ body {
   position: relative;
   z-index: 5;
   background-color: #FEFEFE;
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
 }
 
 * {
@@ -274,7 +270,8 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 
@@ -626,16 +623,14 @@ footer .cta {
     display: flex;
   }
 }
-
-canvas {
+footer canvas {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: -1;
 }
-
-p {
+footer p {
   text-align: center;
 }
 
@@ -644,7 +639,8 @@ p {
 }
 @media (max-width: 768px) {
   .about {
-    padding-bottom: 70px;
+    flex-direction: column-reverse;
+    padding-inline: 2%;
   }
 }
 .about .flex {
@@ -687,6 +683,7 @@ p {
   position: absolute;
   top: -5%;
   right: 20%;
+  width: -moz-fit-content;
   width: fit-content;
   opacity: 0;
   transform: rotate(3deg) translateY(30px);
@@ -801,22 +798,9 @@ p {
   height: 500px;
   margin-left: -85px;
 }
-@media (max-width: 768px) {
-  .about .flex__img {
-    width: 90%;
-    height: 300px;
-    margin-left: auto;
-    margin-top: 50px;
-  }
-}
 .about .flex__img img {
   border-radius: 30px;
   height: 100%;
-}
-@media (max-width: 768px) {
-  .about .flex__img img {
-    object-position: 50% 20%;
-  }
 }
 
 /* ぴょん */
@@ -850,6 +834,7 @@ p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -988,7 +973,8 @@ p {
 .why-pronavi .event-slick img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slick-slide {
@@ -1023,6 +1009,7 @@ body {
   }
 }
 .contact .support-comment p {
+  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 50px;
   padding: 50px 30px;
@@ -1075,6 +1062,17 @@ body {
   background-color: #F59E3D;
   filter: blur(6px);
   z-index: -1;
+}
+.contact .cta-wrapper .btn-wrapper {
+  margin: 0 auto;
+}
+.contact .cta-wrapper .btn-wrapper .reservation {
+  width: 100%;
+}
+@media (max-width: 425px) {
+  .contact .cta-wrapper .btn-wrapper {
+    padding-inline: 2%;
+  }
 }
 
 .faq {
@@ -1190,7 +1188,17 @@ body {
   padding: 60px 0;
   margin-block: 90px;
 }
-.gallery .view-more-btn {
+.gallery .section-title {
+  margin-bottom: 4rem;
+}
+.gallery .section-title .en {
+  color: #3F3D56;
+}
+.gallery .section-title .ja,
+.gallery .section-title .text {
+  color: #FFFFFF;
+}
+.gallery .section-title .view-more-btn {
   margin: 0 auto;
   width: 100px;
   height: 100px;
@@ -1210,16 +1218,6 @@ body {
      object-fit: cover;
   display: block;
   border-radius: 10px;
-}
-.gallery .section-title {
-  margin-bottom: 4rem;
-}
-.gallery .section-title .en {
-  color: #3F3D56;
-}
-.gallery .section-title .ja,
-.gallery .section-title .text {
-  color: #FFFFFF;
 }
 .gallery .slick-bottom {
   margin-top: 2rem;
@@ -1284,6 +1282,7 @@ body {
 }
 .mainvisial h2 span {
   display: block;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 4rem;
   letter-spacing: 3px;
@@ -1313,10 +1312,7 @@ body {
 @media (max-width: 425px) {
   .mainvisial .btn-wrapper {
     padding-inline: 2%;
-    width: 100%;
-  }
-  .mainvisial .btn-wrapper .reservation {
-    width: 100%;
+    margin: 0 auto;
   }
 }
 .mainvisial .flex {
@@ -1326,171 +1322,12 @@ body {
   align-items: end;
   width: 100%;
 }
-<<<<<<< HEAD
-.main-text .icon img {
-  width: 490px;
-  height: 155px;
-  object-fit: cover;
-}
-.main-text .icon .reservation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 3rem;
-  background-color: #F59E3D;
-  color: #fff;
-  font-size: 1.2em;
-  cursor: pointer;
-  text-decoration: none;
-  margin-left: 10rem;
-  padding: 0.5rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-.main-text .icon .reservation p {
-  border: 0.1rem solid #ffffff;
-  border-radius: 3rem;
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-  line-height: 1;
-  letter-spacing: 0.2rem;
-  white-space: nowrap;
-}
-.main-text .icon .reservation .arrow-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  background-color: #fff;
-  border-radius: 50%;
-  margin-left: 15px;
-  position: relative;
-}
-.main-text .icon .reservation .arrow-circle::after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid #F59E3D;
-  border-right: 2px solid #F59E3D;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.price {
-  /* 白いカード */
-  /* 左：アイコン部分（固定300px） */
-  /* 右側：内容 */
-  /* 料金 */
-  /* ボタンを縦並びで左寄せに */
-}
-.price .course {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.price .course-header {
-  background: #3b89d7;
-  padding: 25px 0;
-  text-align: center;
-  color: #fff;
-  font-size: 22px;
-  width: 1180px;
-  height: 114px;
-  margin: 0 auto;
-}
-.price .course-header h1 {
-  font-size: 36px;
-  font-family: "Noto Sans JP", sans-serif;
-}
-.price .course-card {
-  width: 1180px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 60px 40px;
-  border: 1px solid;
-  display: flex;
-  gap: 40px;
-}
-.price .course-left {
-  width: 340px;
-  height: 320px;
-}
-.price .skill-title {
-  background: #2e84d6;
-  color: #fff;
-  font-size: 24px;
-  padding: 10px;
-  border-radius: 6px 6px 0 0;
-  text-align: center;
-}
-.price .skill-box {
-  border: 1px solid #ddd;
-  border-top: none;
-=======
 .mainvisial .flex .img-wrapper {
+  width: -moz-fit-content;
   width: fit-content;
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
   padding: 20px;
   background-color: #FEFEFE;
 }
-<<<<<<< HEAD
-.price .course-right {
-  flex: 1;
-}
-.price .desc {
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 40px;
-  text-align: center;
-}
-.price .price-wrap {
-  font-size: 18px;
-  margin-bottom: 30px;
-  padding-left: 250px;
-}
-.price .cost {
-  font-size: 40px;
-  font-weight: bold;
-  color: #c54e4e;
-  margin: 0 5px;
-}
-.price .reservation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 50%;
-  padding: 8px 5px;
-  background-color: #F59E3D;
-  color: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-.price .reservation p {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding: 5px;
-  line-height: 1;
-  border: 1px solid #ffffff;
-  border-radius: 30px;
-}
-.price .reservation .arrow-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  margin-left: 15px;
-  background-color: #fff;
-  border-radius: 50%;
-=======
 @media (max-width: 425px) {
   .mainvisial .flex .img-wrapper {
     width: 100%;
@@ -1513,14 +1350,10 @@ body {
   }
 }
 .mainvisial .flex .scrolldown {
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
   position: relative;
   bottom: 10px;
   height: 50px;
 }
-<<<<<<< HEAD
-.price .reservation .arrow-circle::after {
-=======
 @media (max-width: 425px) {
   .mainvisial .flex .scrolldown {
     display: none;
@@ -1538,7 +1371,6 @@ body {
   font-style: normal;
 }
 .mainvisial .flex .scrolldown:after {
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
   content: "";
   position: absolute;
   top: 0;
@@ -1669,7 +1501,6 @@ body {
   padding-inline: 2%;
 }
 .price .course {
-  margin-top: 30px;
   border: 1px #767676 solid;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -1744,7 +1575,8 @@ body {
   width: 100%;
   display: block;
   margin: 0 auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 768px) {
   .price .course .course-box .box-bottom .skill .skill-img img {
@@ -1810,8 +1642,19 @@ body {
   width: 200%;
 }
 @media (max-width: 768px) {
-  .price .course .course-box .box-bottom .price-wrapper .price-text .red::before {
+  .price .course .course-box .box-bottom .price-wrapper .price-text .red {
     font-size: clamp(1rem, 3vw, 1.6rem);
+  }
+}
+.price .course .course-box .box-bottom .price-wrapper .btn-wrapper {
+  margin: 0 auto;
+}
+.price .course .course-box .box-bottom .price-wrapper .btn-wrapper .reservation {
+  width: 100%;
+}
+@media (max-width: 425px) {
+  .price .course .course-box .box-bottom .price-wrapper .btn-wrapper {
+    padding-inline: 2%;
   }
 }
 
@@ -1841,8 +1684,7 @@ body {
 }
 .reasons__item {
   border-radius: 30px;
-  padding: 5%;
-  position: -webkit-sticky; /*Safari*/
+  padding: 5%; /*Safari*/
   position: sticky;
 }
 @media (max-width: 425px) {
@@ -2017,6 +1859,7 @@ body {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
+  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -2039,71 +1882,6 @@ body {
   color: #FFFFFF;
   width: 80%;
 }
-<<<<<<< HEAD
-
-.sns-section {
-  background: linear-gradient(180deg, #f0f8ff 0%, #e0f7fa 50%, #f0f8ff 100%);
-  padding: 60px 20px;
-  text-align: center;
-}
-.sns-section .sns-content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.sns-section .section-title {
-  position: relative;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.sns-section .section-title .line-break {
-  position: relative;
-  width: 40px;
-  height: 20px;
-}
-.sns-section .section-title .line-break:first-child::before, .sns-section .section-title .line-break:first-child::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 70px;
-  height: 2px;
-  background: #333;
-}
-.sns-section .section-title .line-break:first-child::before {
-  top: 4px;
-  transform: rotate(-25deg);
-}
-.sns-section .section-title .line-break:first-child::after {
-  bottom: 4px;
-  transform: rotate(-10deg);
-}
-.sns-section .section-title .line-break:last-child::before, .sns-section .section-title .line-break:last-child::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  width: 70px;
-  height: 2px;
-  background: #333;
-}
-.sns-section .section-title .line-break:last-child::before {
-  top: 4px;
-  transform: rotate(35deg);
-}
-.sns-section .section-title .line-break:last-child::after {
-  bottom: 4px;
-  transform: rotate(10deg);
-}
-.sns-section .profile-cards {
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-}
-=======
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
 @media (max-width: 768px) {
   .roadmap .flex__btn .text {
     width: 100%;
@@ -2118,6 +1896,7 @@ body {
   padding-block: 150px;
 }
 .sns .sns-comment {
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   letter-spacing: 4px;
@@ -2125,18 +1904,10 @@ body {
   text-align: center;
   position: relative;
 }
-<<<<<<< HEAD
-.sns-section .profile-image-container .profile-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-=======
 @media (max-width: 768px) {
   .sns .sns-comment {
     letter-spacing: 2px;
   }
->>>>>>> 94ecc36 (金額とカウンセリングとインスタを変更しました)
 }
 @media (max-width: 425px) {
   .sns .sns-comment {
@@ -2312,213 +2083,196 @@ body {
   }
 }
 
-.support .support-card {
-  position: relative;
-  width: 100%;
+.support {
+  padding-top: 100px;
+}
+.support__card {
   display: flex;
-  align-items: center;
-  gap: 40px;
+  justify-content: flex-start;
+  gap: 0;
+  align-items: end;
   margin-bottom: 100px;
-  /* ▼ 青い背景：正方形 */
-  /* ▼ 白いカード：正方形 */
-  /* 番号タグ */
-  /* ▼ 画像はテキストと重ならない位置 */
+  padding-inline: 10px;
 }
-.support .support-card::before {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: -40px;
-  width: 600px;
-  height: 395px;
-  background: #9cc8e8;
-  border-radius: 5px;
-  z-index: -1;
+@media (max-width: 768px) {
+  .support__card {
+    justify-content: center;
+    align-items: start;
+  }
 }
-.support .support-card .support-text {
-  background: #fff;
-  aspect-ratio: 1/1;
-  width: 600px;
-  height: 395px;
-  padding: 70px;
-  border-radius: 5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  position: relative;
-  z-index: 9;
+@media (max-width: 425px) {
+  .support__card {
+    justify-content: flex-start;
+  }
 }
-.support .support-card .support-text h3 {
-  font-size: 24px;
-  margin-bottom: 18px;
-  color: #1a2b48;
-  font-weight: bold;
-}
-.support .support-card .support-text p {
-  line-height: 1.8;
-  font-size: 16px;
-  color: #333;
-  overflow: hidden;
-}
-.support .support-card .support-number {
-  position: absolute;
-  font-family: "Monoton", sans-serif;
-  top: -5px;
-  left: -3px;
-  background: #1a2b48;
-  width: 86px;
-  height: 67px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 36px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-.support .support-card .support-img {
-  position: relative;
-}
-.support .support-card .support-img img {
-  width: 300px;
-  height: auto;
-}
-.support .reverse {
+.support__card.reverse {
   /* 子要素の並び順を逆にする */
   flex-direction: row-reverse;
 }
-.support .reverse::before {
-  content: "";
-  left: auto;
-  right: 40px;
-  top: 40px;
-  background: #3688D6;
-}
-
-/* =====================================================
-  📱 スマホ / タブレット対応（最大幅 768px）
-   ===================================================== */
 @media (max-width: 768px) {
-  .support-card {
-    gap: 0;
+  .support__card.reverse {
+    flex-direction: row;
   }
-  .support-card::before {
-    left: 0;
-  }
-  .support-card .support-text {
-    bottom: 100px;
-  }
-  .support-card .support-img {
-    text-align: center;
-    margin-top: 40px;
-  }
-  .support-card .support-img img {
+}
+.support__card .support-text {
+  width: 80%;
+  max-width: 600px;
+  background-color: #FFFFFF;
+  border: 1px #767676 solid;
+  border-radius: 5px;
+  padding: 70px 30px 50px 30px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .support__card .support-text {
     width: 100%;
   }
 }
-.reverse::before {
+.support__card .support-text::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: #3688D6;
+  border-radius: 5px;
+  z-index: -1;
+}
+.support__card .support-text .support-number {
+  content: "";
+  position: absolute;
+  top: 0;
   left: 0;
-  background: #3688D6;
+  background-color: #3F3D56;
+  color: #FFFFFF;
+  border-radius: 3px;
+  font-size: 3.6rem;
+  font-family: "Monoton", "Noto Sans JP", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  padding-inline: 13px;
+}
+.support__card .support-text h3 {
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+}
+.support__card .support-img {
+  width: 20%;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 768px) {
+  .support__card .support-img {
+    margin-top: -40px;
+    margin-left: -100px;
+  }
+}
+.support__card .support-img img {
+  max-width: 300px;
+  min-width: 100px;
 }
 
-/*  3つのカードを横に並べるコンテナ (Flexbox使用) */
-.profiles-container {
+.teacher {
+  margin-bottom: 90px;
+}
+.teacher .profiles-container {
   display: flex;
-  gap: 20px; /* カード間のスペース */
-  justify-content: center;
-  flex-wrap: wrap; /* 画面が狭くなった時に折り返す */
-  max-width: 1200px; /* 全体の最大幅（適宜調整） */
+  gap: 20px;
+  max-width: 920px;
   margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
 }
-
-/*  個別のプロフィールカードのスタイル */
-.profile-card {
-  /* 3分割に近い幅設定。flex-basisで基準幅、flex-growで拡大、flex-shrinkで縮小を設定 */
-  flex: 1 1 300px;
-  max-width: 400px; /* 個別カードの最大幅 */
-  border-radius: 10px; /* 角の丸み */
+@media (max-width: 768px) {
+  .teacher .profiles-container {
+    max-width: 80%;
+  }
+}
+.teacher .profiles-container::-webkit-scrollbar {
+  height: 8px;
+}
+.teacher .profiles-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+.teacher .profiles-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.teacher .profiles-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.teacher .profiles-container .profile-card {
+  max-width: 60%;
+  flex-shrink: 0;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 30px;
   box-sizing: border-box;
-  /* Tetsuのカードに適用されていた青い枠線 */
   border: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
 }
-
-/* Tetsuのカード (白背景 + 青枠) */
-.white-card {
+@media (max-width: 768px) {
+  .teacher .profiles-container .profile-card {
+    max-width: 100%;
+  }
+}
+.teacher .profiles-container .profile-card:nth-of-type(1) {
   background-color: #E9EDF2;
 }
-
-/* Yurikoのカード (薄いグレー背景) */
-.gray-card {
-  background-color: #CDDCE6; /* 白より少し暗いグレー */
+.teacher .profiles-container .profile-card:nth-of-type(2) {
+  background-color: #CDDCE6;
 }
-
-/*Aokiのカード*/
-.gray2-card {
+.teacher .profiles-container .profile-card:nth-of-type(3) {
   background-color: #8B9DAC;
 }
-
-/* 🖼️ 画像セクション */
-.image-section {
+.teacher .profiles-container .image-section {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
-
-.profile-image {
-  /* 画像のサイズと形状を調整 */
+.teacher .profiles-container .image-section img {
   width: 100%;
-  max-width: 200px; /* 画像の最大幅を制限 */
-  height: auto;
-  display: block;
-  object-fit: cover;
-  /* 画像上部の余白を再現するためにmargin-topを追加 */
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-top: -10px;
-  border-radius: 5px; /* 画像の角を少し丸く */
+  border-radius: 10px;
 }
-
-/* 📝 テキストセクション */
-.text-section {
-  /* 左の赤い線がないため、padding-leftは通常に戻します */
+.teacher .text-section {
   padding-left: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
-
-.title-occupation {
-  font-size: 0.9em;
+.teacher .text-section .title-occupation {
+  font-size: 1.6rem;
   margin: 0;
-  color: #555; /* やや薄い色に */
+  color: #595959;
 }
-
-.title-name {
-  font-size: 2.2em;
+.teacher .text-section .title-name {
+  font-size: 3rem;
   margin: 0;
   padding-bottom: 20px;
   font-weight: bold;
 }
-
-.main-message {
-  font-size: 1.1em;
-  line-height: 1.6;
+.teacher .text-section .main-message {
+  font-size: 1.8rem;
   margin: 0 0 20px 0;
-  font-weight: normal;
-}
-
-.main-message strong {
   font-weight: bold;
-  color: #333; /* 強調文字の色 */
+  color: #333333;
 }
-
-.description-text {
-  font-size: 0.9em;
+.teacher .text-section .description-text {
+  font-size: 1.6rem;
   line-height: 1.7;
   margin: 0;
-  color: #555; /* 説明文の色 */
-}
-
-.description-text strong {
-  font-weight: bold;
-  color: #333;
+  color: #595959;
 }
 
 .voice .wrapper {
@@ -2688,6 +2442,7 @@ body {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -2723,6 +2478,7 @@ body {
 .worries .wrapper ul {
   padding-left: 50px;
   margin-left: 11%;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
@@ -2817,7 +2573,8 @@ body {
   height: 100%;
 }
 .box .step-img img.img-step6 {
-  object-position: 57% 15%;
+  -o-object-position: 57% 15%;
+     object-position: 57% 15%;
 }
 .box .step-content {
   width: 50%;
@@ -2922,7 +2679,6 @@ body {
   right: 15px;
   top: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   padding-right: 15px;
 }
@@ -2932,7 +2688,6 @@ body {
 }
 
 .pagination a:after {
-  -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
   width: 10px;
   height: 10px;
