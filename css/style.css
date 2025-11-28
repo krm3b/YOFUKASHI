@@ -107,8 +107,7 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 
@@ -364,8 +363,7 @@ footer p {
 }
 @media (max-width: 768px) {
   .about .flex__img img {
-    -o-object-position: 50% 20%;
-       object-position: 50% 20%;
+    object-position: 50% 20%;
   }
 }
 
@@ -375,7 +373,6 @@ footer p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
-  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -472,8 +469,7 @@ footer p {
 .why-pronavi .slick img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .slick-slide {
@@ -777,8 +773,7 @@ footer p {
 .main-text .icon img {
   width: 490px;
   height: 155px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .main-text .icon .reservation {
   display: flex;
@@ -827,13 +822,19 @@ footer p {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.course {
+.price {
+  /* 青いヘッダー */
+  /* 白いカード */
+  /* 左：アイコン部分（固定300px） */
+  /* 右側：内容 */
+  /* 料金 */
+  /* ボタンを縦並びで左寄せに */
+}
+.price .course {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
-/* 青いヘッダー */
-.course-header {
+.price .course-header {
   background: #3b89d7;
   padding: 25px 0;
   text-align: center;
@@ -843,29 +844,23 @@ footer p {
   height: 114px;
   margin: 0 auto;
 }
-.course-header h1 {
-  font-size: 36px;
-  font-family: "Noto Sans JP", sans-serif;
+.price .course-header h3 {
+  font-size: 3.6rem;
 }
-
-/* 白いカード */
-.course-card {
+.price .course-card {
   width: 1180px;
   margin: 0 auto;
   background: #fff;
   padding: 60px 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid;
   display: flex;
   gap: 40px;
 }
-
-/* 左：アイコン部分（固定300px） */
-.course-left {
+.price .course-left {
   width: 340px;
   height: 320px;
 }
-
-.skill-title {
+.price .skill-title {
   background: #2e84d6;
   color: #fff;
   font-size: 24px;
@@ -873,42 +868,33 @@ footer p {
   border-radius: 6px 6px 0 0;
   text-align: center;
 }
-
-.skill-box {
+.price .skill-box {
   border: 1px solid #ddd;
   border-top: none;
   padding: 20px;
   text-align: center;
 }
-
-/* 右側：内容 */
-.course-right {
+.price .course-right {
   flex: 1;
 }
-
-.desc {
+.price .desc {
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 40px;
   text-align: center;
 }
-
-/* 料金 */
-.price-wrap {
+.price .price-wrap {
   font-size: 18px;
   margin-bottom: 30px;
   padding-left: 250px;
 }
-
-.cost {
+.price .cost {
   font-size: 40px;
   font-weight: bold;
   color: #c54e4e;
   margin: 0 5px;
 }
-
-/* ボタンを縦並びで左寄せに */
-.reservation {
+.price .reservation {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -923,7 +909,7 @@ footer p {
   font-size: 1.2em;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.reservation p {
+.price .reservation p {
   width: 90%;
   display: flex;
   align-items: center;
@@ -933,7 +919,7 @@ footer p {
   border: 1px solid #ffffff;
   border-radius: 30px;
 }
-.reservation .arrow-circle {
+.price .reservation .arrow-circle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -944,7 +930,7 @@ footer p {
   border-radius: 50%;
   position: relative;
 }
-.reservation .arrow-circle::after {
+.price .reservation .arrow-circle::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -968,7 +954,8 @@ footer p {
 }
 .reasons__item {
   border-radius: 30px;
-  padding: 5%; /*Safari*/
+  padding: 5%;
+  position: -webkit-sticky; /*Safari*/
   position: sticky;
 }
 .reasons__item.item1 {
@@ -1088,7 +1075,6 @@ footer p {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
-  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -1104,7 +1090,6 @@ footer p {
   background: linear-gradient(180deg, #f0f8ff 0%, #e0f7fa 50%, #f0f8ff 100%);
   padding: 60px 20px;
   text-align: center;
-  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
 }
 .sns-section .sns-content-wrapper {
   max-width: 1200px;
@@ -1129,7 +1114,7 @@ footer p {
   content: "";
   position: absolute;
   left: 0;
-  width: 40px;
+  width: 70px;
   height: 2px;
   background: #333;
 }
@@ -1145,13 +1130,13 @@ footer p {
   content: "";
   position: absolute;
   right: 0;
-  width: 40px;
+  width: 70px;
   height: 2px;
   background: #333;
 }
 .sns-section .section-title .line-break:last-child::before {
   top: 4px;
-  transform: rotate(25deg);
+  transform: rotate(35deg);
 }
 .sns-section .section-title .line-break:last-child::after {
   bottom: 4px;
@@ -1190,8 +1175,7 @@ footer p {
 .sns-section .profile-image-container .profile-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .sns-section .instagram-icon {
@@ -1238,84 +1222,112 @@ footer p {
   color: #555;
 }
 
-.support-card {
+.support .support-card {
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 40px;
+  margin-bottom: 100px;
   /* ▼ 青い背景：正方形 */
   /* ▼ 白いカード：正方形 */
   /* 番号タグ */
   /* ▼ 画像はテキストと重ならない位置 */
 }
-.support-card::before {
+.support .support-card::before {
   content: "";
   position: absolute;
-  bottom: -30px;
-  left: 20px;
-  aspect-ratio: 1/1;
-  width: 350px;
+  bottom: -40px;
+  left: -40px;
+  width: 600px;
+  height: 395px;
   background: #9cc8e8;
-  border-radius: 12px;
+  border-radius: 5px;
   z-index: -1;
 }
-.support-card .support-text {
+.support .support-card .support-text {
   background: #fff;
   aspect-ratio: 1/1;
-  width: 320px;
-  padding: 40px;
-  border-radius: 12px;
+  width: 600px;
+  height: 395px;
+  padding: 70px;
+  border-radius: 5px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   position: relative;
+  z-index: 9;
 }
-.support-card .support-text h3 {
-  font-size: 22px;
+.support .support-card .support-text h3 {
+  font-size: 24px;
   margin-bottom: 18px;
   color: #1a2b48;
   font-weight: bold;
 }
-.support-card .support-text p {
+.support .support-card .support-text p {
   line-height: 1.8;
-  font-size: 15px;
+  font-size: 16px;
   color: #333;
   overflow: hidden;
 }
-.support-card .support-number {
+.support .support-card .support-number {
   position: absolute;
-  top: -18px;
-  left: -20px;
+  font-family: "Monoton", sans-serif;
+  top: -5px;
+  left: -3px;
   background: #1a2b48;
-  width: 55px;
-  height: 55px;
-  border-radius: 10px;
+  width: 86px;
+  height: 67px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 36px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
-.support-card .support-img {
+.support .support-card .support-img {
   position: relative;
 }
-.support-card .support-img img {
-  width: 200px;
+.support .support-card .support-img img {
+  width: 300px;
   height: auto;
 }
-
-/* ============================
-   偶数カードだけ反転レイアウト
-   ============================ */
-.support-card:nth-child(even) {
+.support .reverse {
+  /* 子要素の並び順を逆にする */
   flex-direction: row-reverse;
-  /* 青い背景の位置も反転 */
-  /* 番号タグも反転側に寄せる */
 }
-.support-card:nth-child(even)::before {
+.support .reverse::before {
+  content: "";
   left: auto;
-  right: 20px;
+  right: 40px;
+  top: 40px;
+  background: #3688D6;
+}
+
+/* =====================================================
+  📱 スマホ / タブレット対応（最大幅 768px）
+   ===================================================== */
+@media (max-width: 768px) {
+  .support-card {
+    gap: 0;
+  }
+  .support-card::before {
+    left: 0;
+  }
+  .support-card .support-text {
+    bottom: 100px;
+  }
+  .support-card .support-img {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .support-card .support-img img {
+    width: 100%;
+  }
+}
+.reverse::before {
+  left: 0;
+  background: #3688D6;
 }
 
 /*  3つのカードを横に並べるコンテナ (Flexbox使用) */
@@ -1370,8 +1382,7 @@ footer p {
   max-width: 200px; /* 画像の最大幅を制限 */
   height: auto;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* 画像上部の余白を再現するためにmargin-topを追加 */
   margin-top: -10px;
   border-radius: 5px; /* 画像の角を少し丸く */
@@ -1550,7 +1561,6 @@ footer p {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -1586,7 +1596,6 @@ footer p {
 .worries .wrapper ul {
   padding-left: 50px;
   margin-left: 11%;
-  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {

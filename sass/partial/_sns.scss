@@ -16,7 +16,6 @@
   );
   padding: 60px 20px;
   text-align: center;
-  font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
 
   .sns-content-wrapper {
     max-width: 1200px;
@@ -27,14 +26,14 @@
   // タイトル部分
   // ----------------------
   .section-title {
-  position: relative;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+    position: relative;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
   .line-break {
     position: relative;
@@ -48,7 +47,7 @@
         content: "";
         position: absolute;
         left: 0;
-        width: 40px;
+        width: 70px;
         height: 2px;
         background: #333;
       }
@@ -70,14 +69,14 @@
         content: "";
         position: absolute;
         right: 0;
-        width: 40px;
+        width: 70px;
         height: 2px;
         background: #333;
       }
 
       &::before {
         top: 4px;
-        transform: rotate(25deg); // 右上の線
+        transform: rotate(35deg); // 右上の線
       }
       &::after {
         bottom: 4px;
