@@ -1,97 +1,138 @@
 @use 'variables' as *;
 @use 'mixin' as *;
+.support {
 
-.support-card {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  .support-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 100px;
 
-  /* ▼ 青い背景：正方形 */
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    left: 20px;
+    /* ▼ 青い背景：正方形 */
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      left: -40px;
+      width: 600px;     // サイズはここで調整OK
+      height: 395px;
 
-    aspect-ratio: 1 / 1; // 正方形に固定
-    width: 350px;         // サイズはここで調整OK
+      background: #9cc8e8;
+      border-radius: 5px;
+      z-index: -1;
+    }
 
-    background: #9cc8e8;
-    border-radius: 12px;
-    z-index: -1;
+    
+    /* ▼ 白いカード：正方形 */
+    .support-text {
+      background: #fff;
+      aspect-ratio: 1 / 1;  // ★ 正方形にする
+      width: 600px;
+      height: 395px;         // 青い箱より少し小さくすると良い
+      padding: 70px;
+      border-radius: 5px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 9;
+      
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 18px;
+        color: #1a2b48;
+        font-weight: bold;
+      }
+
+      p {
+        line-height: 1.8;
+        font-size: 16px;
+        color: #333;
+        overflow: hidden;   // ★ テキストが溢れないように
+      }
+    }
+
+      /* 番号タグ */
+      .support-number {
+        position: absolute;
+        font-family: "Monoton", sans-serif;
+        top: -5px;
+        left: -3px;
+        background: #1a2b48;
+        width: 86px;
+        height: 67px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 36px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 10;
+      }
+
+      /* ▼ 画像はテキストと重ならない位置 */
+      .support-img {
+        position: relative;
+        
+      img {
+        width: 300px;
+        height: auto;
+      }
+    }
   }
 
-  /* ▼ 白いカード：正方形 */
-  .support-text {
-    background: #fff;
-    aspect-ratio: 1 / 1;  // ★ 正方形にする
-    width: 320px;         // 青い箱より少し小さくすると良い
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    position: relative;
+  .reverse {
+    /* 子要素の並び順を逆にする */
+    flex-direction: row-reverse;
     
 
-    h3 {
-      font-size: 22px;
-      margin-bottom: 18px;
-      color: #1a2b48;
-      font-weight: bold;
+    &::before {
+      content: "";
+      left: auto;
+      right: 40px;
+      top: 40px;
+      background: $color-main;
+      }
     }
 
-    p {
-      line-height: 1.8;
-      font-size: 15px;
-      color: #333;
-      overflow: hidden;   // ★ テキストが溢れないように
-    }
   }
+        
 
-  /* 番号タグ */
-  .support-number {
-    position: absolute;
-    top: -18px;
-    left: -20px;
-    background: #1a2b48;
-    width: 55px;
-    height: 55px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+  /* =====================================================
+    📱 スマホ / タブレット対応（最大幅 768px）
+     ===================================================== */
+    @media(max-width: $tab) {
+      .support-card {
+        gap: 0;
+        // 2. 青い背景の調整
+          &::before {
+                left: 0;
+            }
 
-  /* ▼ 画像はテキストと重ならない位置 */
-  .support-img {
-    position: relative;
+            // 3. 白いテキストカードの調整
+            .support-text {
+              bottom: 100px;
+            }
+            
+            // 4. 画像の調整
+            .support-img {
+                
+                text-align: center;
+                margin-top: 40px; // 番号とのスペース確保
+                
+                img {
+                    width: 100%; // 画像サイズを小さく
+                }
+            }
+        }
+      }
 
-    img {
-      width: 200px;
-      height: auto;
-    }
-  }
-}
+      .reverse {
 
-
-
-/* ============================
-   偶数カードだけ反転レイアウト
-   ============================ */
-.support-card:nth-child(even) {
-  flex-direction: row-reverse;  // 左右入れ替え
-
-  /* 青い背景の位置も反転 */
-  &::before {
-    left: auto;
-    right: 20px;
-  }
-
-  /* 番号タグも反転側に寄せる */
-
-}
+        &::before {
+        left: 0;
+        background: $color-main;
+        }
+      }
