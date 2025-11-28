@@ -1,4 +1,21 @@
 $(function () {
+
+function hamburger() {
+    $(".ham").on("click", function () {
+        $("header").toggleClass("open"); // ★キーポイント：headerに.openが付く
+    });
+
+    // #maskのエリアをクリックした時にメニューを閉じる
+    $(".mask").on("click", function () {
+        $("header").removeClass("open");
+    });
+
+    // リンクをクリックした時にメニューを閉じる
+    $("nav").on("click", function () {
+        $("header").removeClass("open");
+    });
+}
+
     /*=================================================
     PICK UP スライダー
     ===================================================*/
@@ -13,24 +30,55 @@ $(function () {
         cssEase: "linear",                // スライドの流れ方を等速に設定
         responsive: [
             {
-              breakpoint: 769, // 769px以下のとき
+                breakpoint: 769, // 769px以下のとき
                 settings: {
-                speed: 8000,
-                slidesToShow: 2,
-                centerMode: false,
-            },
+                    speed: 8000,
+                    slidesToShow: 2,
+                    centerMode: false,
+                },
             },
             {
-              breakpoint: 426, // 426px以下のとき
+                breakpoint: 426, // 426px以下のとき
                 settings: {
-                speed: 5000,
-                slidesToShow: 1,
-                centerMode: false,
-            },
+                    speed: 5000,
+                    slidesToShow: 1,
+                    centerMode: false,
+                },
             },
         ],
     });
-    
+
+    // 左側：上方向に流れる
+    $('.slick-top').slick({
+
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 5000,
+        cssEase: "linear",
+        infinite: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        arrows: false,
+        draggable: false,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+
+
+    $('.slick-bottom').slick({
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 5000,
+        cssEase: "linear",
+        infinite: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        arrows: false,
+        draggable: false,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+
     /*=================================================
         FAQ
     ===================================================*/
@@ -86,6 +134,3 @@ function removeActiveClasses() {
         panel.classList.remove('active')
     })
 }
-
-
-

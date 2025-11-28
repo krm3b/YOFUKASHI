@@ -1,103 +1,163 @@
-@use 'variables' as *;
-@use 'mixin' as *;
+@use "variables" as *;
+@use "mixin" as *;
 
 .about {
-    padding-block: 100px;
+  padding-block: 100px;
 
-    .flex {
-        @include flex(center, 0);
-        align-items: center;
-        position: relative;
+  @include tab {
+    padding-bottom: 70px;
+  }
 
-        &__text {
-            width: 50%;
-            background-color: $color-white;
-            border-radius: 30px;
-            padding: 10% 100px 10% 5%;
+  .flex {
+    @include flex(center, 0);
+    align-items: center;
+    position: relative;
 
-            .text {
-                line-height: 200%;
-
-                span {
-                    font-size: 1.8rem;
-                    font-weight: bold;
-                    color: $color-main;
-                }
-            }
-
-        }
-
-        .bubble {
-            content: "";
-            position: absolute;
-            top: -5%;
-            right: 20%;
-            transform: rotate(3deg);
-
-            // 吹き出し線
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                width: 60px;
-                height: 1.5px;
-                background-color: $color-text;
-            }
-
-            &::before {
-                top: 60%;
-                left: -23%;
-                transform: translateY(-50%) rotate(60deg);
-            }
-            &::after {
-                top: 70%;
-                right: -23%;
-                transform: translateY(-50%) rotate(-50deg);
-            }
-
-            p {
-                position: relative;
-
-                // 吹き出し線
-                &::before,
-                &::after {
-                    content: "";
-                    position: absolute;
-                    width: 60px;
-                    height: 1.5px;
-                    background-color: $color-text;
-                }
-    
-                &::before {
-                    top: 60%;
-                    left: -20%;
-                    transform: translateY(-50%) rotate(60deg);
-                }
-                &::after {
-                    top: 70%;
-                    right: -20%;
-                    transform: translateY(-50%) rotate(-50deg);
-                }
-            }
-
-            span {
-                font-size: 2.4rem;
-            }
-            .emphasis {
-                color: $color-accent;
-                font-weight: bold;
-            }
-        }
-
-        &__img {
-            width: 50%;
-            height: 500px;
-            margin-left: -85px;
-            img {
-                border-radius: 30px;
-                height: 100%;
-            }
-        }
+    @include tab {
+      flex-direction: column-reverse;
+      padding-inline: 2%;
     }
 
+    &__text {
+      width: 50%;
+      background-color: $color-white;
+      border-radius: 30px;
+      padding: 10% 100px 10% 5%;
+
+      @include tab {
+        width: 90%;
+        margin-right: auto;
+        margin-top: -50px;
+        padding: 10% 5% 10% 5%;
+      }
+
+      .text {
+        line-height: 200%;
+
+        span {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: $color-main;
+        }
+      }
+    }
+
+    .bubble {
+      content: "";
+      position: absolute;
+      top: -5%;
+      right: 20%;
+      transform: rotate(3deg);
+
+      @include tab {
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%) rotate(0deg);
+      }
+
+      // 吹き出し線
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        height: 1.5px;
+        background-color: $color-text;
+      }
+
+      &::before {
+        top: 60%;
+        left: -23%;
+        transform: translateY(-50%) rotate(60deg);
+        @include tab {
+          top: 50%;
+          left: -50px;
+          transform: translateY(-50%) rotate(70deg);
+        }
+      }
+      &::after {
+        top: 70%;
+        right: -23%;
+        transform: translateY(-50%) rotate(-50deg);
+        @include tab {
+          top: 50%;
+          right: -50px;
+          transform: translateY(-50%) rotate(-70deg);
+        }
+      }
+
+      p {
+        position: relative;
+
+        @include tab {
+          text-align: center;
+        }
+
+        // 吹き出し線
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 60px;
+          height: 1.5px;
+          background-color: $color-text;
+        }
+
+        &::before {
+          top: 60%;
+          left: -20%;
+          transform: translateY(-50%) rotate(60deg);
+          @include tab {
+            top: 50%;
+            left: -40px;
+            transform: translateY(-50%) rotate(70deg);
+          }
+        }
+        &::after {
+          top: 70%;
+          right: -20%;
+          transform: translateY(-50%) rotate(-50deg);
+          @include tab {
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%) rotate(-70deg);
+          }
+        }
+      }
+
+      span {
+        font-size: 2.4rem;
+
+        @include tab {
+          font-size: 2rem;
+        }
+      }
+      .emphasis {
+        color: $color-accent;
+        font-weight: bold;
+      }
+    }
+
+    &__img {
+      width: 50%;
+      height: 500px;
+      margin-left: -85px;
+
+      @include tab {
+        width: 90%;
+        height: 300px;
+        margin-left: auto;
+        margin-top: 50px;
+      }
+
+      img {
+        border-radius: 30px;
+        height: 100%;
+
+        @include tab {
+          object-position: 50% 20%;
+        }
+      }
+    }
+  }
 }
