@@ -2,6 +2,8 @@
 @use 'mixin' as *;
 
 .voice {
+    padding-block: 100px;
+    
     .wrapper {
         max-width: 1200px;
         margin: 0 auto;

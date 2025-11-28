@@ -28,6 +28,11 @@ body {
   font-weight: bold;
   letter-spacing: 3px;
 }
+@media (max-width: 425px) {
+  .section-title .en {
+    font-size: 1.6rem;
+  }
+}
 .section-title .ja {
   color: #3F3D56;
   font-size: 3.6rem;
@@ -40,7 +45,7 @@ body {
 }
 @media (max-width: 425px) {
   .section-title .ja {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-size: clamp(2.1rem, 6vw, 3rem);
   }
 }
 
@@ -270,8 +275,7 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 
@@ -321,9 +325,7 @@ header nav ul {
   font-size: 1.6rem;
 }
 header nav ul li a button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -670,6 +672,16 @@ footer p {
     padding: 10% 5% 10% 5%;
   }
 }
+@media (max-width: 425px) {
+  .about .flex__text {
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .about .flex__text .section-title {
+    margin-bottom: 30px;
+  }
+}
 .about .flex__text .text {
   line-height: 200%;
 }
@@ -683,7 +695,6 @@ footer p {
   position: absolute;
   top: -5%;
   right: 20%;
-  width: -moz-fit-content;
   width: fit-content;
   opacity: 0;
   transform: rotate(3deg) translateY(30px);
@@ -747,7 +758,7 @@ footer p {
 }
 @media (max-width: 425px) {
   .about .flex .bubble p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 .about .flex .bubble p::before, .about .flex .bubble p::after {
@@ -798,6 +809,14 @@ footer p {
   height: 500px;
   margin-left: -85px;
 }
+@media (max-width: 768px) {
+  .about .flex__img {
+    width: 90%;
+    height: 300px;
+    margin-left: auto;
+    margin-top: 50px;
+  }
+}
 .about .flex__img img {
   border-radius: 30px;
   height: 100%;
@@ -834,7 +853,6 @@ footer p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
-  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -973,8 +991,7 @@ footer p {
 .why-pronavi .event-slick img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .slick-slide {
@@ -1009,7 +1026,6 @@ body {
   }
 }
 .contact .support-comment p {
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 50px;
   padding: 50px 30px;
@@ -1214,8 +1230,7 @@ body {
 .gallery .slick-top img {
   width: 100%;
   height: 20vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1228,8 +1243,7 @@ body {
 .gallery .slick-bottom img {
   width: 100%;
   height: 20vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1248,7 +1262,6 @@ body {
   gap: 15px;
   flex-direction: column;
   align-items: center;
-  z-index: -1;
 }
 @media (max-width: 768px) {
   .mainvisial .mainvisial-wrapper {
@@ -1260,7 +1273,7 @@ body {
   top: 0;
   right: 0;
   width: 85%;
-  z-index: -1; /*最背面へ*/
+  z-index: -1;
 }
 @media (max-width: 425px) {
   .mainvisial .slider-area {
@@ -1282,7 +1295,6 @@ body {
 }
 .mainvisial h2 span {
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 4rem;
   letter-spacing: 3px;
@@ -1323,7 +1335,6 @@ body {
   width: 100%;
 }
 .mainvisial .flex .img-wrapper {
-  width: -moz-fit-content;
   width: fit-content;
   padding: 20px;
   background-color: #FEFEFE;
@@ -1410,6 +1421,7 @@ body {
   height: 350px;
   background-color: #3688D6;
   border-radius: 5px;
+  border: 1px #767676 solid;
   padding: 10px;
   z-index: 9999;
   animation: bounceSoft 0.8s infinite ease-in-out;
@@ -1486,13 +1498,13 @@ body {
   } /* 上に少し浮く */
 }
 .price {
-  padding-block: 100px;
+  padding-bottom: 50px;
 }
 .price .arrow {
   width: 150px;
   display: block;
   margin: 0 auto;
-  animation: arrowDown 1s infinite ease-in-out;
+  animation: arrowDown_blue 1s infinite ease-in-out;
 }
 .price .price-container {
   max-width: 900px;
@@ -1501,6 +1513,7 @@ body {
   padding-inline: 2%;
 }
 .price .course {
+  margin-top: 50px;
   border: 1px #767676 solid;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -1575,8 +1588,7 @@ body {
   width: 100%;
   display: block;
   margin: 0 auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 @media (max-width: 768px) {
   .price .course .course-box .box-bottom .skill .skill-img img {
@@ -1657,8 +1669,13 @@ body {
     padding-inline: 2%;
   }
 }
+@media (max-width: 425px) and (max-width: 768px) {
+  .price .course .course-box .box-bottom .price-wrapper .btn-wrapper {
+    font-size: clamp(1rem, 3vw, 1.6rem);
+  }
+}
 
-@keyframes arrowDown {
+@keyframes arrowDown_blue {
   0% {
     opacity: 0;
     transform: translateY(-10px);
@@ -1684,12 +1701,14 @@ body {
 }
 .reasons__item {
   border-radius: 30px;
-  padding: 5%; /*Safari*/
+  padding: 5%;
+  position: -webkit-sticky; /*Safari*/
   position: sticky;
 }
 @media (max-width: 425px) {
   .reasons__item {
     padding: 10% 5%;
+    position: static;
   }
 }
 .reasons__item.item1 {
@@ -1859,7 +1878,6 @@ body {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
-  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -1896,7 +1914,6 @@ body {
   padding-block: 150px;
 }
 .sns .sns-comment {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   letter-spacing: 4px;
@@ -2240,8 +2257,7 @@ body {
 .teacher .profiles-container .image-section img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-top: -10px;
   border-radius: 10px;
 }
@@ -2275,6 +2291,9 @@ body {
   color: #595959;
 }
 
+.voice {
+  padding-block: 100px;
+}
 .voice .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -2329,8 +2348,7 @@ body {
 .voice .card-front img {
   width: 100%;
   height: 75%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .voice .card-front .card-content {
   padding: 20px;
@@ -2399,7 +2417,7 @@ body {
 .worries::before {
   content: "";
   position: absolute;
-  top: 15%;
+  top: 12%;
   right: 0;
   width: 90%;
   height: calc(80% - 45px);
@@ -2442,16 +2460,21 @@ body {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
 }
 @media (max-width: 768px) {
   .worries .wrapper h2 {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
     margin: 0 auto;
     padding: 15px 8% 10px 8%;
+  }
+}
+@media (max-width: 425px) {
+  .worries .wrapper h2 {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
   }
 }
 .worries .wrapper h2 span {
@@ -2461,7 +2484,7 @@ body {
 }
 @media (max-width: 768px) {
   .worries .wrapper h2 span {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
   }
 }
 .worries .wrapper h2 span::after {
@@ -2478,13 +2501,14 @@ body {
 .worries .wrapper ul {
   padding-left: 50px;
   margin-left: 11%;
-  width: -moz-fit-content;
+  margin-top: 50px;
   width: fit-content;
 }
 @media (max-width: 768px) {
   .worries .wrapper ul {
     padding-right: 2%;
     margin: 0 auto;
+    padding-left: 35px;
   }
 }
 .worries .wrapper ul li {
@@ -2524,6 +2548,11 @@ body {
   font-size: 2.4rem;
   color: #BB6666;
   font-weight: bold;
+}
+@media (max-width: 425px) {
+  .worries .wrapper ul li span {
+    font-size: 1.8rem;
+  }
 }
 
 @keyframes arrowDown {
@@ -2573,8 +2602,7 @@ body {
   height: 100%;
 }
 .box .step-img img.img-step6 {
-  -o-object-position: 57% 15%;
-     object-position: 57% 15%;
+  object-position: 57% 15%;
 }
 .box .step-content {
   width: 50%;
@@ -2679,6 +2707,7 @@ body {
   right: 15px;
   top: 0;
   opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   padding-right: 15px;
 }
@@ -2688,6 +2717,7 @@ body {
 }
 
 .pagination a:after {
+  -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
   width: 10px;
   height: 10px;

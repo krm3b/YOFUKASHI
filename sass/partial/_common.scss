@@ -33,6 +33,9 @@ body {
         font-size: 2.0rem;
         font-weight: bold;
         letter-spacing: 3px;
+        @include sp {
+            font-size: 1.6rem;
+        }
     }
 
     .ja {
@@ -44,7 +47,7 @@ body {
         }
 
         @include sp {
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(2.1rem, 6vw, 3rem);
         }
     }
 }
