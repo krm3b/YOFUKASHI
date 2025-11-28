@@ -6,14 +6,11 @@
     background-image: url("../img/worries_background.webp");
     background-size: contain;
     background-repeat: repeat;
-    position: relative;
-    z-index: -2;
 }
 
 .worries {
     padding: 45px 0 150px 0;
     position: relative;
-
 
     // 吹き出し画像
     &::before {
@@ -29,7 +26,6 @@
         background-position: right center;
         border-top-left-radius: 100px;
         border-bottom-left-radius: 100px;
-        z-index: -1;
 
         @include tab {
             width: 100%;
@@ -49,13 +45,15 @@
         background-image: url("../../img/arrow_gray.webp");
         background-size: cover;
         background-repeat: no-repeat;
-
+        animation: arrowDown 1s infinite ease-in-out;
+        
     }
     
     .wrapper {
-        max-width: 1200px; // セクション全体の最大幅を少し大きめに設定
+        max-width: 1200px;
         width: 100%;
-        margin: 0 auto; // まずラッパーを中央に配置
+        margin: 0 auto;
+        position: relative;
 
         h2 {
             font-size: 2.4rem;
@@ -149,5 +147,20 @@
                 }
             }
         }
+    }
+}
+
+@keyframes arrowDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
     }
 }

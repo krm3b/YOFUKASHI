@@ -3,7 +3,9 @@
 
 footer {
     padding-bottom: 30px;
+    background-color: $color-base;
     position: relative;
+    z-index: 10;
 
     .cta {
         position: fixed;

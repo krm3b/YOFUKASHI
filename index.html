@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -146,16 +147,55 @@
     <!--* main                                  *-->
     <!--*****************************************-->
     <main>
+
         <!-- ----------------------------------- -->
         <!-- メインビジュアル                       -->
         <!-- ----------------------------------- -->
+        <section class="mainvisial">
+            <div class="mainvisial-wrapper">
+                <div class="slider-area">
+                    <div class="slider"></div>  
+                </div>
 
+                <h2>
+                    <span>Web制作であなたらしい</span>
+                    <span>働き方をみつけてみませんか</span>
+                </h2>
+                
+                <div class="btn-wrapper">
+                    <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" target="_blank" rel="noopener noreferrer" class="reservation">
+                        <p>無料カウンセリングの予約へ進む
+                            <span class="arrow-circle"></span>
+                        </p>
+                    </a>
+                </div>
 
+                <div class="flex">
+                    <div class="scrolldown"><span>Scroll</span></div>
+                    
+                    <div class="img-wrapper">
+                        <img src="img/batch.webp" alt="案件獲得率93%、お客様満足度99%、挫折率1%の実績のバッチ画像">
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <div class="modal">
+            <button class="modal-close"></button>
+            <p>2025年3月16日放送 <br>
+                ＴＯＫＹＯ ＭＸ 情報バラエティ番組 <br>
+                <span>「ええじゃないか！！」</span> <br class="sp-only">で紹介されました！！
+            </p>
+            <a href="https://youtu.be/0Te2W50okgM?si=qkfuegMoIXlfPx_W" target="_blank" rel="noopener noreferrer" class="modal-content">
+            <img src="img/moddal.webp" alt="ProNaviがテレビ放送で紹介されたアーカイブのYouTubeサムネイル画像">
+            </a>
+        </div>
+        
         <!-- ----------------------------------- -->
         <!-- こんなお悩みありませんか                -->
         <!-- ----------------------------------- -->
-
-
+        <div class="z-top">
         <div class="background">
             <section class="worries" id="worris">
                 <div class="wrapper">
@@ -170,8 +210,6 @@
                     </ul>
                 </div>
             </section>
-
-
 
             <!-- ----------------------------------- -->
             <!-- プロナビとは                          -->
@@ -191,7 +229,7 @@
                             学ぶだけで終わらせず、 <span>「実践できる力」</span> を身につけて、あなたの理想のキャリアを一緒に実現しましょう。</p>
                     </div>
 
-                    <div class="bubble">
+                    <div class="bubble js-fade">
                         <p>そんなあなたのお悩みを <br>
                             <span> <span class="emphasis">ProNavi</span>がすべて解決します!!</span>
                         </p>
@@ -211,7 +249,7 @@
             <div class="container">
 
                 <div class="why">
-                    <p>ProNaviは他のスクールとここが違う!</p>
+                    <p>ProNaviは<br class="sp-only">他のスクールとここが違う！</p>
                 </div>
 
                 <div class="flex">
@@ -234,7 +272,7 @@
             </div>
 
             <p class="slick-comment">プログラミングを学習する仲間が集結！</p>
-            <ul class="slick">
+            <ul class="event-slick">
                 <li><img src="img/slick1.webp" alt="第1回プロナビオフ会集合写真"></li>
                 <li><img src="img/slick2.webp" alt="プロナビオフ会の一次会写真"></li>
                 <li><img src="img/slick3.webp" alt="プロナビオフ会の一次会写真"></li>
@@ -266,7 +304,7 @@
 
                     <div class="flex">
                         <div class="flex__text">
-                            <h3>独自のカリキュラムで <br>
+                            <h3>独自のカリキュラムで<br class="tab-none">
                                 求められるスキルを習得</h3>
 
                             <p>専属コンサルタントは、選りすぐりの現役エンジニア。プログラミング学習における目標設定、最適なカリキュラム提案、日々のモチベーション管理など、あなたのスキル向上に本気で向き合います。性格診断の結果を踏まえ、あなたに合ったコンサルタントをアサインします。
@@ -286,7 +324,7 @@
 
                     <div class="flex">
                         <div class="flex__text">
-                            <h3>プロのコーチがあなたの <br>
+                            <h3>プロのコーチがあなたの<br class="tab-none">
                                 レベルに合う学習方法を提案</h3>
 
                             <p>プロのコーチが、あなたを効率よくスキルアップするために学習の提案を行います。毎週の課題に加え、わからない箇所は公式LINEで24時間質問を解決できるので、安心して学習することができます。
@@ -306,7 +344,7 @@
 
                     <div class="flex">
                         <div class="flex__text">
-                            <h3>案件獲得を自走できるよう <br>
+                            <h3>案件獲得を自走できるよう<br class="tab-none">
                                 基本を徹底サポート</h3>
 
                             <p>スキルが身についた後は、実際に案件を獲得するためのサポートも行っています。プロの営業マンが営業の同行サポートも行っているので、実際に案件を取るイメージがしやすく、実際に取れた案件に関しての質問対応もしているので、不安を解消しながら進められます。
@@ -444,7 +482,6 @@
                         <img src="img/support_06.webp" alt="スマホ画面">
                     </div>
                 </div>
-
             </div>
 
 
@@ -454,43 +491,41 @@
         <!-- 料金                                 -->
         <!-- ----------------------------------- -->
         <section class="price" id="price">
-            <div class="section-title">
-                <p class="en">Price</p>
-                <h2 class="ja">料金</h2>
-            </div>
-            <div class="course">
-                <div class="course-header">
-                    <h3>6ヶ月間集中サポートコース</h3>
-                </div>
+            <div class="price-container">
+                <img class="arrow" src="img/arrow_brue.webp" alt="矢印の画像">
 
-                <div class="course-card">
-
-                    <!-- 左側：アイコン -->
-                    <div class="course-left">
-                        <h3 class="skill-title">習得スキル</h3>
-                        <div class="skill-box">
-                            <img src="img/skill.webp" alt="言語写真">
-                        </div>
+                <div class="course">
+                    <div class="course-title">
+                        <h3>6ヶ月間集中サポートコース</h3>
                     </div>
-
-                    <!-- 右側：テキスト・料金・ボタン -->
-                    <div class="course-right">
-                        <p class="desc">
-                            必要なスキルを一つずつ身につけ、確実に前へ進めるカリキュラムです。<br>
-                            HTML・CSSから案件獲得に必要な実践力まで、あなたのペースでしっかり習得できます。
-                        </p>
-
-                        <div class="price-wrap">
-                            <span class="price-label">総額</span>
-                            <span class="cost">550,000</span><span class="yen">円</span>
-                            <span class="tax">(税込)</span>
+                    <div class="course-box">
+                        <div class="box-top">
+                            <p>必要なスキルを一つずつ身につけ、確実に前へ進めるカリキュラムです。</p>
+                            <p> HTML・CSSから案件獲得に必要な実践力まで、あなたのペースでしっかり習得できます。</p>
                         </div>
-
-                        <a href="" class="reservation">
-                            <p>無料カウンセリングの予約へ進む
-                                <span class="arrow-circle"></span>
-                            </p>
-                        </a>
+                        <div class="box-bottom">
+                            <div class="skill">
+                                <div class="skill-title">
+                                    <p>習得スキル</p>
+                                </div>
+                                <div class="skill-img">
+                                    <img src="img/price1.webp" alt="HTML/CSS,js(jQuery)のアイコン画像">
+                                    <img src="img/price2.webp" alt="PHP,WordPressのアイコン画像">
+                                </div>
+                            </div>
+                            <div class="price-wrapper">
+                                <div class="price-text">
+                                    <p><span class="black">総額</span><span class="price-red">550,000</span><span class="red">円</span></p>
+                                </div>
+                                <div class="btn-wrapper">
+                                    <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" target="_blank" rel="noopener noreferrer" class="reservation">
+                                        <p>無料カウンセリングの予約へ進む
+                                            <span class="arrow-circle"></span>
+                                        </p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -755,77 +790,76 @@
         <!-- 無料カウンセリング                     -->
         <!-- ----------------------------------- -->
         <section class="contact" id="contact">
-            <div class="support-content">
-                <div class="support-image-container">
-                    <img src="img/contac_img.webp" class="support-image">
-                    <div class="support-text-overlay">
-                        <p>
-                            未経験の方も案件獲得まで寄り添ってサポートします。<br>
-                            まずは話してみるだけでも大丈夫です。<br>
-                            どうぞお気軽にご相談ください。
-                        </p>
-                    </div>
-                </div>
 
-                <div class="cta-container">
-                    <p class="cta-heading">
-                        まずは<span class="highlight-free">無料</span>カウンセリングを始めてみませんか？
+            <div class="support-comment">
+                <div class="container">
+                    <p>未経験の方も案件獲得まで寄り添ってサポートします。 <br>
+                        まずは話してみるだけでも大丈夫です。 <br>
+                        どうぞお気軽にご相談ください。
                     </p>
-                    <a href="#" class="btn-free-counseling">
-                        無料カウンセリングの予約へ進む
-                    </a>
-                    <p class="small-text">※LINEの登録画面へ移動します</p>
                 </div>
             </div>
 
+            <div class="container cta-wrapper">
+                <p class="cta-text">まずは<span>無</span><span>料</span>カウンセリングを<br class="tab-only">始めてみませんか？</p>
+
+                <div class="btn-wrapper">
+                    <a href="https://line.me/R/ti/p/@420zidsx?oat_content=url" target="_blank" rel="noopener noreferrer" class="reservation">
+                        <p>無料カウンセリングの予約へ進む
+                            <span class="arrow-circle"></span>
+                        </p>
+                    </a>
+                </div>
+
+                <p>※LINEの登録画面へ移動します</p>
+
+            </div>
         </section>
 
         <!-- ----------------------------------- -->
         <!-- インスタグラム                         -->
         <!-- ----------------------------------- -->
         <section class="sns" id="sns">
-            <div class="sns-section">
-                <div class="sns-content-wrapper">
-                    <h2 class="section-title">
-                        <span class="line-break"></span>
-                        プログラミングについて発信しています
-                        <span class="line-break"></span>
-                    </h2>
 
-                    <div class="profile-cards">
-                        <div class="profile-card">
-                            <div class="profile-image-container">
-                                <img src="img/iruka.webp" alt="いるか" class="profile-image">
-                                <span class="instagram-icon"></span>
-                            </div>
-                            <h3 class="name">いるか</h3>
-                            <p class="description">
-                                ワンランク上の仕事と日常<br>プログラミングで脱サラ
-                            </p>
+            <div class="container">
+                <p class="sns-comment"><span>プログラミングについて<br class="tab-only">発信しています</span></p>
+    
+                <div class="flex">
+                    <a href="https://www.instagram.com/iruka.freelance?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="item">
+                        <div class="icon-flex">
+                            <img src="img/icon_iruka.webp" alt="インスタグラム いるか のアイコン">
+                            <div class="icon-instagram"></div>
                         </div>
-
-                        <div class="profile-card">
-                            <div class="profile-image-container">
-                                <img src="img/kakashi.webp" alt="かかし" class="profile-image">
-                                <span class="instagram-icon"></span>
-                            </div>
-                            <h3 class="name">かかし</h3>
-                            <p class="description">
-                                プログラミング×教育<br>プログラミング教育の第一人者
-                            </p>
+                        <div class="item-text">
+                            <p class="name">いるか</p>
+                            <p class="text">ワンランク上の仕事と日常</p>
+                            <p class="text">プログラミングで脱サラ</p>
                         </div>
-
-                        <div class="profile-card">
-                            <div class="profile-image-container">
-                                <img src="img/ino.webp" alt="いの" class="profile-image">
-                                <span class="instagram-icon"></span>
-                            </div>
-                            <h3 class="name">いの</h3>
-                            <p class="description">
-                                プログラミングで自立<br>現役フリーランス
-                            </p>
+                    </a>
+    
+                    <a href="https://www.instagram.com/kakashi.programming.lab?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="  class="item">
+                        <div class="icon-flex">
+                            <img src="img/icon_kakashi.webp" alt="インスタグラム かかし のアイコン">
+                            <div class="icon-instagram"></div>
                         </div>
-                    </div>
+                        <div class="item-text">
+                            <p class="name">かかし</p>
+                            <p class="text">プログラミング×教育</p>
+                            <p class="text">プログラミング教育の第一人者</p>
+                        </div>
+                    </a>
+    
+                    <a href="https://www.instagram.com/ino_lifework?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="item">
+                        <div class="icon-flex">
+                            <img src="img/icon_ino.webp" alt="インスタグラム いの のアイコン">
+                            <div class="icon-instagram"></div>
+                        </div>
+                        <div class="item-text">
+                            <p class="name">いの</p>
+                            <p class="text">プログラミングで自立</p>
+                            <p class="text">現役フリーランス</p>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -850,7 +884,7 @@
                             <span class="line">Q.</span>
                             従来のプログラミングスクールとは何が違いますか？
                         </h3>
-                        <div class="box">
+                        <div class="faq-box">
                             <p class="text-wrapper">
                                 <span>A.</span>
                                 プログラミングスクールの多くは「コードを知る」ことに主眼を置いていますが、プロナビでは模写コーディングを含む複数のトレーニングを組み合わせてお客様ごとの最適カリキュラムをご提案します。また、日々の学習を支援する多彩なサポートを用意しています。
@@ -862,7 +896,7 @@
                             <span class="line">Q.</span>
                             学習時間が確保できるか不安ですが、大丈夫ですか？
                         </h3>
-                        <div class="box">
+                        <div class="faq-box">
                             <p class="text-wrapper">
                                 <span>A.</span>
                                 プログラミングスクールの多くは「コードを知る」ことに主眼を置いていますが、プロナビでは模写コーディングを含む複数のトレーニングを組み合わせてお客様ごとの最適カリキュラムをご提案します。また、日々の学習を支援する多彩なサポートを用意しています。
@@ -874,7 +908,7 @@
                             <span class="line">Q.</span>
                             どんな教材を使用しますか？
                         </h3>
-                        <div class="box">
+                        <div class="faq-box">
                             <p class="text-wrapper">
                                 <span>A.</span>
                                 当社が厳選した市販教材とオリジナル教材の中から、お客様にとって最適な組み合わせをご提案します。どのような教材を用いるかは無料カウンセリングにてお問い合わせください。
@@ -886,7 +920,7 @@
                             <span class="line">Q.</span>
                             パソコンは必要ですか？
                         </h3>
-                        <div class="box">
+                        <div class="faq-box">
                             <p class="text-wrapper">
                                 <span>A.</span>
                                 プログラミングの学習ではパソコンは必須になります。貸し出しなどは行っていないため、ご用意必要になります。
@@ -898,7 +932,7 @@
                             <span class="line">Q.</span>
                             校舎に通うのが難しいのですが、大丈夫ですか？
                         </h3>
-                        <div class="box">
+                        <div class="faq-box">
                             <p class="text-wrapper">
                                 <span>A.</span>
                                 基本的にオンライン受講となっています。対面受講の場合と同等のプログラミングスキル上達の実績を上げております。
@@ -910,7 +944,7 @@
                             <span class="line">Q.</span>
                             専属コンサルタントは変えられますか？
                         </h3>
-                        <div class="box">
+                        <div class="faq-box">
                             <p class="text-wrapper">
                                 <span>A.</span>
                                 可能です。ご希望の場合は、公式事務局LINEまでお問い合わせください。
@@ -920,7 +954,7 @@
                 </ul>
             </div>
         </section>
-
+        </div>
     </main>
     <!--*****************************************-->
     <!--* footer                                *-->
@@ -933,15 +967,15 @@
                 </p>
             </a>
         </div>
+
         <canvas id="waveCanvas"></canvas>
         <p>© ProNavi</p>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
