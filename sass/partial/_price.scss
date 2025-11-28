@@ -2,12 +2,13 @@
 @use 'mixin' as *;
 .price {
 
+.price {
+
     .course {
         padding-top: 20px;
         padding-bottom: 20px;
     }
     
-    /* 青いヘッダー */
     .course-header {
         background: #3b89d7;
         padding: 25px 0;
@@ -18,8 +19,15 @@
         height: 114px;
         margin: 0 auto;
         
+<<<<<<< HEAD
         h3 {
             font-size: 3.6rem; 
+=======
+        h1 {
+            font-size: 36px;
+            font-family: 'Noto Sans JP', sans-serif;
+            
+>>>>>>> 1ed9100 (〇〇を変更しました)
         }
     }
 
@@ -34,13 +42,13 @@
         display: flex;
         gap: 40px;
     }
-
+    
     /* 左：アイコン部分（固定300px） */
     .course-left {
         width: 340px;
         height: 320px;
     }
-
+    
     .skill-title {
         background: #2e84d6;
         color: #fff;
@@ -68,7 +76,7 @@
         margin-bottom: 40px;
         text-align: center;
     }
-
+    
     /* 料金 */
     .price-wrap {
         font-size: 18px;
@@ -76,6 +84,7 @@
         padding-left: 250px;
         
     }
+<<<<<<< HEAD
 
     .cost {
         font-size: 40px;
@@ -116,12 +125,22 @@
         
         border: 1px solid #ffffff;
         border-radius: 30px;
+=======
+    
+    .cost {
+        font-size: 40px;
+        font-weight: bold;
+        color: #c54e4e;
+        margin: 0 5px;
+>>>>>>> 1ed9100 (〇〇を変更しました)
     }
-
-    .arrow-circle {
+    
+    
+    /* ボタンを縦並びで左寄せに */
+    .reservation {
         display: flex;
-        justify-content: center;
         align-items: center;
+<<<<<<< HEAD
         
         width: 35px;
         height: 35px;
@@ -144,6 +163,64 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(45deg);
+=======
+        justify-content: space-between;
+        margin: 0 auto;
+        
+        width: 50%;
+        padding: 8px 5px;
+        
+        background-color: #F59E3D;
+        color: #fff;
+        
+        border-radius: 30px;
+        text-decoration: none;
+        cursor: pointer;
+        
+        font-size: 1.2em;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        
+        p {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            
+            padding: 5px;
+            line-height: 1;
+            
+            border: 1px solid #ffffff;
+            border-radius: 30px;
+        }
+        
+        .arrow-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            width: 35px;
+            height: 35px;
+            margin-left: 15px;
+            
+            background-color: #fff;
+            border-radius: 50%;
+            position: relative;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                
+                width: 10px;
+                height: 10px;
+                
+                border-top: 2px solid #F59E3D;
+                border-right: 2px solid #F59E3D;
+                
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+>>>>>>> 1ed9100 (〇〇を変更しました)
         }
     }
 }
