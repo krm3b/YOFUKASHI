@@ -16,6 +16,11 @@
         position: -webkit-sticky;/*Safari*/
         position: sticky;
 
+        @include sp {
+            padding: 10% 5%;
+            position: static;
+        }
+
 
         &.item1 {
             background-color: $color-step1;
@@ -38,6 +43,11 @@
             font-size: 3.0rem;
             text-align: right;
             margin-bottom: 50px;
+
+            @include tab {
+                margin-bottom: 10px;
+            }
+
             span {
                 font-size: 5.0rem;
             }
@@ -46,19 +56,40 @@
         .flex {
             @include flex(justify-content, 20px);
 
+            @include tab {
+                flex-direction: column-reverse;
+            }
+
             &__text {
                 width: 50%;
+
+                @include tab {
+                    width: 100%;
+                }
+
                 h3 {
                     font-size: clamp(2.5rem, 3vw, 3.6rem);
                     white-space: nowrap;
                     font-weight: normal;
                     margin-bottom: 50px;
+
+                    @include tab {
+                        font-size: clamp(2rem, 3vw, 2.5rem);
+                        white-space: normal;
+                        margin-bottom: 20px;
+                    }
                     
                 }
             }
             &__img {
                 width: 50%;
                 height: 455px;
+
+                @include tab {
+                    width: 100%;
+                    height: 30vh;
+                }
+
                 img {
                     height: 100%;
                 }

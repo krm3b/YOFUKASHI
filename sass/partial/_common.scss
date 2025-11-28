@@ -33,39 +33,55 @@ body {
         font-size: 2.0rem;
         font-weight: bold;
         letter-spacing: 3px;
+        @include sp {
+            font-size: 1.6rem;
+        }
     }
+
     .ja {
         color: $color-accent-navy;
         font-size: 3.6rem;
         font-weight: normal;
-        @include sp {
+        @include tab {
             font-size: 3rem;
+        }
+
+        @include sp {
+            font-size: clamp(2.1rem, 6vw, 3rem);
         }
     }
 }
 
 .back-btn {
-    margin-top: 40px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 1px solid #888;
-    background: none;
+    border: 2px solid #888;
+    background: $color-white;
     cursor: pointer;
     font-size: 16px;
     position: fixed;
     right: 10px;
     bottom: 10px;
-    display: flex;
+    @include flex(center, 6px);
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 6px;
+
+    @include sp {
+        width: 70px;
+        height: 70px;
+        @include flex(center, 3px);
+    }
+
     img {
         width: 32px;
         height: 32px;
         margin-bottom: 4px;
         display: block;
+        @include sp {
+            width: 25px;
+            height: 25px;
+        }
     }
 }
 
@@ -82,9 +98,161 @@ body {
     flex-direction: column;
     align-items: center;
     margin-left: auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $color-line;
+        top: 0;
+        left: -100%;
+        transition: 0.5s;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0.8;
+    }
+
+    &:hover::after {
+        left: 0;
+    }
+
+    @include tab {
+        width: 130px;
+        height: 130px;        
+    }
     img {
         width: 32px;
         height: 32px;
         display: block;
     }
+}
+
+.reservation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: $color-accent;
+    color: $color-white;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1.2em;
+    box-shadow: 0 0 1em 0 $color-accent;
+    transition: 1s;
+    position: relative;
+    animation: ripple 1s linear infinite, colorize 1s infinite;
+
+    p {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        padding: 5px;
+        line-height: 1;
+        border: 1px solid $color-white;
+        border-radius: 30px;
+        transition: 0.5s;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+        transform: scale(0.95);
+
+        p {
+            text-shadow: none;
+        }
+    }
+
+    &:hover {
+        outline: 0.1em solid transparent;
+        outline-offset: 0.2em;
+    }
+
+    .arrow-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        margin-left: 15px;
+        background-color: $color-white;
+        border-radius: 50%;
+        position: relative;
+        transition: 0.5s;
+        overflow: hidden;
+        filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.25));
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid $color-accent;
+            border-right: 2px solid $color-accent;
+            transform: translate(0, 0) rotate(45deg);
+
+            transition: 0.5s;
+        }
+
+        &::before {
+            transform: translate(-50%, 0) rotate(45deg);
+            opacity: 0;
+        }
+
+
+        &::after {
+            animation: arrow-slide 1.2s infinite;
+        }
+
+        &::before {
+            animation: arrow-slide 1.2s infinite 0.3s;
+        }
+    }
+
+    &:active {
+        .arrow-circle {
+            filter: none;
+        }
+    }
+}
+
+.sp-only {
+    display: none;
+    @include sp {
+        display: inline;
+    }
+}
+
+.sp-none {
+    display: inline;
+    @include sp {
+        display: none;
+    }
+}
+
+.tab-only {
+    display: none;
+    @include tab {
+        display: inline;
+    }
+}
+
+.tab-none {
+    display: inline;
+    @include tab {
+        display: none;
+    }
+}
+
+.z-top {
+    position: relative;
+    z-index: 5;
+    background-color: $color-base;
 }

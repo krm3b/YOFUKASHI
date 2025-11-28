@@ -2,94 +2,131 @@
 @use 'mixin' as *;
 
 .voice {
+    padding-block: 100px;
+    
+    .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
 
-    // 全ての子孫要素に対してbox-sizingを適用
-    * {
-        box-sizing: border-box;
+        @include sp {
+            grid-template-columns: 1fr;
+        }
+
+        .card-flip {
+            height: 40rem;
+            perspective: 100rem;
+            cursor: pointer;
+
+            &:hover .card-inner {
+                transform: rotateY(180deg);
+            }
+
+            .card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+            }
+        }
+
+        .card-flip:nth-of-type(1) .card-back {
+            background-image: url("../img/voice/student1.webp");
+        }
+
+        .card-flip:nth-of-type(2) .card-back {
+            background-image: url("../img/voice/student2.webp");
+        }
+
+        .card-flip:nth-of-type(3) .card-back {
+            background-image: url("../img/voice/student3.webp");
+        }
+
+        .card-flip:nth-of-type(4) .card-back {
+            background-image: url("../img/voice/student4.webp");
+        }
     }
 
-    // --- Keyframes ---
-    @keyframes gradientText {
-        0% {
-            background-position: 0% 50%;
-        }
+    .card-front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: white;
+        overflow: hidden;
 
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-
-    @keyframes zoomBackground {
-        from {
-            background-size: 100% 100%;
-        }
-
-        to {
-            background-size: 120% 120%;
-        }
-    }
-
-    .container {
-        display: flex;
-    }
-
-    .panel {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 50.0rem;
-        border-radius: 1.6rem 1.6rem 0 0;
-        color: $color-white;
-        cursor: pointer;
-        flex: 0.5;
-        margin: 10px;
-        position: relative;
-        -webkit-transition: all 700ms ease-in;
-
-        .text {
-            font-size: 2.4rem;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin: 0;
-            opacity: 0;
-            padding: 1.2rem 2.5rem 1.2rem 2.0rem;
-            background: #fff;
-            border-radius: 0 0 1.6rem 1.6rem;
-            color: $color-text;
-            border: 0.1rem solid $color-line;
-            letter-spacing: 0.5rem;
+        img {
             width: 100%;
+            height: 75%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
 
             h3 {
-                font-size: 2.4rem;
+                margin: 0 0 10px 0;
+                font-size: 1.8rem;
+                color: $color-text;
             }
 
             p {
-                font-size: 1.6rem;
-                line-height: 1.4;
-                padding-top: 0.5rem;
-            }
-        }
-
-        &.active {
-            flex: 5;
-            background-size: 100% 100%;
-
-            &:hover {
-                animation: zoomBackground 5s ease forwards;
-            }
-
-
-            .text {
-                opacity: 1;
-                transition: opacity 0.3s ease-in 0.4s;
+                margin: 0 0 15px 0;
+                color: $color-text;
+                line-height: 1.5;
             }
         }
     }
-}
 
+    .card-back {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius:30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+&::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+        .card-content {
+            padding: 20px;
+            position: relative; 
+        z-index: 2;
+    
+            h3 {
+                margin: 0 0 10px 0;
+                font-size: 18px;
+                color: #ffffff;
+            }
+    
+            p {
+                margin: 0 0 15px 0;
+                color: #ffffff;
+                line-height: 1.5;
+            }
+        }
+    }
+
+}

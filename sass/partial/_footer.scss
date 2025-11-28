@@ -3,15 +3,36 @@
 
 footer {
     padding-bottom: 30px;
-    position:relative;
+    background-color: $color-base;
+    position: relative;
+    z-index: 10;
 
-    canvas{
+    .cta {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 10px 0 10px 0;
+        z-index: 100;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+
+        @include tab {
+            display: flex;
+        }
+    }
+
+    canvas {
         position: absolute;
         bottom: 0;
-        left:0;
+        left: 0;
         width: 100%;
         z-index: -1;
-    }    
+    }
     
     p {
         text-align: center;

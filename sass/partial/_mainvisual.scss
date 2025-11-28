@@ -3,144 +3,249 @@
 
 .mainvisial {
     position: relative;
-    width: 80%;
     height: 100vh;
-    margin-bottom: 300px; //仮
 
-    
-
-    .clip {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .mainvisial-wrapper {
+        position: fixed;
+        inset: 0;
         width: 100%;
-        height: 100%;
-        transition: all 0.5s;
-    }
+        height: 100vh;
+        @include flex(end, 15px);
+        flex-direction: column;
+        align-items: center;
 
-    .clip1 {
-        background: url(/img/mainvisial/mainvisial-left.webp);
-        background-size: cover;
-        background-position: center top;
-        clip-path: polygon(0 0, 46% 0, 39% 100%, 0 100%);
-    }
-
-    .clip2 {
-        background: url(/img/mainvisial/mainvisial-center.webp);
-        background-size: cover;
-        background-position: center top;
-        clip-path: polygon(19% 0, 87% 0, 64% 100%, 33% 100%);
-    }
-
-
-    .clip3 {
-        background: url(/img/mainvisial/mainvisial-right.webp);
-        background-size: cover;
-        background-position: center top;
-        clip-path: polygon(82% 0, 100% 0, 100% 100%, 63% 100%);
-    }
-
-
-    &:hover .clip {
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-
-        &:hover {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        @include tab {
+            gap: 10px;
         }
     }
 
-    // h2 {
-    //     background-color: #ffffff;
-    //     color: #000; // 背景が白なので文字色を黒にすると見やすい
-    //     position: relative;
-    //     z-index: 20; // 背景のclipより前面に出す
-    // }
+    .slider-area{
+        position: absolute;
+        top:0;
+        right: 0;
+        width: 85%;
+        z-index: -1;
 
-    .icon {
-        position: relative;
-        z-index: 20; // clipより前面に出す
-        text-align: center;
-        margin-top: 20px;
+        @include sp {
+            width: 100%;
+        }
+
+        .slider {
+            width: 100%;
+            height: 85vh;/*スライダー全体の縦幅を91vhにする*/
+        }
+    }
+
+    h2 {
+        margin-left: auto;
+        margin-right: 2%;
+
+        @include sp {
+            margin-inline: 2%;
+        }
+        span {
+            display: block;
+            width: fit-content;
+            font-size: 4rem;
+            letter-spacing: 3px;
+            background-color: $color-white;
+            border-radius: 5px;
+            margin-block: 10px;
+            padding-inline: 10px;
+            
+            @include tab {
+                font-size: clamp(2.7rem, 6vw, 4rem);
+            }
+            
+            @include sp {
+                font-size: clamp(2rem, 6vw, 2.7rem);
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    .btn-wrapper {
+        margin-left: auto;
+        margin-right: 2%;
+
+        .reservation {
+            width: 100%;
+        }
+
+        @include sp {
+            padding-inline: 2%;
+            margin: 0 auto;
+        }
+    }
+
+    .flex {
+        @include flex(flex-end, 50px);
+        align-items: end;
+        width: 100%;
+        .img-wrapper {
+            width: fit-content;
+            padding: 20px;
+            background-color: $color-base;
+            @include sp {
+                width: 100%;
+                margin: 0 auto;
+                padding: 0;
+            }
+    
+            img {
+                max-width: 450px;
+                width: 100%;
+    
+                @include tab {
+                    max-width: 300px;
+                }
+    
+                @include sp {
+                    max-width: none;
+                }
+    
+            }
+        }
+
+        .scrolldown{
+            position: relative;
+            bottom: 10px;
+            height:50px;
+            @include sp {
+                display: none;
+            }
+            span{
+                position: absolute;
+                left:-23px;
+                top: -20px;
+                color: $color-accent-navy;
+                font-size: 1.6rem;
+                letter-spacing: 0.05em;
+                @include open-sans;
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 1px;
+                height: 30px;
+                background: $color-accent-navy;
+                animation: pathmove 1.4s ease-in-out infinite;
+                opacity: 0;
+            }
+        }
+    }
+
+
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+	0%{
+		height:0;
+		top:0;
+		opacity: 0;
+	}
+	30%{
+		height:30px;
+		opacity: 1;
+	}
+	100%{
+		height:0;
+		top:50px;
+		opacity: 0;
+	}
+}
+
+// モーダル
+.modal {
+    @include flex(center, 10px);
+    flex-direction: column;
+    position: fixed;
+    bottom: 1%;
+    left: 1%;
+    width: 400px;
+    height: 350px;
+    background-color: $color-main;
+    border-radius: 5px;
+    border: 1px $color-line solid;
+    padding: 10px;
+    z-index: 9999;
+    animation: bounceSoft 0.8s infinite ease-in-out;
+    
+    @include sp {
+        width: 300px;
+        height: 320px;
+    }
+
+
+    .modal-close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 50px;
+        height: 50px;
+        background: $color-white;
+        border: 1px solid $color-text;
+        border-radius: 50%;
+        cursor: pointer;
+
+        /* 疑似要素でバツを表現 */
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 22px;
+            height: 2px;
+            background: $color-text;
+            transition: .3s ease;
+
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &:hover::before,
+        &:hover::after {
+            background-color: $color-line;
+        }
+    }
+
+    p {
+        color: $color-white;
+        span {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+    }
+
+
+    .modal-content {
+        transition: transform 0.3s, opacity 0.3s;
+        cursor: pointer;
+    
+        &:hover {
+            opacity: 0.7;
+        }
+        img {
+            width: 400px;
+            height: 240px;
+            border-radius: 5px;
+
+            @include sp {
+                width: 250px;
+                height: 180px;
+            }
+        }
     }
 }
 
-
-.main-text {
-    position: absolute;
-    left: 20%;
-    top: 80%;
-
-    h2 {
-        background-color: #ffffff;
-        font-size: 4.2rem;
-        display: inline-block;
-
-    }
-
-
-    .icon {
-    display: flex;
-    justify-content: center;  // 横方向の中央揃え
-    align-items: center;       // 縦方向の中央揃え
-    gap: 4rem;                 // アイコンと予約ボタンの間隔を調整（必要なら）
-
-        img {
-            width: 490px;
-            height: 155px;
-            object-fit: cover;
-        }
-
-        .reservation {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 3.0rem;
-            background-color: #F59E3D;
-            color: #fff;
-            font-size: 1.2em;
-            cursor: pointer;
-            text-decoration: none;
-            margin-left: 10.0rem;
-            padding: 0.5rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-
-
-            p {
-                
-                border: 0.1rem solid #ffffff;
-                border-radius: 3.0rem;
-                display: flex;
-                align-items: center;
-                padding: 0.5rem;
-                line-height: 1;
-                letter-spacing: 0.2rem;
-                white-space: nowrap;
-
-            }
-
-            .arrow-circle {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 35px;
-                height: 35px;
-                background-color: #fff;
-                border-radius: 50%;
-                margin-left: 15px;
-                position: relative;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    width: 10px;
-                    height: 10px;
-                    border-top: 2px solid #F59E3D;
-                    border-right: 2px solid #F59E3D;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%) rotate(45deg);
-                }
-            }
-        }
-    }
+@keyframes bounceSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); } /* 上に少し浮く */
 }

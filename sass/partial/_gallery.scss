@@ -1,39 +1,62 @@
 @use 'variables' as *;
 @use 'mixin' as *;
 
-
 .gallery {
-    background-color: #3688D6;
-    margin-block: 300px;
+    background-color: $color-main;
+    overflow: hidden;
+    padding: 60px 0;
+    margin-block: 90px;
 
-
-    .wrapper {
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-
-
-        .section-title {
-            .en {
-                color: $color-text;
-            }
-
-            .ja,
-            .text {
-                color: $color-white;
-            }
+    .section-title {
+        margin-bottom: 4rem;
+        .en {
+            color: $color-accent-navy;
         }
 
-        .slick {
+        .ja,
+        .text {
+            color: $color-white;
+        }
 
-            .slick-left {
-                transform: rotate(180deg) !important;
+        .view-more-btn {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+        }
+    }
 
-                img {
-                    transform: rotate(180deg);
-                }
-            }
+    .slick-top {
+        margin-bottom: 2rem;
+        transform: scaleX(-1);
+
+        .slick-slide {
+            margin: 0 10px;
+            transform: scaleX(-1);
+        }
+
+        img {
+            width: 100%;
+            height: 20vh;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+    }
+
+
+    .slick-bottom {
+        margin-top: 2rem;
+
+        .slick-slide {
+            margin: 0 10px;
+        }
+
+        img {
+            width: 100%;
+            height: 20vh;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
         }
     }
 }
-
