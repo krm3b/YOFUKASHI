@@ -3,17 +3,18 @@
 
 .teacher {
     margin-bottom: 90px;
+
     .profiles-container {
         display: flex;
         gap: 20px;
-        max-width: calc(600px * 1.5 + 20px); 
+        max-width: calc(600px * 1.5 + 20px);
         margin: 0 auto;
         overflow-x: auto;
         overflow-y: hidden;
         padding-bottom: 10px;
         flex-wrap: nowrap;
-        justify-content: flex-start; 
-        align-items: stretch; 
+        justify-content: flex-start;
+        align-items: stretch;
 
         @include tab {
             max-width: 80%;
@@ -23,13 +24,16 @@
         &::-webkit-scrollbar {
             height: 8px;
         }
+
         &::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 4px;
         }
+
         &::-webkit-scrollbar-thumb {
             background: #888;
             border-radius: 4px;
+
             &:hover {
                 background: #555;
             }
@@ -46,7 +50,7 @@
             display: flex;
             flex-direction: column;
 
-            @include tab  {
+            @include tab {
                 max-width: 100%;
             }
 
@@ -60,6 +64,11 @@
 
             &:nth-of-type(3) {
                 background-color: $color-step3;
+
+                p {
+                    color: white;
+                }
+
             }
         }
 
@@ -83,6 +92,8 @@
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+
+
 
         .title-occupation {
             font-size: 1.6rem;
