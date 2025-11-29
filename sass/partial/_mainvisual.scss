@@ -66,10 +66,17 @@
 
     .btn-wrapper {
         margin-left: auto;
-        margin-right: 2%;
+        margin-right: 3%;
 
         .reservation {
-            width: 100%;
+            p {
+                padding:10px ;
+                font-size: 3rem;
+
+                @include sp {
+                    font-size: 1.6rem;
+                }
+            }
         }
 
         @include sp {
