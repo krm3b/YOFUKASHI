@@ -177,7 +177,7 @@
     border-radius: 5px;
     border: 1px $color-line solid;
     padding: 10px;
-    z-index: 9999;
+    z-index: 8;
     animation: bounceSoft 0.8s infinite ease-in-out;
     
     @include sp {

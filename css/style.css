@@ -458,6 +458,11 @@ header nav ul li a button svg {
   color: var(--_clr-txt-svg);
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 768px) {
+  header nav ul li a button svg {
+    display: none;
+  }
+}
 header nav ul li a button svg g {
   transform-origin: center;
   animation: rotate var(--_ani-speed) linear infinite;
@@ -1693,7 +1698,7 @@ body {
   border-radius: 5px;
   border: 1px #767676 solid;
   padding: 10px;
-  z-index: 9999;
+  z-index: 8;
   animation: bounceSoft 0.8s infinite ease-in-out;
 }
 @media (max-width: 425px) {
@@ -2360,7 +2365,7 @@ body {
   bottom: -10px;
   width: 70px;
   height: 70px;
-  background-image: url(../../img/sns/icon_instagram.webp);
+  background-image: url(../img/sns/icon_instagram.webp);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

@@ -108,6 +108,10 @@ header {
                             color: var(--_clr-txt-svg);
                             transition: all .3s ease-in-out;
 
+                            @include tab {
+                                display: none;
+                            }
+
                             g {
                                 transform-origin: center;
                                 animation: rotate var(--_ani-speed) linear infinite;
