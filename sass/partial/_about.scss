@@ -68,7 +68,7 @@
                 transform: translateX(-50%) rotate(0deg) translateY(30px);
             }
             
-            &.show {
+            &.fadeUp {
                 opacity: 1;
                 transform: translateY(0);
                 animation: pop 0.6s ease-out;

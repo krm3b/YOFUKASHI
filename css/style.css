@@ -256,6 +256,67 @@ body {
   background-color: #FEFEFE;
 }
 
+/* ふわっ（下から） */
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ふわっ（左から）*/
+.fadeLeft {
+  animation-name: fadeLeftAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* ふわっ（右から） */
+.fadeRight {
+  animation-name: fadeRightAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeRightAnime {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+.fadeUpTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger {
+  opacity: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -275,8 +336,7 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 
@@ -329,9 +389,7 @@ header nav ul {
   font-size: 1.6rem;
 }
 header nav ul li a button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -649,6 +707,120 @@ footer p {
   text-align: center;
 }
 
+/*==========================*/
+/*==========================*/
+#splash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #3688D6;
+  z-index: 9999999;
+  text-align: center;
+  color: #FFFFFF;
+}
+#splash .splash-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#splash .splash-logo .text-typing {
+  font-size: 7rem;
+  font-family: "Monoton", "Noto Sans JP", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  letter-spacing: 4px;
+  /*文字列後ろの線の設定*/
+}
+@media (max-width: 425px) {
+  #splash .splash-logo .text-typing {
+    font-size: 5rem;
+  }
+}
+#splash .splash-logo .text-typing span {
+  display: none;
+}
+#splash .splash-logo .text-typing::after {
+  content: "|";
+  animation: typingAnime 0.8s ease infinite;
+}
+
+@keyframes typingAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*==========================*/
+/*==========================*/
+/*画面遷移アニメーション*/
+.splashbg1,
+.splashbg2 {
+  display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg1,
+body.appear .splashbg2 {
+  display: block;
+}
+
+/*上に消えるエリア*/
+body.appear .splashbg1 {
+  animation-name: PageAnime;
+  animation-duration: 1.4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  content: "";
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100vh;
+  bottom: 50%;
+  left: 0;
+  transform: scaleY(1);
+  background-color: #3688D6;
+}
+
+@keyframes PageAnime {
+  0% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+}
+/*下に消えるエリア*/
+body.appear .splashbg2 {
+  animation-name: PageAnime2;
+  animation-duration: 1.4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  content: "";
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100vh;
+  top: 50%;
+  left: 0;
+  transform: scaleY(1);
+  background-color: #3688D6;
+}
+
+@keyframes PageAnime2 {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
 .about {
   padding-block: 100px;
 }
@@ -708,7 +880,6 @@ footer p {
   position: absolute;
   top: -5%;
   right: 20%;
-  width: -moz-fit-content;
   width: fit-content;
   opacity: 0;
   transform: rotate(3deg) translateY(30px);
@@ -721,13 +892,13 @@ footer p {
     transform: translateX(-50%) rotate(0deg) translateY(30px);
   }
 }
-.about .flex .bubble.show {
+.about .flex .bubble.fadeUp {
   opacity: 1;
   transform: translateY(0);
   animation: pop 0.6s ease-out;
 }
 @media (max-width: 768px) {
-  .about .flex .bubble.show {
+  .about .flex .bubble.fadeUp {
     transform: translateX(-50%) rotate(0deg) translateY(30px);
   }
 }
@@ -867,7 +1038,6 @@ footer p {
 }
 .why-pronavi .why {
   padding: 16px 20px;
-  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -984,6 +1154,7 @@ footer p {
 .why-pronavi .slick-comment {
   text-align: center;
   margin-bottom: 10px;
+  font-size: clamp(1.6rem, 5vw, 3rem);
 }
 .why-pronavi .event-slick {
   width: 100%;
@@ -1006,8 +1177,7 @@ footer p {
 .why-pronavi .event-slick img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .slick-slide {
@@ -1042,7 +1212,6 @@ body {
   }
 }
 .contact .support-comment p {
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 50px;
   padding: 50px 30px;
@@ -1247,8 +1416,7 @@ body {
 .gallery .slick-top img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1261,8 +1429,7 @@ body {
 .gallery .slick-bottom img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1314,7 +1481,6 @@ body {
 }
 .mainvisial h2 span {
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 4rem;
   letter-spacing: 3px;
@@ -1361,7 +1527,6 @@ body {
   width: 100%;
 }
 .mainvisial .flex .img-wrapper {
-  width: -moz-fit-content;
   width: fit-content;
   padding: 20px;
   background-color: #FEFEFE;
@@ -1615,8 +1780,7 @@ body {
   width: 100%;
   display: block;
   margin: 0 auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 @media (max-width: 768px) {
   .price .course .course-box .box-bottom .skill .skill-img img {
@@ -1683,7 +1847,7 @@ body {
 }
 @media (max-width: 768px) {
   .price .course .course-box .box-bottom .price-wrapper .price-text .red {
-    font-size: clamp(1rem, 3vw, 1.6rem);
+    font-size: clamp(0.8rem, 3vw, 1.6rem);
   }
 }
 .price .course .course-box .box-bottom .price-wrapper .btn-wrapper {
@@ -1729,7 +1893,8 @@ body {
 }
 .reasons__item {
   border-radius: 30px;
-  padding: 5%; /*Safari*/
+  padding: 5%;
+  position: -webkit-sticky; /*Safari*/
   position: sticky;
 }
 @media (max-width: 425px) {
@@ -1905,7 +2070,6 @@ body {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
-  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -1942,7 +2106,6 @@ body {
   padding-block: 150px;
 }
 .sns .sns-comment {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   letter-spacing: 4px;
@@ -2139,6 +2302,8 @@ body {
   align-items: end;
   margin-bottom: 100px;
   padding-inline: 10px;
+  position: relative;
+  z-index: 1;
 }
 @media (max-width: 768px) {
   .support .support-card {
@@ -2151,17 +2316,11 @@ body {
     justify-content: flex-start;
   }
 }
-.support .support-card.reverse {
-  flex-direction: row-reverse;
-}
-@media (max-width: 768px) {
-  .support .support-card.reverse {
-    flex-direction: row;
-  }
-}
-.support .support-card .support-text {
+.support .support-card .fadeUpTrigger {
   width: 80%;
   max-width: 600px;
+}
+.support .support-card .support-text {
   background-color: #FFFFFF;
   border: 1px #767676 solid;
   border-radius: 5px;
@@ -2180,7 +2339,7 @@ body {
   left: -10px;
   width: 100%;
   height: 100%;
-  background-color: #3688D6;
+  background-color: #CDDCE6;
   border-radius: 5px;
   z-index: -1;
 }
@@ -2216,6 +2375,17 @@ body {
 .support .support-card .support-img img {
   max-width: 300px;
   min-width: 100px;
+}
+.support .support-card.reverse {
+  flex-direction: row-reverse;
+}
+.support .support-card.reverse .support-text::before {
+  background-color: #3688D6;
+}
+@media (max-width: 768px) {
+  .support .support-card.reverse {
+    flex-direction: row;
+  }
 }
 
 .teacher {
@@ -2285,8 +2455,7 @@ body {
 .teacher .profiles-container .image-section img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-top: -10px;
   border-radius: 10px;
 }
@@ -2377,8 +2546,7 @@ body {
 .voice .card-front img {
   width: 100%;
   height: 75%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .voice .card-front .card-content {
   padding: 20px;
@@ -2490,7 +2658,6 @@ body {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -2533,7 +2700,6 @@ body {
   padding-left: 50px;
   margin-left: 11%;
   margin-top: 50px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
@@ -2634,8 +2800,7 @@ body {
   height: 100%;
 }
 .box .step-img img.img-step6 {
-  -o-object-position: 57% 15%;
-     object-position: 57% 15%;
+  object-position: 57% 15%;
 }
 .box .step-content {
   width: 50%;
@@ -2740,6 +2905,7 @@ body {
   right: 15px;
   top: 0;
   opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   padding-right: 15px;
 }
@@ -2749,6 +2915,7 @@ body {
 }
 
 .pagination a:after {
+  -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
   width: 10px;
   height: 10px;

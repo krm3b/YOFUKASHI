@@ -154,7 +154,7 @@
                             }
 
                             @include tab {
-                                font-size: clamp(1rem, 3vw, 1.6rem);
+                                font-size: clamp(0.8rem, 3vw, 1.6rem);
                             }
                         }
                     }

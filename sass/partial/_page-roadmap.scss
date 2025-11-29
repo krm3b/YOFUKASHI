@@ -2,7 +2,7 @@
 @use 'mixin' as *;
 
 .box:nth-child(odd) {
-    background-color: #F7F9FC; // ← 色変更奇数番号のみ
+    background-color: $color-main-background; // ← 色変更奇数番号のみ
 }
 
 .box {

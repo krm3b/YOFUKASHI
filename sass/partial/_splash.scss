@@ -1,0 +1,119 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+/*==========================*/
+// ローディング画面
+/*==========================*/
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: $color-main;
+	z-index: 9999999;
+	text-align: center;
+	color: $color-white;
+    
+    .splash-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        .text-typing {
+            font-size: 7rem;
+            @include monoton;
+            letter-spacing: 4px;
+
+            @include sp {
+                font-size: 5rem;
+            }
+
+            span {
+                display: none;
+            }
+            
+            /*文字列後ろの線の設定*/
+            &::after {
+                content: "|";
+                animation: typingAnime .8s ease infinite;
+            }
+        }
+    }
+}
+
+@keyframes typingAnime {
+    from { opacity: 0 }
+    to   { opacity: 1 }
+}
+
+/*==========================*/
+// 画面遷移
+/*==========================*/
+/*画面遷移アニメーション*/
+.splashbg1,
+.splashbg2{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg1,
+body.appear .splashbg2{
+	display:block;
+}
+
+/*上に消えるエリア*/
+body.appear .splashbg1{
+	animation-name:PageAnime;
+	animation-duration:1.4s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+    content: "";
+    position:fixed;
+	z-index: 999999;
+    width: 100%;
+    height: 100vh;
+    bottom:50%;
+	left:0;
+    transform: scaleY(1);
+    background-color: $color-main;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:top;
+		transform:scaleY(1);
+	}
+
+	100% {
+		transform-origin:top;
+		transform:scaleY(0);
+	}
+}
+
+/*下に消えるエリア*/
+body.appear .splashbg2{
+    animation-name:PageAnime2;
+	animation-duration:1.4s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+    content: "";
+    position:fixed;
+	z-index: 999999;
+    width: 100%;
+    height: 100vh;
+    top: 50%;
+	left:0;
+    transform: scaleY(1);
+    background-color: $color-main;
+}
+
+@keyframes PageAnime2{
+	0% {
+		transform-origin:bottom;
+		transform:scaleY(1);
+	}
+	100% {
+		transform-origin:bottom;
+		transform:scaleY(0);
+	}
+}
