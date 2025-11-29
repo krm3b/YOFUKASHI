@@ -5,9 +5,17 @@
     padding-block: 100px;
     background-color: $color-background-accent;
 
+    @include sp {
+        padding-bottom: 0;
+    }
+
     .container {
         @include flex(justify-content, 100px);
         flex-direction: column;
+
+        @include sp {
+            gap: 40px;
+        }
     }
 
     &__item {

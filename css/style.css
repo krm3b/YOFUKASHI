@@ -53,7 +53,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 2px solid #888;
+  border: 2px solid #595959;
   background: #FFFFFF;
   cursor: pointer;
   font-size: 1.6rem;
@@ -356,8 +356,7 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
 }
 
@@ -410,9 +409,7 @@ header nav ul {
   font-size: 1.6rem;
 }
 header nav ul li a button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -522,7 +519,7 @@ header nav.hide {
   header nav {
     position: fixed;
     top: 0;
-    left: 100%;
+    left: 101%;
     width: 100%;
     height: 100vh;
     background: rgba(73, 73, 73, 0.95);
@@ -898,7 +895,6 @@ body.appear .splashbg2 {
   position: absolute;
   top: -20%;
   right: 20%;
-  width: -moz-fit-content;
   width: fit-content;
   opacity: 0;
   transform: rotate(3deg) translateY(30px);
@@ -1093,7 +1089,6 @@ body.appear .splashbg2 {
 }
 .why-pronavi .why {
   padding: 16px 20px;
-  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -1233,8 +1228,7 @@ body.appear .splashbg2 {
 .why-pronavi .event-slick img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .slick-slide {
@@ -1269,7 +1263,6 @@ body {
   }
 }
 .contact .support-comment p {
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 50px;
   padding: 50px 30px;
@@ -1448,20 +1441,47 @@ body {
   padding: 60px 0;
   margin-block: 90px;
 }
-.gallery .section-title {
+.gallery .container {
   margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
 }
-.gallery .section-title .en {
+@media (max-width: 425px) {
+  .gallery .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.gallery .container .inner {
+  width: 60%;
+}
+@media (max-width: 425px) {
+  .gallery .container .inner {
+    width: 100%;
+  }
+}
+.gallery .container .inner .section-title {
+  margin-bottom: 30px;
+}
+.gallery .container .inner .section-title .en {
   color: #3F3D56;
 }
-.gallery .section-title .ja,
-.gallery .section-title .text {
+.gallery .container .inner .section-title .ja {
   color: #FFFFFF;
 }
-.gallery .section-title .view-more-btn {
+.gallery .container .inner .text {
+  color: #FFFFFF;
+}
+.gallery .container .view-more-btn {
   margin: 0 auto;
-  width: 100px;
-  height: 100px;
+}
+@media (max-width: 425px) {
+  .gallery .container .view-more-btn {
+    width: 130px;
+    height: 130px;
+  }
 }
 .gallery .slick-top {
   margin-bottom: 2rem;
@@ -1474,8 +1494,7 @@ body {
 .gallery .slick-top img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1488,8 +1507,7 @@ body {
 .gallery .slick-bottom img {
   width: 100%;
   height: 30vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1541,7 +1559,6 @@ body {
 }
 .mainvisial h2 span {
   display: block;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 4rem;
   letter-spacing: 3px;
@@ -1588,7 +1605,6 @@ body {
   width: 100%;
 }
 .mainvisial .flex .img-wrapper {
-  width: -moz-fit-content;
   width: fit-content;
   padding: 20px;
   background-color: #FEFEFE;
@@ -1841,8 +1857,7 @@ body {
   width: 100%;
   display: block;
   margin: 0 auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 @media (max-width: 768px) {
   .price .course .course-box .box-bottom .skill .skill-img img {
@@ -1947,15 +1962,26 @@ body {
   padding-block: 100px;
   background-color: #F3F9FF;
 }
+@media (max-width: 425px) {
+  .reasons {
+    padding-bottom: 0;
+  }
+}
 .reasons .container {
   display: flex;
   justify-content: justify-content;
   gap: 100px;
   flex-direction: column;
 }
+@media (max-width: 425px) {
+  .reasons .container {
+    gap: 40px;
+  }
+}
 .reasons__item {
   border-radius: 30px;
-  padding: 5%; /*Safari*/
+  padding: 5%;
+  position: -webkit-sticky; /*Safari*/
   position: sticky;
 }
 @media (max-width: 425px) {
@@ -2042,6 +2068,11 @@ body {
 .roadmap {
   padding-block: 100px;
   background-color: #F3F9FF;
+}
+@media (max-width: 425px) {
+  .roadmap {
+    padding-top: 0;
+  }
 }
 .roadmap .flex {
   display: flex;
@@ -2132,7 +2163,6 @@ body {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
-  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -2169,7 +2199,6 @@ body {
   padding-block: 150px;
 }
 .sns .sns-comment {
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   letter-spacing: 4px;
@@ -2527,8 +2556,7 @@ body {
 .teacher .profiles-container .image-section img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   margin-top: -10px;
   border-radius: 10px;
 }
@@ -2619,8 +2647,7 @@ body {
 .voice .card-front img {
   width: 100%;
   height: 75%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .voice .card-front .card-content {
   padding: 20px;
@@ -2668,16 +2695,16 @@ body {
 .voice .card-back .card-content h3 {
   margin: 0 0 10px 0;
   font-size: 18px;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .voice .card-back .card-content p {
   margin: 0 0 15px 0;
-  color: #ffffff;
+  color: #FFFFFF;
   line-height: 1.5;
 }
 
 .background {
-  background-image: url("../img/worries/_background.webp");
+  background-image: url("../img/worries/worries_background.webp");
   background-size: contain;
   background-repeat: repeat;
 }
@@ -2732,7 +2759,6 @@ body {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -2775,7 +2801,6 @@ body {
   padding-left: 50px;
   margin-left: 11%;
   margin-top: 50px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
@@ -2876,8 +2901,7 @@ body {
   height: 100%;
 }
 .box .step-img img.img-step6 {
-  -o-object-position: 57% 15%;
-     object-position: 57% 15%;
+  object-position: 57% 15%;
 }
 .box .step-content {
   width: 50%;
@@ -2982,6 +3006,7 @@ body {
   right: 15px;
   top: 0;
   opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   padding-right: 15px;
 }
@@ -2991,6 +3016,7 @@ body {
 }
 
 .pagination a:after {
+  -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
   width: 10px;
   height: 10px;
