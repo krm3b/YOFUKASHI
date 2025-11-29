@@ -89,19 +89,6 @@ function hamburger() {
  スリックスライダー（共通設定に統一）
 ==================================================*/
 function slick() {
-    $(".slick").slick({
-        centerMode: true,
-        slidesToShow: 3,
-        autoplay: true,
-        autoplaySpeed: 0,
-        speed: 7000,
-        cssEase: "linear",
-        responsive: [
-            { breakpoint: 769, settings: { speed: 8000, slidesToShow: 2, centerMode: false } },
-            { breakpoint: 426, settings: { speed: 5000, slidesToShow: 1, centerMode: false } },
-        ],
-    });
-
     const commonSettings = {
         infinite: true,
         slidesToShow: 3,
@@ -113,6 +100,10 @@ function slick() {
         cssEase: "linear",
         pauseOnFocus: false,
         pauseOnHover: false,
+        responsive: [
+            { breakpoint: 769, settings: { speed: 8000, slidesToShow: 2, centerMode: false } },
+            { breakpoint: 426, settings: { speed: 5000, slidesToShow: 1, centerMode: false } },
+        ],
     };
 
     $('.slick-top').slick(commonSettings);
@@ -122,10 +113,6 @@ function slick() {
         ...commonSettings,
         centerMode: true,
         swipe: false,
-        responsive: [
-            { breakpoint: 769, settings: { speed: 8000, slidesToShow: 2, centerMode: false } },
-            { breakpoint: 426, settings: { speed: 5000, slidesToShow: 1, centerMode: false } },
-        ],
     });
 }
 
@@ -168,9 +155,9 @@ function scrollHeader() {
 ==================================================*/
 function mainVisualSlider() {
     const srcs = [
-        { src: '/img/mainvisial/mainvisial-center.webp' },
-        { src: '/img/mainvisial/mainvisial-left.webp' },
-        { src: '/img/mainvisial/mainvisial-right.webp' }
+        { src: 'img/mainvisial/mainvisial-center.webp' },
+        { src: 'img/mainvisial/mainvisial-left.webp' },
+        { src: 'img/mainvisial/mainvisial-right.webp' }
     ];
 
     $('.slider').vegas({

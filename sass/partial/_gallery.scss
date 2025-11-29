@@ -7,21 +7,46 @@
     padding: 60px 0;
     margin-block: 90px;
 
-    .section-title {
+    .container {
         margin-bottom: 4rem;
-        .en {
-            color: $color-accent-navy;
+        @include flex(center, 30px);
+        align-items: center;
+
+        @include sp {
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .ja,
-        .text {
-            color: $color-white;
-        }
+        .inner {
+            width: 60%;
 
+            @include sp {
+                width: 100%;
+            }
+
+            .section-title {
+                margin-bottom: 30px;
+                .en {
+                    color: $color-accent-navy;
+                }
+                .ja{
+                    color: $color-white;
+                }
+    
+            }
+    
+            .text {
+                color: $color-white;
+            }
+            
+        }
         .view-more-btn {
             margin: 0 auto;
-            width: 100px;
-            height: 100px;
+
+            @include sp {
+                width: 130px;
+                height: 130px;
+            }
         }
     }
 
