@@ -31,6 +31,18 @@
 </head>
 
 <body>
+    <!-- loading -->
+    <div id="splash">
+        <div class="splash-logo">
+            <div class="fadeUp">
+                <p class="text-typing">ProNavi</p>
+            </div>
+        </div>
+    </div>
+    <!---画面遷移用-->
+    <div class="splashbg1"></div>
+    <div class="splashbg2"></div>
+
     <!--*****************************************-->
     <!--* header                                *-->
     <!--*****************************************-->
@@ -185,7 +197,7 @@
         <div class="modal">
             <button class="modal-close"></button>
             <p>2025年3月16日放送 <br>
-                ＴＯＫＹＯ ＭＸ 情報バラエティ番組 <br>
+                TOKYO MX 情報バラエティ番組 <br>
                 <span>「ええじゃないか！！」</span> <br class="sp-only">で紹介されました！！
             </p>
             <a href="https://youtu.be/0Te2W50okgM?si=qkfuegMoIXlfPx_W" target="_blank" rel="noopener noreferrer"
@@ -199,7 +211,7 @@
         <!-- ----------------------------------- -->
         <div class="z-top">
             <div class="background">
-                <section class="worries" id="worris">
+                <section class="worries fadeUpTrigger" id="worris">
                     <div class="wrapper">
                         <h2>こんな<span>お</span><span>悩</span><span>み</span>ありませんか？</h2>
 
@@ -219,7 +231,17 @@
                 <section class="about" id="about">
 
                     <div class="flex">
-                        <div class="flex__text">
+                        <div class="flex__img">
+                            <img class="fadeRightTrigger" src="img/about/about1.webp" alt="ノートパソコンを手に持つ女性の画像">
+
+                            <div class="bubble fadeUpTrigger">
+                                <p>そんなあなたのお悩みを <br>
+                                    <span> <span class="emphasis">ProNavi</span>がすべて解決します!!</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex__text fadeLeftTrigger">
                             <div class="section-title">
                                 <p class="en">About Us</p>
                                 <h2 class="ja">ProNaviとは</h2>
@@ -231,15 +253,7 @@
                                 学ぶだけで終わらせず、 <span>「実践できる力」</span> を身につけて、あなたの理想のキャリアを一緒に実現しましょう。</p>
                         </div>
 
-                        <div class="bubble js-fade">
-                            <p>そんなあなたのお悩みを <br>
-                                <span> <span class="emphasis">ProNavi</span>がすべて解決します!!</span>
-                            </p>
-                        </div>
 
-                        <div class="flex__img">
-                            <img src="img/about1.webp" alt="ノートパソコンを手に持つ女性の画像">
-                        </div>
                     </div>
                 </section>
             </div>
@@ -250,17 +264,17 @@
             <section class="why-pronavi" id="why-pronavi">
                 <div class="container">
 
-                    <div class="why">
+                    <div class="why fadeLeftTrigger">
                         <p>ProNaviは<br class="sp-only">他のスクールとここが違う！</p>
                     </div>
 
                     <div class="flex">
                         <div class="flex__img">
-                            <img class="img1" src="img/about2.webp" alt="楽しく会議をしている画像">
-                            <img class="img2" src="img/about3.webp" alt="トップ講師の加藤夕騎の画像">
+                            <img class="img1 fadeLeftTrigger" src="img/about/about2.webp" alt="楽しく会議をしている画像">
+                            <img class="img2 fadeRightTrigger" src="img/about/about3.webp" alt="トップ講師の加藤夕騎の画像">
                         </div>
 
-                        <div class="flex__text">
+                        <div class="flex__text fadeUpTrigger">
                             <h3>プログラミングスキルを身につけた <br>
                                 プロナビ生と一緒に仕事をしたい！</h3>
 
@@ -275,17 +289,17 @@
 
                 <p class="slick-comment">プログラミングを学習する仲間が集結！</p>
                 <ul class="event-slick">
-                    <li><img src="img/slick1.webp" alt="第1回プロナビオフ会集合写真"></li>
-                    <li><img src="img/slick2.webp" alt="プロナビオフ会の一次会写真"></li>
-                    <li><img src="img/slick3.webp" alt="プロナビオフ会の一次会写真"></li>
-                    <li><img src="img/slick4.webp" alt="プロナビオフ会の一次会写真"></li>
-                    <li><img src="img/slick5.webp" alt="プロナビオフ会の一次会写真"></li>
-                    <li><img src="img/slick6.webp" alt="第2回プロナビオフ会集合写真"></li>
-                    <li><img src="img/slick7.webp" alt="プロナビオフ会のグループワークの写真"></li>
-                    <li><img src="img/slick8.webp" alt="プロナビオフ会のグループワークの写真"></li>
-                    <li><img src="img/slick9.webp" alt="第3回プロナビオフ会集合写真"></li>
-                    <li><img src="img/slick10.webp" alt="プロナビオフ会の個別写真"></li>
-                    <li><img src="img/slick11.webp" alt="プロナビオフ会の個別写真"></li>
+                    <li><img src="img/offline-meeting/slick1.webp" alt="第1回プロナビオフ会集合写真"></li>
+                    <li><img src="img/offline-meeting/slick2.webp" alt="プロナビオフ会の一次会写真"></li>
+                    <li><img src="img/offline-meeting/slick3.webp" alt="プロナビオフ会の一次会写真"></li>
+                    <li><img src="img/offline-meeting/slick4.webp" alt="プロナビオフ会の一次会写真"></li>
+                    <li><img src="img/offline-meeting/slick5.webp" alt="プロナビオフ会の一次会写真"></li>
+                    <li><img src="img/offline-meeting/slick6.webp" alt="第2回プロナビオフ会集合写真"></li>
+                    <li><img src="img/offline-meeting/slick7.webp" alt="プロナビオフ会のグループワークの写真"></li>
+                    <li><img src="img/offline-meeting/slick8.webp" alt="プロナビオフ会のグループワークの写真"></li>
+                    <li><img src="img/offline-meeting/slick9.webp" alt="第3回プロナビオフ会集合写真"></li>
+                    <li><img src="img/offline-meeting/slick10.webp" alt="プロナビオフ会の個別写真"></li>
+                    <li><img src="img/offline-meeting/slick1webp" alt="プロナビオフ会の個別写真"></li>
                 </ul>
             </section>
 
@@ -314,7 +328,7 @@
                             </div>
 
                             <div class="flex__img">
-                                <img src="img/reasons1.webp" alt="パソコンに向かって学習を進める男性の画像" />
+                                <img src="img/reasons/reasons1.webp" alt="パソコンに向かって学習を進める男性の画像" />
                             </div>
                         </div>
                     </div>
@@ -334,7 +348,7 @@
                             </div>
 
                             <div class="flex__img">
-                                <img src="img/reasons2.webp" alt="女性講師に指導を受ける女性の画像" />
+                                <img src="img/reasons/reasons2.webp" alt="女性講師に指導を受ける女性の画像" />
                             </div>
                         </div>
                     </div>
@@ -354,7 +368,7 @@
                             </div>
 
                             <div class="flex__img">
-                                <img src="img/reasons3.webp" alt="チームで仕事に取り組んでいる画像" />
+                                <img src="img/reasons/reasons3.webp" alt="チームで仕事に取り組んでいる画像" />
                             </div>
                         </div>
                     </div>
@@ -374,12 +388,12 @@
                 </div>
 
                 <div class="flex">
-                    <div class="flex__icon">
-                        <img src="img/roadmap2.webp" alt="クラウドソーシングサイトのイラスト">
+                    <div class="flex__icon fadeUpTrigger">
+                        <img src="img/roadmap/roadmap2.webp" alt="クラウドソーシングサイトのイラスト">
                     </div>
                     <a href="page-roadmap.html" class="flex__btn">
                         <div class="bg-wrapper"></div>
-                        <div class="comment-wrapper">
+                        <div class="comment-wrapper fadeLeftTrigger">
                             <p class="comment">一歩ずつスキルを磨いて、</p>
                             <p class="comment">案件獲得を目指そう！</p>
                         </div>
@@ -390,7 +404,7 @@
 
                         <div class="view-more-btn">
                             View More
-                            <img src="img/ArrowUpRight.webp" alt="右矢印のアイコン">
+                            <img src="img/arrow/ArrowUpRight.webp" alt="右矢印のアイコン">
                         </div>
                     </a>
                 </div>
@@ -407,82 +421,94 @@
 
                 <div class="container">
                     <div class="support-card">
-                        <div class="support-text">
-                            <div class="support-number">01</div>
-                            <h3>24時間LINEサポート</h3>
-                            <p>
-                                わからないところは、いつでもLINEで質問できます。「これ合っているのかな？」という小さな疑問でも大丈夫です。
-                                学習中につまずいた場面に応じて、体験者さんにとって必要なことを適切にサポートします。
-                                あなたのペースで安心して相談できるので、不安をため込むことなく前に進める環境です。
-                            </p>
+                        <div class="fadeUpTrigger">
+                            <div class="support-text">
+                                <div class="support-number">01</div>
+                                <h3>24時間LINEサポート</h3>
+                                <p>
+                                    わからないところは、いつでもLINEで質問できます。「これ合っているのかな？」という小さな疑問でも大丈夫です。
+                                    学習中につまずいた場面に応じて、体験者さんにとって必要なことを適切にサポートします。
+                                    あなたのペースで安心して相談できるので、不安をため込むことなく前に進める環境です。
+                                </p>
+                            </div>
                         </div>
-                        <div class="support-img">
-                            <img src="img/support_01.webp" alt="スマホ画面">
+                        <div class="support-img fadeRightTrigger">
+                            <img src="img/support/support_01.webp" alt="スマホ画面のイラスト">
                         </div>
                     </div>
                     <div class="support-card reverse">
-                        <div class="support-text">
-                            <div class="support-number">02</div>
-                            <h3>週１回個別授業</h3>
-                            <p>
-                                毎週の授業では、あなたの理解度やペースに合わせて丁寧に進めていきます。わからない部分はその場で質問でき、安心して学習を続けられる時間です。
-                                さらに、画面共有を使ってコードを一緒に確認しながら添削を行うので、つまずきを一つずつ解消しながら、自信を持って前に進めるサポートを提供します。
-                            </p>
+                        <div class="fadeUpTrigger">
+                            <div class="support-text">
+                                <div class="support-number">02</div>
+                                <h3>週１回個別授業</h3>
+                                <p>
+                                    毎週の授業では、あなたの理解度やペースに合わせて丁寧に進めていきます。わからない部分はその場で質問でき、安心して学習を続けられる時間です。
+                                    さらに、画面共有を使ってコードを一緒に確認しながら添削を行うので、つまずきを一つずつ解消しながら、自信を持って前に進めるサポートを提供します。
+                                </p>
+                            </div>
                         </div>
-                        <div class="support-img">
-                            <img src="img/support_02.webp" alt="スマホ画面">
+                        <div class="support-img fadeLeftTrigger">
+                            <img src="img/support/support_02.webp" alt="PCでオンライン会議をしているイラスト">
                         </div>
                     </div>
                     <div class="support-card">
-                        <div class="support-text">
-                            <div class="support-number">03</div>
-                            <h3>担当者制度</h3>
-                            <p>
-                                あなたには専属のコンサルタントがつき、学習から案件獲得までマンツーマンでサポートします。授業ごとに担当が変わることはないので、あなたの状況をしっかり理解した上で寄り添ったアドバイスが受けられます。
-                                気になることも相談しやすく、安心して学習を進められる仕組みです。
-                            </p>
+                        <div class="fadeUpTrigger">
+                            <div class="support-text">
+                                <div class="support-number">03</div>
+                                <h3>担当者制度</h3>
+                                <p>
+                                    あなたには専属のコンサルタントがつき、学習から案件獲得までマンツーマンでサポートします。授業ごとに担当が変わることはないので、あなたの状況をしっかり理解した上で寄り添ったアドバイスが受けられます。
+                                    気になることも相談しやすく、安心して学習を進められる仕組みです。
+                                </p>
+                            </div>
                         </div>
-                        <div class="support-img">
-                            <img src="img/support_03.webp" alt="スマホ画面">
+                        <div class="support-img fadeRightTrigger">
+                            <img src="img/support/support_03.webp" alt="2人で会議をしているイラスト">
                         </div>
                     </div>
                     <div class="support-card reverse">
-                        <div class="support-text">
-                            <div class="support-number">04</div>
-                            <h3>週1セミナー</h3>
-                            <p>
-                                効率の良い勉強方法、案件獲得のコツ、特別対談など、「知りたい」「聞いてみたい」というテーマを大切にしています。
-                                より学びやすく、実践に役立つ内容を一緒につくっていくセミナーです。
-                            </p>
+                        <div class="fadeUpTrigger">
+                            <div class="support-text">
+                                <div class="support-number">04</div>
+                                <h3>週1セミナー</h3>
+                                <p>
+                                    効率の良い勉強方法、案件獲得のコツ、特別対談など、「知りたい」「聞いてみたい」というテーマを大切にしています。
+                                    より学びやすく、実践に役立つ内容を一緒につくっていくセミナーです。
+                                </p>
+                            </div>
                         </div>
-                        <div class="support-img">
-                            <img src="img/support_04.webp" alt="">
+                        <div class="support-img fadeLeftTrigger">
+                            <img src="img/support/support_04.webp" alt="セミナーのイラスト">
                         </div>
                     </div>
                     <div class="support-card">
-                        <div class="support-text">
-                            <div class="support-number">05</div>
-                            <h3>作業会</h3>
-                            <p>
-                                学習中の不安や疑問を、同じ目標を持つ仲間と共有できます。一緒に作業したり、ちょっと相談したり、気楽に参加できる場です。ひとりで勉強しないから、続けやすく、前に進みやすくなります。
-                                オンライン飲み会などの交流を深めるイベントも実施しています。
-                            </p>
+                        <div class="fadeUpTrigger">
+                            <div class="support-text">
+                                <div class="support-number">05</div>
+                                <h3>作業会</h3>
+                                <p>
+                                    学習中の不安や疑問を、同じ目標を持つ仲間と共有できます。一緒に作業したり、ちょっと相談したり、気楽に参加できる場です。ひとりで勉強しないから、続けやすく、前に進みやすくなります。
+                                    オンライン飲み会などの交流を深めるイベントも実施しています。
+                                </p>
+                            </div>
                         </div>
-                        <div class="support-img">
-                            <img src="img/support_05.webp" alt="">
+                        <div class="support-img fadeRightTrigger">
+                            <img src="img/support/support_05.webp" alt="バーチャル空間を体験しているイラスト">
                         </div>
                     </div>
                     <div class="support-card reverse">
-                        <div class="support-text">
-                            <div class="support-number">06</div>
-                            <h3>案件獲得サポート</h3>
-                            <p>
-                                担当ディレクターがつき、案件サイトの使い方やプロフィールの添削、提案文の作り方、営業時のフィードバックまで丁寧にサポートします。
-                                一つひとつ確認しながら進めていくので、未経験の方でも安心して案件に挑戦でき、安定してお仕事を取れる力を育てていけます。
-                            </p>
+                        <div class="fadeUpTrigger">
+                            <div class="support-text">
+                                <div class="support-number">06</div>
+                                <h3>案件獲得サポート</h3>
+                                <p>
+                                    担当ディレクターがつき、案件サイトの使い方やプロフィールの添削、提案文の作り方、営業時のフィードバックまで丁寧にサポートします。
+                                    一つひとつ確認しながら進めていくので、未経験の方でも安心して案件に挑戦でき、安定してお仕事を取れる力を育てていけます。
+                                </p>
+                            </div>
                         </div>
-                        <div class="support-img">
-                            <img src="img/support_06.webp" alt="スマホ画面">
+                        <div class="support-img fadeLeftTrigger">
+                            <img src="img/support/support_06.webp" alt="クライアントと打ち合わせをしているイラスト">
                         </div>
                     </div>
                 </div>
@@ -495,9 +521,9 @@
             <!-- ----------------------------------- -->
             <section class="price" id="price">
                 <div class="price-container">
-                    <img class="arrow" src="img/arrow_brue.webp" alt="矢印の画像">
+                    <img class="arrow" src="img/arrow/arrow_brue.webp" alt="矢印の画像">
 
-                    <div class="course">
+                    <div class="course fadeUpTrigger">
                         <div class="course-title">
                             <h3>6ヶ月間集中サポートコース</h3>
                         </div>
@@ -512,8 +538,8 @@
                                         <p>習得スキル</p>
                                     </div>
                                     <div class="skill-img">
-                                        <img src="img/price1.webp" alt="HTML/CSS,js(jQuery)のアイコン画像">
-                                        <img src="img/price2.webp" alt="PHP,WordPressのアイコン画像">
+                                        <img src="img/price/price1.webp" alt="HTML/CSS,js(jQuery)のアイコン画像">
+                                        <img src="img/price/price2.webp" alt="PHP,WordPressのアイコン画像">
                                     </div>
                                 </div>
                                 <div class="price-wrapper">
@@ -548,7 +574,7 @@
                     <div class="card-flip container">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="/img/voice/student1.webp" alt="カード画像">
+                                <img src="img/voice/student1.webp" alt="カード画像">
                                 <div class="card-content">
                                     <h3>M.M</h3>
                                     <p>30代前半｜2023年5月入会</p>
@@ -586,7 +612,7 @@
                     <div class="card-flip container">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="/img/voice/student3.webp" alt="カード画像">
+                                <img src="img/voice/student3.webp" alt="カード画像">
                                 <div class="card-content">
                                     <h3> W.K</h3>
                                     <p> 20代後半｜2023年4月入会 </p>
@@ -606,7 +632,7 @@
                     <div class="card-flip container">
                         <div class="card-inner">
                             <div class="card-front">
-                                <img src="/img/voice/student4.webp" alt="カード画像">
+                                <img src="img/voice/student4.webp" alt="カード画像">
                                 <div class="card-content">
                                     <h3> M.H</h3>
                                     <p> 20代前半｜2023年8月入会 </p>
@@ -630,40 +656,57 @@
             <!-- ----------------------------------- -->
             <section class="gallery" id="gallery">
                 <div class="slick-top">
-                    <a href="https://luna-820.github.io/original-site01/" target="_blank"><img
-                            src="/img/gallery/gallery1.webp" alt="生徒作品1"></a>
-                    <a href="https://ryotasogawa.github.io/originalsitte/" target="_blank"><img
-                            src="/img/gallery/gallery2.webp" alt="生徒作品2"></a>
-                    <a href="https://kakao-design.com/portfolio/" target="_blank"><img src="/img/gallery/gallery3.webp"
-                            alt="生徒作品3"></a>
-                    <a href="https://takerunakase.github.io/Trattoria-Verde/" target="_blank"><img
-                            src="/img/gallery/gallery4.webp" alt="生徒作品4"></a>
-                    <a href="https://yuta-swallows.github.io/tokyo-thundards-goods-site/" target="_blank"><img
-                            src="/img/gallery/gallery5.webp" alt="生徒作品5"></a>
-                    <a href="https://rgarage1230.com/" target="_blank"><img src="/img/gallery/gallery6.webp"
-                            alt="生徒作品6"></a>
-                    <a href="https://chimoe166.github.io/-LP/" target="_blank"><img src="/img/gallery/gallery7.webp"
-                            alt="生徒作品7"></a>
-                    <a href="https://quietkg.shop/" target="_blank"><img src="/img/gallery/gallery8.webp"
-                            alt="生徒作品8"></a>
-                    <a href="https://sugizaki-aya.com/daiwa/" target="_blank"><img src="/img/gallery/gallery9.webp"
-                            alt="生徒作品9"></a>
-                    <a href="https://sunny-clafoutis-cb97c8.netlify.app/" target="_blank"><img
-                            src="/img/gallery/gallery10.webp" alt="生徒作品10"></a>
-                    <a href="https://suzukisaki.github.io/charmehp/index.html" target="_blank"><img
-                            src="/img/gallery/gallery11.webp" alt="生徒作品11"></a>
-                    <a href="https://xs341931.xsrv.jp/matcha/" target="_blank"><img src="/img/gallery/gallery12.webp"
-                            alt="生徒作品12"></a>
-                    <a href="https://orchid913130.studio.site/" target="_blank"><img src="/img/gallery/gallery13.webp"
-                            alt="生徒作品13"></a>
-                    <a href="https://asaaaaaka.penne.jp/" target="_blank"><img src="/img/gallery/gallery14.webp"
-                            alt="生徒作品14"></a>
-                    <a href="https://qiu7917.github.io/PilatesFleur/" target="_blank"><img
-                            src="/img/gallery/gallery15.webp" alt="生徒作品15"></a>
-                    <a href="https://chiharuuuuunn.github.io/miel/" target="_blank"><img
-                            src="/img/gallery/gallery16.webp" alt="生徒作品16"></a>
-                    <a href="https://velvety-pegasus-59fbe0.netlify.app/" target="_blank"><img
-                            src="/img/gallery/gallery17.webp" alt="生徒作品17"></a>
+                    <a href="https://luna-820.github.io/original-site01/" target="_blank">
+                        <img src="img/gallery/gallery1.webp" alt="生徒作品1">
+                    </a>
+                    <a href="https://ryotasogawa.github.io/originalsitte/" target="_blank">
+                        <img src="img/gallery/gallery2.webp" alt="生徒作品2">
+                    </a>
+                    <a href="https://kakao-design.com/portfolio/" target="_blank">
+                        <img src="img/gallery/gallery3.webp" alt="生徒作品3">
+                    </a>
+                    <a href="https://takerunakase.github.io/Trattoria-Verde/" target="_blank">
+                        <img src="img/gallery/gallery4.webp" alt="生徒作品4">
+                    </a>
+                    <a href="https://yuta-swallows.github.io/tokyo-thundards-goods-site/" target="_blank">
+                        <img src="img/gallery/gallery5.webp" alt="生徒作品5">
+                    </a>
+                    <a href="https://rgarage1230.com/" target="_blank">
+                        <img src="img/gallery/gallery6.webp" alt="生徒作品6">
+                    </a>
+                    <a href="https://chimoe166.github.io/-LP/" target="_blank">
+                        <img src="img/gallery/gallery7.webp" alt="生徒作品7">
+                    </a>
+                    <a href="https://quietkg.shop/" target="_blank">
+                        <img src="img/gallery/gallery8.webp" alt="生徒作品8">
+                    </a>
+                    <a href="https://sugizaki-aya.com/daiwa/" target="_blank">
+                        <img src="img/gallery/gallery9.webp" alt="生徒作品9">
+                    </a>
+                    <a href="https://sunny-clafoutis-cb97c8.netlify.app/" target="_blank">
+                        <img src="img/gallery/gallery10.webp" alt="生徒作品10">
+                    </a>
+                    <a href="https://suzukisaki.github.io/charmehp/index.html" target="_blank">
+                        <img src="img/gallery/gallery11.webp" alt="生徒作品11">
+                    </a>
+                    <a href="https://xs341931.xsrv.jp/matcha/" target="_blank">
+                        <img src="img/gallery/gallery12.webp" alt="生徒作品12">
+                    </a>
+                    <a href="https://orchid913130.studio.site/" target="_blank">
+                        <img src="img/gallery/gallery13.webp" alt="生徒作品13">
+                    </a>
+                    <a href="https://asaaaaaka.penne.jp/" target="_blank">
+                        <img src="img/gallery/gallery14.webp" alt="生徒作品14">
+                    </a>
+                    <a href="https://qiu7917.github.io/PilatesFleur/" target="_blank">
+                        <img src="img/gallery/gallery15.webp" alt="生徒作品15">
+                    </a>
+                    <a href="https://chiharuuuuunn.github.io/miel/" target="_blank">
+                        <img src="img/gallery/gallery16.webp" alt="生徒作品16">
+                    </a>
+                    <a href="https://velvety-pegasus-59fbe0.netlify.app/" target="_blank">
+                        <img src="img/gallery/gallery17.webp" alt="生徒作品17">
+                    </a>
                 </div>
                 <div class="section-title container">
                     <div class="inner">
@@ -679,46 +722,63 @@
                     <a href="https://pronavi-board.noe-p.com/" target="_blank">
                         <div class="view-more-btn">
                             View More
-                            <img src="img/ArrowUpRight.webp" alt="右矢印のアイコン">
+                            <img src="img/arrow/ArrowUpRight.webp" alt="右矢印のアイコン">
                         </div>
                     </a>
                 </div>
 
                 <div class="slick-bottom">
-                    <a href="https://velvety-pegasus-59fbe0.netlify.app/" target="_blank"><img
-                            src="/img/gallery/gallery17.webp" alt="生徒作品17"></a>ï
-                    <a href="https://chiharuuuuunn.github.io/miel/" target="_blank"><img
-                            src="/img/gallery/gallery16.webp" alt="生徒作品16"></a>
-                    <a href="https://qiu7917.github.io/PilatesFleur/" target="_blank"><img
-                            src="/img/gallery/gallery15.webp" alt="生徒作品15"></a>
-                    <a href="https://asaaaaaka.penne.jp/" target="_blank"><img src="/img/gallery/gallery14.webp"
-                            alt="生徒作品14"></a>
-                    <a href="https://orchid913130.studio.site/" target="_blank"><img src="/img/gallery/gallery13.webp"
-                            alt="生徒作品13"></a>
-                    <a href="https://xs341931.xsrv.jp/matcha/" target="_blank"><img src="/img/gallery/gallery12.webp"
-                            alt="生徒作品12"></a>
-                    <a href="https://suzukisaki.github.io/charmehp/index.html" target="_blank"><img
-                            src="/img/gallery/gallery11.webp" alt="生徒作品11"></a>
-                    <a href="https://sunny-clafoutis-cb97c8.netlify.app/" target="_blank"><img
-                            src="/img/gallery/gallery10.webp" alt="生徒作品10"></a>
-                    <a href="https://sugizaki-aya.com/daiwa/" target="_blank"><img src="/img/gallery/gallery9.webp"
-                            alt="生徒作品9"></a>
-                    <a href="https://quietkg.shop/" target="_blank"><img src="/img/gallery/gallery8.webp"
-                            alt="生徒作品8"></a>
-                    <a href="https://chimoe166.github.io/-LP/" target="_blank"><img src="/img/gallery/gallery7.webp"
-                            alt="生徒作品7"></a>
-                    <a href="https://rgarage1230.com/" target="_blank"><img src="/img/gallery/gallery6.webp"
-                            alt="生徒作品6"></a>
-                    <a href="https://yuta-swallows.github.io/tokyo-thundards-goods-site/" target="_blank"><img
-                            src="/img/gallery/gallery5.webp" alt="生徒作品5"></a>
-                    <a href="https://takerunakase.github.io/Trattoria-Verde/" target="_blank"><img
-                            src="/img/gallery/gallery4.webp" alt="生徒作品4"></a>
-                    <a href="https://kakao-design.com/portfolio/" target="_blank"><img src="/img/gallery/gallery3.webp"
-                            alt="生徒作品3"></a>
-                    <a href="https://ryotasogawa.github.io/originalsitte/" target="_blank"><img
-                            src="/img/gallery/gallery2.webp" alt="生徒作品2"></a>
-                    <a href="https://luna-820.github.io/original-site01/" target="_blank"><img
-                            src="/img/gallery/gallery1.webp" alt="生徒作品1"></a>
+                    <a href="https://velvety-pegasus-59fbe0.netlify.app/" target="_blank">
+                        <img src="img/gallery/gallery17.webp" alt="生徒作品17">
+                    </a>
+                    <a href="https://chiharuuuuunn.github.io/miel/" target="_blank">
+                        <img src="img/gallery/gallery16.webp" alt="生徒作品16">
+                    </a>
+                    <a href="https://qiu7917.github.io/PilatesFleur/" target="_blank">
+                        <img src="img/gallery/gallery15.webp" alt="生徒作品15">
+                    </a>
+                    <a href="https://asaaaaaka.penne.jp/" target="_blank">
+                        <img src="img/gallery/gallery14.webp" alt="生徒作品14">
+                    </a>
+                    <a href="https://orchid913130.studio.site/" target="_blank">
+                        <img src="img/gallery/gallery13.webp" alt="生徒作品13">
+                    </a>
+                    <a href="https://xs341931.xsrv.jp/matcha/" target="_blank">
+                        <img src="img/gallery/gallery12.webp" alt="生徒作品12">
+                    </a>
+                    <a href="https://suzukisaki.github.io/charmehp/index.html" target="_blank">
+                        <img src="img/gallery/gallery11.webp" alt="生徒作品11">
+                    </a>
+                    <a href="https://sunny-clafoutis-cb97c8.netlify.app/" target="_blank">
+                        <img src="img/gallery/gallery10.webp" alt="生徒作品10">
+                    </a>
+                    <a href="https://sugizaki-aya.com/daiwa/" target="_blank">
+                        <img src="img/gallery/gallery9.webp" alt="生徒作品9">
+                    </a>
+                    <a href="https://quietkg.shop/" target="_blank">
+                        <img src="img/gallery/gallery8.webp" alt="生徒作品8">
+                    </a>
+                    <a href="https://chimoe166.github.io/-LP/" target="_blank">
+                        <img src="img/gallery/gallery7.webp" alt="生徒作品7">
+                    </a>
+                    <a href="https://rgarage1230.com/" target="_blank">
+                        <img src="img/gallery/gallery6.webp" alt="生徒作品6">
+                    </a>
+                    <a href="https://yuta-swallows.github.io/tokyo-thundards-goods-site/" target="_blank">
+                        <img src="img/gallery/gallery5.webp" alt="生徒作品5">
+                    </a>
+                    <a href="https://takerunakase.github.io/Trattoria-Verde/" target="_blank">
+                        <img src="img/gallery/gallery4.webp" alt="生徒作品4">
+                    </a>
+                    <a href="https://kakao-design.com/portfolio/" target="_blank">
+                        <img src="img/gallery/gallery3.webp" alt="生徒作品3">
+                    </a>
+                    <a href="https://ryotasogawa.github.io/originalsitte/" target="_blank">
+                        <img src="img/gallery/gallery2.webp" alt="生徒作品2">
+                    </a>
+                    <a href="https://luna-820.github.io/original-site01/" target="_blank">
+                        <img src="img/gallery/gallery1.webp" alt="生徒作品1">
+                    </a>
                 </div>
             </section>
 
@@ -735,7 +795,7 @@
                 <div class="profiles-container">
                     <div class="profile-card">
                         <div class="image-section">
-                            <img src="img/Teacher.01.webp" alt="Tetsuのプロフィール画像" class="profile-image">
+                            <img src="img/teacher/Teacher.01.webp" alt="Tetsuのプロフィール画像" class="profile-image">
                         </div>
                         <div class="text-section">
                             <p class="title-occupation">現役エンジニア講師</p>
@@ -756,7 +816,7 @@
 
                     <div class="profile-card">
                         <div class="image-section">
-                            <img src="img/Teacher.02.webp" alt="Yurikoのプロフィール画像" class="profile-image">
+                            <img src="img/teacher/Teacher.02.webp" alt="Yurikoのプロフィール画像" class="profile-image">
                         </div>
                         <div class="text-section">
                             <p class="title-occupation">現役エンジニア講師</p>
@@ -774,7 +834,7 @@
 
                     <div class="profile-card">
                         <div class="image-section">
-                            <img src="img/Teacher.03.webp" alt="Aokiのプロフィール画像" class="profile-image">
+                            <img src="img/teacher/Teacher.03.webp" alt="Aokiのプロフィール画像" class="profile-image">
                         </div>
                         <div class="text-section">
                             <p class="title-occupation">現役エンジニア講師</p>
@@ -801,7 +861,7 @@
             <section class="contact" id="contact">
 
                 <div class="support-comment">
-                    <div class="container">
+                    <div class="container fadeUpTrigger">
                         <p>未経験の方も案件獲得まで寄り添ってサポートします。 <br>
                             まずは話してみるだけでも大丈夫です。 <br>
                             どうぞお気軽にご相談ください。
@@ -832,13 +892,13 @@
             <section class="sns" id="sns">
 
                 <div class="container">
-                    <p class="sns-comment"><span>プログラミングについて<br class="tab-only">発信しています</span></p>
+                    <p class="sns-comment fadeUpTrigger"><span>プログラミングについて<br class="tab-only">発信しています</span></p>
 
                     <div class="flex">
                         <a href="https://www.instagram.com/iruka.freelance?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                             class="item">
                             <div class="icon-flex">
-                                <img src="img/icon_iruka.webp" alt="インスタグラム いるか のアイコン">
+                                <img src="img/sns/icon_iruka.webp" alt="インスタグラム いるか のアイコン">
                                 <div class="icon-instagram"></div>
                             </div>
                             <div class="item-text">
@@ -851,7 +911,7 @@
                         <a href="https://www.instagram.com/kakashi.programming.lab?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                             class="item">
                             <div class="icon-flex">
-                                <img src="img/icon_kakashi.webp" alt="インスタグラム かかし のアイコン">
+                                <img src="img/sns/icon_kakashi.webp" alt="インスタグラム かかし のアイコン">
                                 <div class="icon-instagram"></div>
                             </div>
                             <div class="item-text">
@@ -864,7 +924,7 @@
                         <a href="https://www.instagram.com/ino_lifework?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                             class="item">
                             <div class="icon-flex">
-                                <img src="img/icon_ino.webp" alt="インスタグラム いの のアイコン">
+                                <img src="img/sns/icon_ino.webp" alt="インスタグラム いの のアイコン">
                                 <div class="icon-instagram"></div>
                             </div>
                             <div class="item-text">
@@ -973,7 +1033,7 @@
     <!--* footer                                *-->
     <!--*****************************************-->
     <footer>
-        <div class="cta">
+        <div class="cta btn-wrapper">
             <a href="" class="reservation">
                 <p>無料カウンセリング予約
                     <span class="arrow-circle"></span>

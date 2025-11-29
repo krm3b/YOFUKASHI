@@ -1,14 +1,73 @@
 $(function () {
+    splash();
     hamburger();
     slick();
     accordion();
     scrollHeader();
-    headermask();
     mainVisualSlider();
     modal();
     fadeIn();
+    headerMask();
+    reservationFadeIn();
 });
 
+
+/*=================================================
+ローディングアニメーション
+==================================================*/
+function splash() {
+    $(window).on('load', function () {
+        //ロゴタイピング表示　spanタグを追加する
+        var element = $(".text-typing");
+        element.each(function () {
+            var text = $(this).html();
+            var textbox = "";
+            text.split('').forEach(function (t) {
+                if (t !== " ") {
+                    textbox += '<span>' + t + '</span>';
+                } else {
+                    textbox += t;
+                }
+            });
+            $(this).html(textbox);
+            
+        });
+
+        TextTypingAnime();/* アニメーション用の関数を呼ぶ*/
+
+        // ロゴを1.2秒（1200ms）でフェードアウト
+        $(".splash-logo").delay(1200).fadeOut('slow', function() {
+            $("#splash").delay(100).fadeOut('slow');
+            //appearクラスを付与して上下背景伸びるアニメーション
+            $('body').addClass('appear');
+        });
+    });   
+}
+
+// TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義
+function TextTypingAnime() {
+	$('.text-typing').each(function () {
+		var elemPos = $(this).offset().top - 50;
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		var thisChild = "";
+		if (scroll >= elemPos - windowHeight) {
+			thisChild = $(this).children(); //spanタグを取得
+			//spanタグの要素の１つ１つ処理を追加
+			thisChild.each(function (i) {
+				var time = 100;
+				//時差で表示する為にdelayを指定しその時間後にfadeInで表示させる
+				$(this).delay(time * i).fadeIn(time);
+			});
+		} else {
+			thisChild = $(this).children();
+			thisChild.each(function () {
+				$(this).stop(); //delay処理を止める
+				$(this).css("display", "none"); //spanタグ非表示
+			});
+		}
+	});
+}
 
 /*=================================================
  ハンバーガーメニュー
@@ -62,7 +121,11 @@ function slick() {
     $(".event-slick").slick({
         ...commonSettings,
         centerMode: true,
-        swipe: false
+        swipe: false,
+        responsive: [
+            { breakpoint: 769, settings: { speed: 8000, slidesToShow: 2, centerMode: false } },
+            { breakpoint: 426, settings: { speed: 5000, slidesToShow: 1, centerMode: false } },
+        ],
     });
 }
 
@@ -138,15 +201,39 @@ function modal() {
 ==================================================*/
 function fadeIn() {
     $(window).on('scroll', function () {
-        $(".js-fade").each(function () {
-            const scroll = $(window).scrollTop();
-            const target = $(this).offset().top;
-            const winH = $(window).height();
-
-            if (scroll > target - winH + $(this).outerHeight()) {
-                $(this).addClass("show");
+        // ふわっ（下から）
+        $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+            var elemPos = $(this).offset().top + 100;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll >= elemPos - windowHeight){
+            $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+            }else{
+            $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
             }
-        });
+            });
+        // ふわっ（左から）
+        $('.fadeLeftTrigger').each(function(){ //fadeLeftTriggerというクラス名が
+            var elemPos = $(this).offset().top + 100;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll >= elemPos - windowHeight){
+            $(this).addClass('fadeLeft');// 画面内に入ったらfadeLeftというクラス名を追記
+            }else{
+            $(this).removeClass('fadeLeft');// 画面外に出たらfadeLeftというクラス名を外す
+            }
+            });
+        // ふわっ（右から）
+        $('.fadeRightTrigger').each(function(){ //fadeRightTriggerというクラス名が
+            var elemPos = $(this).offset().top + 100;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll >= elemPos - windowHeight){
+            $(this).addClass('fadeRight');// 画面内に入ったらfadeRightというクラス名を追記
+            }else{
+            $(this).removeClass('fadeRight');// 画面外に出たらfadeRightというクラス名を外す
+            }
+            });	
     });
 }
 
@@ -154,7 +241,7 @@ function fadeIn() {
 /*=================================================
 ヘッダースクロールしたら表示しない
 ==================================================*/
-function headermask() {
+function headerMask() {
     const panels = document.querySelectorAll('.panel');
 
     panels.forEach(panel => {
@@ -165,3 +252,28 @@ function headermask() {
     });
 }
 
+
+
+/*=================================================
+カウンセリング予約ボタンのフェードイン・アウト
+==================================================*/
+function reservationFadeIn() {
+    let reservation = $(".cta");
+    reservation.hide();
+
+    function checkScroll() {
+        let scrollTop = $(window).scrollTop();
+        let windowHeight = $(window).height();
+        let documentHeight = $(document).height();
+        let isBottom = scrollTop + windowHeight >= documentHeight - 10;
+        let isMobile = $(window).width() < 768;
+        
+        if (scrollTop > 180 && !isBottom && isMobile) {
+            reservation.fadeIn();
+        } else {
+            reservation.fadeOut();
+        }
+    }
+
+    $(window).on('scroll resize', checkScroll);
+}
