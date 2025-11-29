@@ -336,7 +336,8 @@ a {
 img {
   vertical-align: bottom;
   max-width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 
@@ -389,7 +390,9 @@ header nav ul {
   font-size: 1.6rem;
 }
 header nav ul li a button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -690,6 +693,7 @@ footer .cta {
   flex-direction: column;
   align-items: center;
   display: none;
+  width: 100%;
 }
 @media (max-width: 768px) {
   footer .cta {
@@ -874,6 +878,7 @@ body.appear .splashbg2 {
   position: absolute;
   top: -20%;
   right: 20%;
+  width: -moz-fit-content;
   width: fit-content;
   opacity: 0;
   transform: rotate(3deg) translateY(30px);
@@ -1068,6 +1073,7 @@ body.appear .splashbg2 {
 }
 .why-pronavi .why {
   padding: 16px 20px;
+  width: -moz-fit-content;
   width: fit-content;
   background-color: #3688D6;
   margin-bottom: 50px;
@@ -1207,7 +1213,8 @@ body.appear .splashbg2 {
 .why-pronavi .event-slick img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slick-slide {
@@ -1227,7 +1234,7 @@ body {
 .contact .support-comment {
   height: 500px;
   width: 100%;
-  background-image: url(../img/contact1.webp);
+  background-image: url(../img/contact/contact1.webp);
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1242,6 +1249,7 @@ body {
   }
 }
 .contact .support-comment p {
+  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 50px;
   padding: 50px 30px;
@@ -1446,7 +1454,8 @@ body {
 .gallery .slick-top img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1459,7 +1468,8 @@ body {
 .gallery .slick-bottom img {
   width: 100%;
   height: 30vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-radius: 10px;
 }
@@ -1511,6 +1521,7 @@ body {
 }
 .mainvisial h2 span {
   display: block;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 4rem;
   letter-spacing: 3px;
@@ -1557,6 +1568,7 @@ body {
   width: 100%;
 }
 .mainvisial .flex .img-wrapper {
+  width: -moz-fit-content;
   width: fit-content;
   padding: 20px;
   background-color: #FEFEFE;
@@ -1809,7 +1821,8 @@ body {
   width: 100%;
   display: block;
   margin: 0 auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 768px) {
   .price .course .course-box .box-bottom .skill .skill-img img {
@@ -1922,8 +1935,7 @@ body {
 }
 .reasons__item {
   border-radius: 30px;
-  padding: 5%;
-  position: -webkit-sticky; /*Safari*/
+  padding: 5%; /*Safari*/
   position: sticky;
 }
 @media (max-width: 425px) {
@@ -2077,7 +2089,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url(../img/roadmap1.webp);
+  background-image: url(../img/roadmap/roadmap1.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
@@ -2100,6 +2112,7 @@ body {
 }
 .roadmap .flex__btn .comment {
   background-color: #FFFFFF;
+  width: -moz-fit-content;
   width: fit-content;
   margin-left: -100px;
   padding: 10px 15px;
@@ -2136,6 +2149,7 @@ body {
   padding-block: 150px;
 }
 .sns .sns-comment {
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   letter-spacing: 4px;
@@ -2297,7 +2311,7 @@ body {
   bottom: -10px;
   width: 70px;
   height: 70px;
-  background-image: url(../../img/icon_instagram.webp);
+  background-image: url(../../img/sns/icon_instagram.webp);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -2482,6 +2496,9 @@ body {
 .teacher .profiles-container .profile-card:nth-of-type(3) {
   background-color: #8B9DAC;
 }
+.teacher .profiles-container .profile-card:nth-of-type(3) p {
+  color: white;
+}
 .teacher .profiles-container .image-section {
   width: 100%;
   margin-bottom: 20px;
@@ -2490,7 +2507,8 @@ body {
 .teacher .profiles-container .image-section img {
   width: 100%;
   height: 250px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-top: -10px;
   border-radius: 10px;
 }
@@ -2581,7 +2599,8 @@ body {
 .voice .card-front img {
   width: 100%;
   height: 75%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .voice .card-front .card-content {
   padding: 20px;
@@ -2638,7 +2657,7 @@ body {
 }
 
 .background {
-  background-image: url("../img/worries_background.webp");
+  background-image: url("../img/worries/_background.webp");
   background-size: contain;
   background-repeat: repeat;
 }
@@ -2654,7 +2673,7 @@ body {
   right: 0;
   width: 90%;
   height: calc(80% - 45px);
-  background-image: url("../img/worries1.webp");
+  background-image: url("../img/worries/worries1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right center;
@@ -2675,7 +2694,7 @@ body {
   transform: translateX(-50%);
   width: 135px;
   height: 140px;
-  background-image: url("../../img/arrow_gray.webp");
+  background-image: url("../../img/arrow/arrow_gray.webp");
   background-size: cover;
   background-repeat: no-repeat;
   animation: arrowDown 1s infinite ease-in-out;
@@ -2693,6 +2712,7 @@ body {
   background-color: #3F3D56;
   border-radius: 50px;
   font-weight: normal;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 15px 16% 10px 16%;
   margin-left: 10%;
@@ -2735,6 +2755,7 @@ body {
   padding-left: 50px;
   margin-left: 11%;
   margin-top: 50px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 768px) {
@@ -2835,7 +2856,8 @@ body {
   height: 100%;
 }
 .box .step-img img.img-step6 {
-  object-position: 57% 15%;
+  -o-object-position: 57% 15%;
+     object-position: 57% 15%;
 }
 .box .step-content {
   width: 50%;
@@ -2940,7 +2962,6 @@ body {
   right: 15px;
   top: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   padding-right: 15px;
 }
@@ -2950,7 +2971,6 @@ body {
 }
 
 .pagination a:after {
-  -webkit-transition: box-shadow 0.5s ease;
   transition: box-shadow 0.5s ease;
   width: 10px;
   height: 10px;

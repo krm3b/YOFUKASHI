@@ -3,7 +3,7 @@
 
 // 格子状の背景
 .background {
-    background-image: url("../img/worries_background.webp");
+    background-image: url("../img/worries/_background.webp");
     background-size: contain;
     background-repeat: repeat;
 }
@@ -20,7 +20,7 @@
         right: 0;
         width: 90%;
         height: calc(80% - 45px);
-        background-image: url("../img/worries1.webp");
+        background-image: url("../img/worries/worries1.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: right center;
@@ -42,7 +42,7 @@
         transform: translateX(-50%);
         width: 135px;
         height: 140px;
-        background-image: url("../../img/arrow_gray.webp");
+        background-image: url("../../img/arrow/arrow_gray.webp");
         background-size: cover;
         background-repeat: no-repeat;
         animation: arrowDown 1s infinite ease-in-out;
