@@ -33,9 +33,12 @@
             padding: 70px 30px 50px 30px;
             position: relative;
 
-
             @include tab {
                 width: 100%;
+            }
+
+            @include sp {
+                width: 125%;
             }
 
             &::before {
