@@ -1593,7 +1593,7 @@ body {
 }
 @media (max-width: 425px) {
   .mainvisial .btn-wrapper .reservation p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 425px) {
@@ -1815,6 +1815,11 @@ body {
   gap: 30px;
   flex-direction: column;
 }
+@media (max-width: 425px) {
+  .price .course .course-box {
+    padding: 30px 10px;
+  }
+}
 .price .course .course-box .box-bottom {
   display: flex;
   justify-content: space-between;
@@ -1937,6 +1942,11 @@ body {
 }
 .price .course .course-box .box-bottom .price-wrapper .btn-wrapper .reservation {
   width: 100%;
+}
+@media (max-width: 425px) {
+  .price .course .course-box .box-bottom .price-wrapper .btn-wrapper .reservation p {
+    font-size: 1.3rem;
+  }
 }
 @media (max-width: 425px) {
   .price .course .course-box .box-bottom .price-wrapper .btn-wrapper {
@@ -2746,7 +2756,7 @@ body {
   transform: translateX(-50%);
   width: 135px;
   height: 140px;
-  background-image: url("../../img/arrow/arrow_gray.webp");
+  background-image: url("../img/arrow/arrow_gray.webp");
   background-size: cover;
   background-repeat: no-repeat;
   animation: arrowDown 1s infinite ease-in-out;
