@@ -3,10 +3,11 @@ $(function () {
     slick();
     accordion();
     scrollHeader();
-    headermask();
     mainVisualSlider();
     modal();
     fadeIn();
+    headermask();
+    reservationfadeIn();
 });
 
 
@@ -165,3 +166,28 @@ function headermask() {
     });
 }
 
+
+
+/*=================================================
+カウンセリング予約ボタンのフェードイン・アウト
+==================================================*/
+function reservationfadeIn() {
+    let reservation = $(".cta");
+    reservation.hide();
+
+    function checkScroll() {
+        let scrollTop = $(window).scrollTop();
+        let windowHeight = $(window).height();
+        let documentHeight = $(document).height();
+        let isBottom = scrollTop + windowHeight >= documentHeight - 10;
+        let isMobile = $(window).width() < 768;
+        
+        if (scrollTop > 180 && !isBottom && isMobile) {
+            reservation.fadeIn();
+        } else {
+            reservation.fadeOut();
+        }
+    }
+
+    $(window).on('scroll resize', checkScroll);
+}

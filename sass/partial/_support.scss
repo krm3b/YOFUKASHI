@@ -4,7 +4,7 @@
 .support {
     padding-top: 100px;
 
-    &__card {
+    .support-card {
         @include flex(flex-start, 0);
         align-items: end;
         margin-bottom: 100px;
@@ -20,7 +20,6 @@
         }
         
         &.reverse {
-            /* 子要素の並び順を逆にする */
             flex-direction: row-reverse;
 
             @include tab {
@@ -51,7 +50,6 @@
                 background-color: $color-main;
                 border-radius: 5px;
                 z-index: -1;
-
             }
 
             .support-number {
