@@ -5,6 +5,10 @@
     padding-block: 100px;
     background-color: $color-background-accent;
 
+    @include sp {
+        padding-top: 0;
+    }
+
     .flex {
         @include flex(center, 0);
         align-items: end;
