@@ -47,6 +47,10 @@
             @include flex(center, 30px);
             flex-direction: column;
 
+            @include sp {
+                padding: 30px 10px;
+            }
+
             .box-bottom {
                 @include flex(space-between, 10px);
 
@@ -164,6 +168,12 @@
 
                         .reservation {
                             width: 100%;
+
+                            p {
+                                @include sp {
+                                    font-size: 1.3rem;
+                                }
+                            }
                         }
 
                         @include sp {
