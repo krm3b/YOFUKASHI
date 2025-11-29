@@ -121,7 +121,11 @@ function slick() {
     $(".event-slick").slick({
         ...commonSettings,
         centerMode: true,
-        swipe: false
+        swipe: false,
+        responsive: [
+            { breakpoint: 769, settings: { speed: 8000, slidesToShow: 2, centerMode: false } },
+            { breakpoint: 426, settings: { speed: 5000, slidesToShow: 1, centerMode: false } },
+        ],
     });
 }
 
