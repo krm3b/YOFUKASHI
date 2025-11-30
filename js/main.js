@@ -16,58 +16,59 @@ $(function () {
 ローディングアニメーション
 ==================================================*/
 function splash() {
+
+    var timeoutId = splashTimeout();     // タイムアウト処理（強制フェードアウト）
+
     $(window).on('load', function () {
-        //ロゴタイピング表示　spanタグを追加する
-        var element = $(".text-typing");
-        element.each(function () {
-            var text = $(this).html();
-            var textbox = "";
-            text.split('').forEach(function (t) {
-                if (t !== " ") {
-                    textbox += '<span>' + t + '</span>';
-                } else {
-                    textbox += t;
-                }
-            });
-            $(this).html(textbox);
-            
-        });
-
-        TextTypingAnime();/* アニメーション用の関数を呼ぶ*/
-
-        // ロゴを1.2秒（1200ms）でフェードアウト
-        $(".splash-logo").delay(1200).fadeOut('slow', function() {
-            $("#splash").delay(100).fadeOut('slow');
-            //appearクラスを付与して上下背景伸びるアニメーション
-            $('body').addClass('appear');
-        });
-    });   
+        clearTimeout(timeoutId);         // タイムアウト解除
+        splashFadeOut();                 // フェードアウト処理
+    });
 }
+
+// ===== タイムアウト処理 =====
+function splashTimeout() {
+    return setTimeout(function () {
+        if ($("#splash").is(":visible")) {
+            splashFadeOut();            // フェードアウト処理
+        }
+    }, 3000);
+}
+
+// ===== ロゴタイピング処理 =====
+function logoTyping() {
+    $(".text-typing").each(function () {
+        var text = $(this).html();
+        var textbox = "";
+        text.split('').forEach(function (t) {
+            textbox += (t !== " ") ? `<span>${t}</span>` : t;
+        });
+        $(this).html(textbox);
+    });
+}
+
+// ===== フェードアウト処理 =====
+function splashFadeOut() {
+    logoTyping();                       // タイピング処理
+    TextTypingAnime();                  // 既存アニメーション関数
+    $(".splash-logo").delay(1200).fadeOut('slow', function () {
+        $("#splash").delay(100).fadeOut('slow');
+        $('body').addClass('appear');
+    });
+}
+
 
 // TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義
 function TextTypingAnime() {
-	$('.text-typing').each(function () {
-		var elemPos = $(this).offset().top - 50;
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-		var thisChild = "";
-		if (scroll >= elemPos - windowHeight) {
-			thisChild = $(this).children(); //spanタグを取得
-			//spanタグの要素の１つ１つ処理を追加
-			thisChild.each(function (i) {
-				var time = 100;
-				//時差で表示する為にdelayを指定しその時間後にfadeInで表示させる
-				$(this).delay(time * i).fadeIn(time);
-			});
-		} else {
-			thisChild = $(this).children();
-			thisChild.each(function () {
-				$(this).stop(); //delay処理を止める
-				$(this).css("display", "none"); //spanタグ非表示
-			});
-		}
-	});
+    $('.text-typing').each(function () {
+        var thisChild = $(this).children();  // spanタグを取得
+
+        thisChild.each(function (i) {
+            var time = 100;
+            $(this).delay(time * i).fadeIn(time); // 順番に表示
+        });
+    });
 }
+
 
 /*=================================================
  ハンバーガーメニュー
